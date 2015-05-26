@@ -20,7 +20,7 @@
     integer i__1, i__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, il, ir, maxn;
@@ -95,7 +95,7 @@
 
     /* Function Body */
     maxn = max(1,*n);
-    temp = log((real) maxn / (real) (*msub + 1)) / log(2.f);
+    temp = logf((real) maxn / (real) (*msub + 1)) / logf(2.f);
     *lvl = (integer) temp + 1;
 
     i__ = *n / 2;

@@ -32,7 +32,7 @@ static integer c__1 = 1;
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     integer pow_ii(integer *, integer *);
     float sqrtf(real);
 
@@ -268,7 +268,7 @@ static integer c__1 = 1;
 	    liwmin = 1;
 	    lrwmin = *n - 1 << 1;
 	} else if (icompz == 1) {
-	    lgn = (integer) (log((real) (*n)) / log(2.f));
+	    lgn = (integer) (logf((real) (*n)) / logf(2.f));
 	    if (pow_ii(&c__2, &lgn) < *n) {
 		++lgn;
 	    }

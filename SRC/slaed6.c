@@ -22,7 +22,7 @@
 
     /* Builtin functions */
     float sqrtf(real);
-    double log(doublereal);
+    float logf(real);
     double pow_ri(real *, integer *);
 
     /* Local variables */
@@ -202,7 +202,7 @@
 
     eps = slamch_("Epsilon");
     base = slamch_("Base");
-    i__1 = (integer) (log(slamch_("SafMin")) / log(base) / 3.f);
+    i__1 = (integer) (logf(slamch_("SafMin")) / logf(base) / 3.f);
     small1 = pow_ri(&base, &i__1);
     sminv1 = 1.f / small1;
     small2 = small1 * small1;

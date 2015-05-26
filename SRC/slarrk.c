@@ -22,7 +22,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, it;
@@ -127,7 +127,7 @@
     tnorm = dmax(r__1,r__2);
     rtoli = *reltol;
     atoli = *pivmin * 4.f;
-    itmax = (integer) ((log(tnorm + *pivmin) - log(*pivmin)) / log(2.f)) + 2;
+    itmax = (integer) ((logf(tnorm + *pivmin) - logf(*pivmin)) / logf(2.f)) + 2;
     *info = -1;
     left = *gl - tnorm * 2.f * eps * *n - *pivmin * 4.f;
     right = *gu + tnorm * 2.f * eps * *n + *pivmin * 4.f;

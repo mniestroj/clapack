@@ -32,7 +32,7 @@ static integer c__0 = 0;
 
     /* Builtin functions */
     float sqrtf(real);
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer j, ib, jb, ie, je, nb;
@@ -421,7 +421,7 @@ static integer c__0 = 0;
 
 /*        Compute Iteration parameters */
 
-	itmax = (integer) ((log(tnorm + pivmin) - log(pivmin)) / log(2.f)) + 
+	itmax = (integer) ((logf(tnorm + pivmin) - logf(pivmin)) / logf(2.f)) + 
 		2;
 	if (*abstol <= 0.f) {
 	    atoli = ulp * tnorm;
@@ -606,7 +606,7 @@ static integer c__0 = 0;
 
 /*           Compute Eigenvalues */
 
-	    itmax = (integer) ((log(gu - gl + pivmin) - log(pivmin)) / log(
+	    itmax = (integer) ((logf(gu - gl + pivmin) - logf(pivmin)) / logf(
 		    2.f)) + 2;
 	    slaebz_(&c__2, &itmax, &in, &in, &c__1, &nb, &atoli, &rtoli, &
 		    pivmin, &d__[ibegin], &e[ibegin], &work[ibegin], idumma, &

@@ -31,7 +31,7 @@ static real c_b29 = 0.f;
 
     /* Builtin functions */
     double r_sign(real *, real *);
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, j, k;
@@ -363,7 +363,7 @@ static real c_b29 = 0.f;
 
     eps = slamch_("Epsilon");
 
-    mlvl = (integer) (log((real) (*n) / (real) (smlsiz + 1)) / log(2.f)) + 1;
+    mlvl = (integer) (logf((real) (*n) / (real) (smlsiz + 1)) / logf(2.f)) + 1;
     smlszp = smlsiz + 1;
 
     if (icompq == 1) {

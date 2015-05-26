@@ -32,7 +32,7 @@ static integer c__2 = 2;
     logical L__1;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer minwsize, i__, j, k, p, q, miniwsize, ii;
@@ -689,7 +689,7 @@ L40:
 
 			iter = 0;
 
-			tol = log((real) in) * 4.f * eps;
+			tol = logf((real) in) * 4.f * eps;
 
 			k = newfst;
 			windex = wbegin + k - 1;

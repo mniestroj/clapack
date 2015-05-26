@@ -29,7 +29,7 @@ static integer c__1 = 1;
     /* Builtin functions */
     double r_imag(complex *);
     float sqrtf(real);
-    double log(doublereal);
+    float logf(real);
     double pow_ri(real *, integer *);
 
     /* Local variables */
@@ -435,10 +435,10 @@ L999:
     smax = 0.f;
     t = 1.f / sqrtf(avg);
     base = slamch_("B");
-    u = 1.f / log(base);
+    u = 1.f / logf(base);
     i__1 = *n;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	i__2 = (integer) (u * log(s[i__] * t));
+	i__2 = (integer) (u * logf(s[i__] * t));
 	s[i__] = pow_ri(&base, &i__2);
 /* Computing MIN */
 	r__1 = smin, r__2 = s[i__];

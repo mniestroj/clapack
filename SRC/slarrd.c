@@ -32,7 +32,7 @@ static integer c__0 = 0;
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, j, ib, ie, je, nb;
@@ -395,7 +395,7 @@ static integer c__0 = 0;
 /*        RANGE='I': Compute an interval containing eigenvalues */
 /*        IL through IU. The initial interval [GL,GU] from the global */
 /*        Gerschgorin bounds GL and GU is refined by SLAEBZ. */
-	itmax = (integer) ((log(tnorm + *pivmin) - log(*pivmin)) / log(2.f)) 
+	itmax = (integer) ((logf(tnorm + *pivmin) - logf(*pivmin)) / logf(2.f)) 
 		+ 2;
 	work[*n + 1] = gl;
 	work[*n + 2] = gl;
@@ -582,7 +582,7 @@ static integer c__0 = 0;
 	    nwu += iwork[in + 1];
 	    iwoff = *m - iwork[1];
 /*           Compute Eigenvalues */
-	    itmax = (integer) ((log(gu - gl + *pivmin) - log(*pivmin)) / log(
+	    itmax = (integer) ((logf(gu - gl + *pivmin) - logf(*pivmin)) / logf(
 		    2.f)) + 2;
 	    slaebz_(&c__2, &itmax, &in, &in, &c__1, &nb, &atoli, &rtoli, 
 		    pivmin, &d__[ibegin], &e[ibegin], &e2[ibegin], idumma, &

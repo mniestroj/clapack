@@ -23,7 +23,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, k, r__, i1, ii, ip;
@@ -163,7 +163,7 @@
     /* Function Body */
     *info = 0;
 
-    maxitr = (integer) ((log(*spdiam + *pivmin) - log(*pivmin)) / log(2.f)) + 
+    maxitr = (integer) ((logf(*spdiam + *pivmin) - logf(*pivmin)) / logf(2.f)) + 
 	    2;
     mnwdth = *pivmin * 2.f;
 

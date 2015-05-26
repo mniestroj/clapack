@@ -30,7 +30,7 @@ static integer c__2 = 2;
 
     /* Builtin functions */
     float sqrtf(real);
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer i__, j;
@@ -777,7 +777,7 @@ L83:
 /*           This is an ESTIMATED error, the worst case bound is 4*N*EPS */
 /*           which is usually too large and requires unnecessary work to be */
 /*           done by bisection when computing the eigenvectors */
-	    rtol = log((real) in) * 4.f * eps;
+	    rtol = logf((real) in) * 4.f * eps;
 	    j = ibegin;
 	    i__2 = in - 1;
 	    for (i__ = 1; i__ <= i__2; ++i__) {

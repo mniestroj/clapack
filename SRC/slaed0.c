@@ -31,7 +31,7 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     integer pow_ii(integer *, integer *);
 
     /* Local variables */
@@ -257,7 +257,7 @@ L10:
 /*        Set up workspaces for eigenvalues only/accumulate new vectors */
 /*        routine */
 
-	temp = log((real) (*n)) / log(2.f);
+	temp = logf((real) (*n)) / logf(2.f);
 	lgn = (integer) temp;
 	if (pow_ii(&c__2, &lgn) < *n) {
 	    ++lgn;

@@ -30,7 +30,7 @@ static real c_b81 = 0.f;
     integer a_dim1, a_offset, b_dim1, b_offset, i__1, i__2, i__3, i__4;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
 
     /* Local variables */
     integer ie, il, mm;
@@ -262,7 +262,7 @@ static real c_b81 = 0.f;
 	    smlsiz = ilaenv_(&c__9, "SGELSD", " ", &c__0, &c__0, &c__0, &c__0);
 	    mnthr = ilaenv_(&c__6, "SGELSD", " ", m, n, nrhs, &c_n1);
 /* Computing MAX */
-	    i__1 = (integer) (log((real) minmn / (real) (smlsiz + 1)) / log(
+	    i__1 = (integer) (logf((real) minmn / (real) (smlsiz + 1)) / logf(
 		    2.f)) + 1;
 	    nlvl = max(i__1,0);
 	    liwork = minmn * 3 * nlvl + minmn * 11;

@@ -21,7 +21,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     double pow_ri(real *, integer *);
     float sqrtf(real);
 
@@ -135,7 +135,7 @@
 	return 0;
     }
     base = slamch_("B");
-    tmp = -.5f / log(base);
+    tmp = -.5f / logf(base);
 
 /*     Find the minimum and maximum diagonal elements. */
 
@@ -173,7 +173,7 @@
 
 	i__1 = *n;
 	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = (integer) (tmp * log(s[i__]));
+	    i__2 = (integer) (tmp * logf(s[i__]));
 	    s[i__] = pow_ri(&base, &i__2);
 /* L30: */
 	}

@@ -22,7 +22,7 @@
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     double pow_ri(real *, integer *);
 
     /* Local variables */
@@ -178,7 +178,7 @@
     smlnum = slamch_("S");
     bignum = 1.f / smlnum;
     radix = slamch_("B");
-    logrdx = log(radix);
+    logrdx = logf(radix);
 
 /*     Compute row scale factors. */
 
@@ -210,7 +210,7 @@
     i__1 = *m;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	if (r__[i__] > 0.f) {
-	    i__3 = (integer) (log(r__[i__]) / logrdx);
+	    i__3 = (integer) (logf(r__[i__]) / logrdx);
 	    r__[i__] = pow_ri(&radix, &i__3);
 	}
     }
@@ -288,7 +288,7 @@
 /* L80: */
 	}
 	if (c__[j] > 0.f) {
-	    i__2 = (integer) (log(c__[j]) / logrdx);
+	    i__2 = (integer) (logf(c__[j]) / logrdx);
 	    c__[j] = pow_ri(&radix, &i__2);
 	}
 /* L90: */

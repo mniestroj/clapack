@@ -22,7 +22,7 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     float sqrtf(real);
     void c_exp(complex *, complex *);
 
@@ -143,7 +143,7 @@
 	    i__2 = il;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
 		i__3 = iv + i__ - 1;
-		r__1 = sqrtf(log(u[(i__ << 1) - 2]) * -2.f);
+		r__1 = sqrtf(logf(u[(i__ << 1) - 2]) * -2.f);
 		r__2 = u[(i__ << 1) - 1] * 6.2831853071795864769252867663f;
 		q__3.r = 0.f, q__3.i = r__2;
 		c_exp(&q__2, &q__3);

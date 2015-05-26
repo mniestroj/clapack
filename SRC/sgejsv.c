@@ -33,7 +33,7 @@ static integer c_n1 = -1;
 
     /* Builtin functions */
     float sqrtf(real);
-    double log(doublereal);
+    float logf(real);
     double r_sign(real *, real *);
     integer i_nint(real *);
 
@@ -809,11 +809,11 @@ static integer c_n1 = -1;
 	    r__1 = sva[p] / xsc;
 	    big1 = r__1 * r__1 * temp1;
 	    if (big1 != 0.f) {
-		entra += big1 * log(big1);
+		entra += big1 * logf(big1);
 	    }
 /* L1113: */
 	}
-	entra = -entra / log((real) (*n));
+	entra = -entra / logf((real) (*n));
 
 /*        Now, SVA().^2/Trace(A^t * A) is a point in the probability simplex. */
 /*        It is derived from the diagonal of  A^t * A.  Do the same with the */
@@ -828,11 +828,11 @@ static integer c_n1 = -1;
 	    r__1 = work[p] / xsc;
 	    big1 = r__1 * r__1 * temp1;
 	    if (big1 != 0.f) {
-		entrat += big1 * log(big1);
+		entrat += big1 * logf(big1);
 	    }
 /* L1114: */
 	}
-	entrat = -entrat / log((real) (*m));
+	entrat = -entrat / logf((real) (*m));
 
 /*        Analyze the entropies and decide A or A^t. Smaller entropy */
 /*        usually means better input for the algorithm. */

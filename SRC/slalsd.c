@@ -29,7 +29,7 @@ static real c_b11 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double log(doublereal);
+    float logf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -337,7 +337,7 @@ static real c_b11 = 1.f;
 
 /*     Book-keeping and setting up some constants. */
 
-    nlvl = (integer) (log((real) (*n) / (real) (*smlsiz + 1)) / log(2.f)) + 1;
+    nlvl = (integer) (logf((real) (*n) / (real) (*smlsiz + 1)) / logf(2.f)) + 1;
 
     smlszp = *smlsiz + 1;
 
