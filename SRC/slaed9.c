@@ -26,7 +26,8 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;

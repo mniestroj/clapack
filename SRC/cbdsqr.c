@@ -32,8 +32,9 @@ static real c_b72 = -1.f;
     doublereal d__1;
 
     /* Builtin functions */
-    double pow_dd(doublereal *, doublereal *), sqrt(doublereal), r_sign(real *
-	    , real *);
+    double pow_dd(doublereal *, doublereal *);
+    double sqrt(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real f, g, h__;

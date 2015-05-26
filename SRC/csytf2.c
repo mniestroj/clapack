@@ -27,7 +27,8 @@ static integer c__1 = 1;
     complex q__1, q__2, q__3, q__4;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_imag(complex *);
+    double sqrt(doublereal);
+    double r_imag(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

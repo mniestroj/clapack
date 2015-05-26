@@ -32,7 +32,9 @@ static real c_b35 = 0.f;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *), log(doublereal), r_sign(real *, real *);
+    double r_imag(complex *);
+    double log(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer c__, i__, j, k;

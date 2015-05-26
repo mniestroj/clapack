@@ -31,7 +31,8 @@ static integer c_n1 = -1;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_imag(complex *);
+    double sqrt(doublereal);
+    double r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

@@ -16,7 +16,8 @@
 /* Subroutine */ int slabad_(real *small, real *large)
 {
     /* Builtin functions */
-    double r_lg10(real *), sqrt(doublereal);
+    double r_lg10(real *);
+    double sqrt(doublereal);
 
 
 /*  -- LAPACK auxiliary routine (version 3.2) -- */

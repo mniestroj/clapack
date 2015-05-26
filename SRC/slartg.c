@@ -20,7 +20,9 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double log(doublereal), pow_ri(real *, integer *), sqrt(doublereal);
+    double log(doublereal);
+    double pow_ri(real *, integer *);
+    double sqrt(doublereal);
 
     /* Local variables */
     integer i__;

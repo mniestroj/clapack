@@ -30,7 +30,8 @@ static real c_b29 = 0.f;
     real r__1;
 
     /* Builtin functions */
-    double r_sign(real *, real *), log(doublereal);
+    double r_sign(real *, real *);
+    double log(doublereal);
 
     /* Local variables */
     integer i__, j, k;

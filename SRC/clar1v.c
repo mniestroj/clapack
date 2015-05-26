@@ -25,7 +25,8 @@
     complex q__1, q__2;
 
     /* Builtin functions */
-    double c_abs(complex *), sqrt(doublereal);
+    double c_abs(complex *);
+    double sqrt(doublereal);
 
     /* Local variables */
     integer i__;

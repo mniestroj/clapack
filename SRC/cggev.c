@@ -33,7 +33,8 @@ static integer c_n1 = -1;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_imag(complex *);
+    double sqrt(doublereal);
+    double r_imag(complex *);
 
     /* Local variables */
     integer jc, in, jr, ihi, ilo;

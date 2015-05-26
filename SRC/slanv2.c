@@ -24,7 +24,8 @@ static real c_b4 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double r_sign(real *, real *), sqrt(doublereal);
+    double r_sign(real *, real *);
+    double sqrt(doublereal);
 
     /* Local variables */
     real p, z__, aa, bb, cc, dd, cs1, sn1, sab, sac, eps, tau, temp, scale, 

@@ -22,7 +22,8 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double log(doublereal), sqrt(doublereal);
+    double log(doublereal);
+    double sqrt(doublereal);
     void c_exp(complex *, complex *);
 
     /* Local variables */

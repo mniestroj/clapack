@@ -35,7 +35,8 @@ static integer c__0 = 0;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_imag(complex *);
+    double sqrt(doublereal);
+    double r_imag(complex *);
 
     /* Local variables */
     integer i__, j, m, jc, in, jr;

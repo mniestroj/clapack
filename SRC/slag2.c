@@ -22,7 +22,8 @@
     real r__1, r__2, r__3, r__4, r__5, r__6;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real r__, c1, c2, c3, c4, c5, s1, s2, a11, a12, a21, a22, b11, b12, b22, 

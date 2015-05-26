@@ -32,7 +32,9 @@ static integer c_n1 = -1;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal), log(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    double log(doublereal);
+    double r_sign(real *, real *);
     integer i_nint(real *);
 
     /* Local variables */

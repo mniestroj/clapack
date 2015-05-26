@@ -25,7 +25,8 @@ static real c_b5 = 1.f;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real b, t, s1, s2, eps, tmp, sine;

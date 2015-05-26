@@ -22,7 +22,8 @@
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double log(doublereal), pow_ri(real *, integer *);
+    double log(doublereal);
+    double pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j;

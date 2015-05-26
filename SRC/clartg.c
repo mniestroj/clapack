@@ -22,8 +22,10 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double log(doublereal), pow_ri(real *, integer *), r_imag(complex *), 
-	    sqrt(doublereal);
+    double log(doublereal);
+    double pow_ri(real *, integer *);
+    double r_imag(complex *);
+    double sqrt(doublereal);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

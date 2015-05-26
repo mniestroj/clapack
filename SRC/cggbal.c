@@ -28,8 +28,11 @@ static real c_b72 = .5f;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double r_lg10(real *), r_imag(complex *), c_abs(complex *), r_sign(real *,
-	     real *), pow_ri(real *, integer *);
+    double r_lg10(real *);
+    double r_imag(complex *);
+    double c_abs(complex *);
+    double r_sign(real *, real *);
+    double pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j, k, l, m;

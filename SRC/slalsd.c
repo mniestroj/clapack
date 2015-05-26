@@ -29,7 +29,8 @@ static real c_b11 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double log(doublereal), r_sign(real *, real *);
+    double log(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer c__, i__, j, k;

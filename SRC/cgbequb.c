@@ -22,7 +22,9 @@
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double log(doublereal), r_imag(complex *), pow_ri(real *, integer *);
+    double log(doublereal);
+    double r_imag(complex *);
+    double pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j, kd;

@@ -22,7 +22,8 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double r_imag(complex *), r_sign(real *, real *);
+    double r_imag(complex *);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;

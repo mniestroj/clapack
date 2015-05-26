@@ -25,7 +25,8 @@ doublereal clangt_(char *norm, integer *n, complex *dl, complex *d__, complex
     real ret_val, r__1, r__2;
 
     /* Builtin functions */
-    double c_abs(complex *), sqrt(doublereal);
+    double c_abs(complex *);
+    double sqrt(doublereal);
 
     /* Local variables */
     integer i__;

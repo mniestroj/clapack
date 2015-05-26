@@ -28,7 +28,8 @@ static real c_b23 = 0.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j, n2, n12, ii, n23, iq2;

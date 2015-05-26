@@ -29,7 +29,8 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double c_abs(complex *), r_imag(complex *);
+    double c_abs(complex *);
+    double r_imag(complex *);
 
     /* Local variables */
     integer i__, j, k, ks, ix;

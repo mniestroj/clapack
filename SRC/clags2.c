@@ -22,7 +22,8 @@
     complex q__1, q__2, q__3, q__4, q__5;
 
     /* Builtin functions */
-    double c_abs(complex *), r_imag(complex *);
+    double c_abs(complex *);
+    double r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */
