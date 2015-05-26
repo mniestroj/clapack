@@ -1,0 +1,43 @@
+include(CMakeForceCompiler)
+
+if(NOT TOOLCHAIN_PATH)
+  set(TOOLCHAIN_PATH "/usr")
+  message(STATUS "Using default TOOLCHAIN_PATH: " ${TOOLCHAIN_PATH})
+endif()
+
+if(NOT TOOLCHAIN_PREFIX)
+  set(TOOLCHAIN_PREFIX "arm-none-eabi")
+  message(STATUS "Using default TOOLCHAIN_PREFIX: " ${TOOLCHAIN_PREFIX})
+endif()
+
+set(TOOLCHAIN_BIN_DIR ${TOOLCHAIN_PATH}/bin)
+set(TOOLCHAIN_INC_DIR ${TOOLCHAIN_PATH}/${TOOLCHAIN_PREFIX}/include)
+set(TOOLCHAIN_LIB_DIR ${TOOLCHAIN_PATH}/${TOOLCHAIN_PREFIX}/lib)
+
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR arm-cm4)
+
+CMAKE_FORCE_C_COMPILER(${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-gcc GNU)
+CMAKE_FORCE_CXX_COMPILER(${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-g++ GNU)
+
+set(CMAKE_OBJCOPY ${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-objcopy CACHE INTERNAL "objcopy tool")
+set(CMAKE_OBJDUMP ${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-objdump CACHE INTERNAL "objdump tool")
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-common -Wstrict-prototypes -ffunction-sections -fdata-sections")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mpcu=cortex-m4 -march=armv7e-m -mthumb")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfloat-abi=hard -mpfu=fpv4-sp-d16")
+
+set(CMAKE_C_FLAGS_DEBUG "-Og -g" CACHE INTERNAL "c compiler flags debug")
+set(CMAKE_CXX_FLAGS_DEBUG "-Og -g" CACHE INTERNAL "cxx compiler flags debug")
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "" CACHE INTERNAL "linker flags debug")
+
+set(CMAKE_C_FLAGS_DEBUG "-Os -flto" CACHE INTERNAL "c compiler flags release")
+set(CMAKE_CXX_FLAGS_DEBUG "-Os -flto" CACHE INTERNAL "cxx compiler flags release")
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "-flto" CACHE INTERNAL "linker flags release")
+
+set(CMAKE_FIND_ROOT_PATH ${TOOLCHAIN_PATH}/${TOOLCHAIN_PREFIX})
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+set(BUILD_SHARED_LIBS OFF)

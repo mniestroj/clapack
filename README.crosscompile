@@ -1,0 +1,7 @@
+CLAPACK library adjusted to cross-compile for Cortex-M4 target
+
+Compile steps:
+#> mkdir build
+#> cd build
+#> cmake -DCMAKE_TOOLCHAIN_FILE=../cm4.cmake -DTOOLCHAIN_PATH=/path/to/toolchain -DTOOLCHAIN_PREFIX=arm-none-eabi ../
+#> make
