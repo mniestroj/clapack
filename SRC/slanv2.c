@@ -25,7 +25,7 @@ static real c_b4 = 1.f;
 
     /* Builtin functions */
     double r_sign(real *, real *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real p, z__, aa, bb, cc, dd, cs1, sn1, sab, sac, eps, tau, temp, scale, 
@@ -51,7 +51,7 @@ static real c_b4 = 1.f;
 
 /*  where either */
 /*  1) CC = 0 so that AA and DD are real eigenvalues of the matrix, or */
-/*  2) AA = DD and BB*CC < 0, so that AA + or - sqrt(BB*CC) are complex */
+/*  2) AA = DD and BB*CC < 0, so that AA + or - sqrtf(BB*CC) are complex */
 /*  conjugate eigenvalues. */
 
 /*  Arguments */
@@ -140,7 +140,7 @@ static real c_b4 = 1.f;
 
 /*           Real eigenvalues. Compute A and D. */
 
-	    r__1 = sqrt(scale) * sqrt(z__);
+	    r__1 = sqrtf(scale) * sqrtf(z__);
 	    z__ = p + r_sign(&r__1, &p);
 	    *a = *d__ + z__;
 	    *d__ -= bcmax / z__ * bcmis;
@@ -159,7 +159,7 @@ static real c_b4 = 1.f;
 
 	    sigma = *b + *c__;
 	    tau = slapy2_(&sigma, &temp);
-	    *cs = sqrt((dabs(sigma) / tau + 1.f) * .5f);
+	    *cs = sqrtf((dabs(sigma) / tau + 1.f) * .5f);
 	    *sn = -(p / (tau * *cs)) * r_sign(&c_b4, &sigma);
 
 /*           Compute [ AA  BB ] = [ A  B ] [ CS -SN ] */
@@ -188,11 +188,11 @@ static real c_b4 = 1.f;
 
 /*                    Real eigenvalues: reduce to upper triangular form */
 
-			sab = sqrt((dabs(*b)));
-			sac = sqrt((dabs(*c__)));
+			sab = sqrtf((dabs(*b)));
+			sac = sqrtf((dabs(*c__)));
 			r__1 = sab * sac;
 			p = r_sign(&r__1, c__);
-			tau = 1.f / sqrt((r__1 = *b + *c__, dabs(r__1)));
+			tau = 1.f / sqrtf((r__1 = *b + *c__, dabs(r__1)));
 			*a = temp + p;
 			*d__ = temp - p;
 			*b -= *c__;
@@ -225,7 +225,7 @@ L10:
 	*rt1i = 0.f;
 	*rt2i = 0.f;
     } else {
-	*rt1i = sqrt((dabs(*b))) * sqrt((dabs(*c__)));
+	*rt1i = sqrtf((dabs(*b))) * sqrtf((dabs(*c__)));
 	*rt2i = -(*rt1i);
     }
     return 0;

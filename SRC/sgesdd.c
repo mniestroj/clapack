@@ -30,7 +30,7 @@ static real c_b248 = 1.f;
 	    i__2, i__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, ie, il, ir, iu, blk;
@@ -636,7 +636,7 @@ static real c_b248 = 1.f;
 /*     Get machine constants */
 
     eps = slamch_("P");
-    smlnum = sqrt(slamch_("S")) / eps;
+    smlnum = sqrtf(slamch_("S")) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

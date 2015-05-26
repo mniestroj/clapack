@@ -20,7 +20,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real c__, fa, ga, ha, as, at, au, fhmn, fhmx;
@@ -101,7 +101,7 @@
 	} else {
 /* Computing 2nd power */
 	    r__1 = dmin(fhmx,ga) / dmax(fhmx,ga);
-	    *ssmax = dmax(fhmx,ga) * sqrt(r__1 * r__1 + 1.f);
+	    *ssmax = dmax(fhmx,ga) * sqrtf(r__1 * r__1 + 1.f);
 	}
     } else {
 	if (ga < fhmx) {
@@ -110,7 +110,7 @@
 /* Computing 2nd power */
 	    r__1 = ga / fhmx;
 	    au = r__1 * r__1;
-	    c__ = 2.f / (sqrt(as * as + au) + sqrt(at * at + au));
+	    c__ = 2.f / (sqrtf(as * as + au) + sqrtf(at * at + au));
 	    *ssmin = fhmn * c__;
 	    *ssmax = fhmx / c__;
 	} else {
@@ -130,7 +130,7 @@
 		r__1 = as * au;
 /* Computing 2nd power */
 		r__2 = at * au;
-		c__ = 1.f / (sqrt(r__1 * r__1 + 1.f) + sqrt(r__2 * r__2 + 1.f)
+		c__ = 1.f / (sqrtf(r__1 * r__1 + 1.f) + sqrtf(r__2 * r__2 + 1.f)
 			);
 		*ssmin = fhmn * c__ * au;
 		*ssmin += *ssmin;

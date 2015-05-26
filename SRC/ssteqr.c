@@ -29,7 +29,8 @@ static integer c__2 = 2;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    float sqrtf(real);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real b, c__, f, g;
@@ -207,8 +208,8 @@ static integer c__2 = 2;
     eps2 = r__1 * r__1;
     safmin = slamch_("S");
     safmax = 1.f / safmin;
-    ssfmax = sqrt(safmax) / 3.f;
-    ssfmin = sqrt(safmin) / eps2;
+    ssfmax = sqrtf(safmax) / 3.f;
+    ssfmin = sqrtf(safmin) / eps2;
 
 /*     Compute the eigenvalues and eigenvectors of the tridiagonal */
 /*     matrix. */
@@ -241,7 +242,7 @@ L10:
 	    if (tst == 0.f) {
 		goto L30;
 	    }
-	    if (tst <= sqrt((r__1 = d__[m], dabs(r__1))) * sqrt((r__2 = d__[m 
+	    if (tst <= sqrtf((r__1 = d__[m], dabs(r__1))) * sqrtf((r__2 = d__[m 
 		    + 1], dabs(r__2))) * eps) {
 		e[m] = 0.f;
 		goto L30;

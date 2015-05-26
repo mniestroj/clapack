@@ -20,7 +20,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real b, c__, w, del, tau, delsq;
@@ -114,12 +114,12 @@
 
 /*           The following TAU is DSIGMA * DSIGMA - D( 1 ) * D( 1 ) */
 
-	    tau = c__ * 2.f / (b + sqrt((r__1 = b * b - c__ * 4.f, dabs(r__1))
+	    tau = c__ * 2.f / (b + sqrtf((r__1 = b * b - c__ * 4.f, dabs(r__1))
 		    ));
 
 /*           The following TAU is DSIGMA - D( 1 ) */
 
-	    tau /= d__[1] + sqrt(d__[1] * d__[1] + tau);
+	    tau /= d__[1] + sqrtf(d__[1] * d__[1] + tau);
 	    *dsigma = d__[1] + tau;
 	    delta[1] = -tau;
 	    delta[2] = del - tau;
@@ -134,14 +134,14 @@
 /*           The following TAU is DSIGMA * DSIGMA - D( 2 ) * D( 2 ) */
 
 	    if (b > 0.f) {
-		tau = c__ * -2.f / (b + sqrt(b * b + c__ * 4.f));
+		tau = c__ * -2.f / (b + sqrtf(b * b + c__ * 4.f));
 	    } else {
-		tau = (b - sqrt(b * b + c__ * 4.f)) / 2.f;
+		tau = (b - sqrtf(b * b + c__ * 4.f)) / 2.f;
 	    }
 
 /*           The following TAU is DSIGMA - D( 2 ) */
 
-	    tau /= d__[2] + sqrt((r__1 = d__[2] * d__[2] + tau, dabs(r__1)));
+	    tau /= d__[2] + sqrtf((r__1 = d__[2] * d__[2] + tau, dabs(r__1)));
 	    *dsigma = d__[2] + tau;
 	    delta[1] = -(del + tau);
 	    delta[2] = -tau;
@@ -163,14 +163,14 @@
 /*        The following TAU is DSIGMA * DSIGMA - D( 2 ) * D( 2 ) */
 
 	if (b > 0.f) {
-	    tau = (b + sqrt(b * b + c__ * 4.f)) / 2.f;
+	    tau = (b + sqrtf(b * b + c__ * 4.f)) / 2.f;
 	} else {
-	    tau = c__ * 2.f / (-b + sqrt(b * b + c__ * 4.f));
+	    tau = c__ * 2.f / (-b + sqrtf(b * b + c__ * 4.f));
 	}
 
 /*        The following TAU is DSIGMA - D( 2 ) */
 
-	tau /= d__[2] + sqrt(d__[2] * d__[2] + tau);
+	tau /= d__[2] + sqrtf(d__[2] * d__[2] + tau);
 	*dsigma = d__[2] + tau;
 	delta[1] = -(del + tau);
 	delta[2] = -tau;

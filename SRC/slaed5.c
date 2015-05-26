@@ -20,7 +20,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real b, c__, w, del, tau, temp;
@@ -104,7 +104,7 @@
 
 /*           B > ZERO, always */
 
-	    tau = c__ * 2.f / (b + sqrt((r__1 = b * b - c__ * 4.f, dabs(r__1))
+	    tau = c__ * 2.f / (b + sqrtf((r__1 = b * b - c__ * 4.f, dabs(r__1))
 		    ));
 	    *dlam = d__[1] + tau;
 	    delta[1] = -z__[1] / tau;
@@ -113,15 +113,15 @@
 	    b = -del + *rho * (z__[1] * z__[1] + z__[2] * z__[2]);
 	    c__ = *rho * z__[2] * z__[2] * del;
 	    if (b > 0.f) {
-		tau = c__ * -2.f / (b + sqrt(b * b + c__ * 4.f));
+		tau = c__ * -2.f / (b + sqrtf(b * b + c__ * 4.f));
 	    } else {
-		tau = (b - sqrt(b * b + c__ * 4.f)) / 2.f;
+		tau = (b - sqrtf(b * b + c__ * 4.f)) / 2.f;
 	    }
 	    *dlam = d__[2] + tau;
 	    delta[1] = -z__[1] / (del + tau);
 	    delta[2] = -z__[2] / tau;
 	}
-	temp = sqrt(delta[1] * delta[1] + delta[2] * delta[2]);
+	temp = sqrtf(delta[1] * delta[1] + delta[2] * delta[2]);
 	delta[1] /= temp;
 	delta[2] /= temp;
     } else {
@@ -131,14 +131,14 @@
 	b = -del + *rho * (z__[1] * z__[1] + z__[2] * z__[2]);
 	c__ = *rho * z__[2] * z__[2] * del;
 	if (b > 0.f) {
-	    tau = (b + sqrt(b * b + c__ * 4.f)) / 2.f;
+	    tau = (b + sqrtf(b * b + c__ * 4.f)) / 2.f;
 	} else {
-	    tau = c__ * 2.f / (-b + sqrt(b * b + c__ * 4.f));
+	    tau = c__ * 2.f / (-b + sqrtf(b * b + c__ * 4.f));
 	}
 	*dlam = d__[2] + tau;
 	delta[1] = -z__[1] / (del + tau);
 	delta[2] = -z__[2] / tau;
-	temp = sqrt(delta[1] * delta[1] + delta[2] * delta[2]);
+	temp = sqrtf(delta[1] * delta[1] + delta[2] * delta[2]);
 	delta[1] /= temp;
 	delta[2] /= temp;
     }

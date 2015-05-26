@@ -19,7 +19,7 @@ doublereal slapy3_(real *x, real *y, real *z__)
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real w, xabs, yabs, zabs;
@@ -35,7 +35,7 @@ doublereal slapy3_(real *x, real *y, real *z__)
 /*  Purpose */
 /*  ======= */
 
-/*  SLAPY3 returns sqrt(x**2+y**2+z**2), taking care not to cause */
+/*  SLAPY3 returns sqrtf(x**2+y**2+z**2), taking care not to cause */
 /*  unnecessary overflow. */
 
 /*  Arguments */
@@ -74,7 +74,7 @@ doublereal slapy3_(real *x, real *y, real *z__)
 	r__2 = yabs / w;
 /* Computing 2nd power */
 	r__3 = zabs / w;
-	ret_val = w * sqrt(r__1 * r__1 + r__2 * r__2 + r__3 * r__3);
+	ret_val = w * sqrtf(r__1 * r__1 + r__2 * r__2 + r__3 * r__3);
     }
     return ret_val;
 

@@ -26,7 +26,8 @@ static real c_b32 = 1.f;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    float sqrtf(real);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real c__;
@@ -137,8 +138,8 @@ static real c_b32 = 1.f;
     eps2 = r__1 * r__1;
     safmin = slamch_("S");
     safmax = 1.f / safmin;
-    ssfmax = sqrt(safmax) / 3.f;
-    ssfmin = sqrt(safmin) / eps2;
+    ssfmax = sqrtf(safmax) / 3.f;
+    ssfmin = sqrtf(safmin) / eps2;
 
 /*     Compute the eigenvalues of the tridiagonal matrix. */
 
@@ -161,8 +162,8 @@ L10:
     }
     i__1 = *n - 1;
     for (m = l1; m <= i__1; ++m) {
-	if ((r__3 = e[m], dabs(r__3)) <= sqrt((r__1 = d__[m], dabs(r__1))) * 
-		sqrt((r__2 = d__[m + 1], dabs(r__2))) * eps) {
+	if ((r__3 = e[m], dabs(r__3)) <= sqrtf((r__1 = d__[m], dabs(r__1))) * 
+		sqrtf((r__2 = d__[m + 1], dabs(r__2))) * eps) {
 	    e[m] = 0.f;
 	    goto L30;
 	}
@@ -250,7 +251,7 @@ L70:
 /*        eigenvalues. */
 
 	if (m == l + 1) {
-	    rte = sqrt(e[l]);
+	    rte = sqrtf(e[l]);
 	    slae2_(&d__[l], &rte, &d__[l + 1], &rt1, &rt2);
 	    d__[l] = rt1;
 	    d__[l + 1] = rt2;
@@ -269,7 +270,7 @@ L70:
 
 /*        Form shift. */
 
-	rte = sqrt(e[l]);
+	rte = sqrtf(e[l]);
 	sigma = (d__[l + 1] - p) / (rte * 2.f);
 	r__ = slapy2_(&sigma, &c_b32);
 	sigma = p - rte / (sigma + r_sign(&r__, &sigma));
@@ -348,7 +349,7 @@ L120:
 /*        eigenvalues. */
 
 	if (m == l - 1) {
-	    rte = sqrt(e[l - 1]);
+	    rte = sqrtf(e[l - 1]);
 	    slae2_(&d__[l], &rte, &d__[l - 1], &rt1, &rt2);
 	    d__[l] = rt1;
 	    d__[l - 1] = rt2;
@@ -367,7 +368,7 @@ L120:
 
 /*        Form shift. */
 
-	rte = sqrt(e[l - 1]);
+	rte = sqrtf(e[l - 1]);
 	sigma = (d__[l - 1] - p) / (rte * 2.f);
 	r__ = slapy2_(&sigma, &c_b32);
 	sigma = p - rte / (sigma + r_sign(&r__, &sigma));

@@ -27,7 +27,7 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     void r_cnjg(complex *, complex *);
     double c_abs(complex *);
 
@@ -173,7 +173,7 @@ static integer c__1 = 1;
     }
 
     mn = min(*m,*n);
-    tol3z = sqrt(slamch_("Epsilon"));
+    tol3z = sqrtf(slamch_("Epsilon"));
 
 /*     Move initial columns up front */
 
@@ -299,7 +299,7 @@ static integer c__1 = 1;
 			    rwork[*n + j] = 0.f;
 			}
 		    } else {
-			rwork[j] *= sqrt(temp);
+			rwork[j] *= sqrtf(temp);
 		    }
 		}
 /* L30: */

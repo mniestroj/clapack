@@ -26,7 +26,7 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer j, kn;
@@ -185,7 +185,7 @@ static integer c__1 = 1;
 	    if (ajj <= 0.f) {
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    ab[*kd + 1 + j * ab_dim1] = ajj;
 
 /*           Compute elements J+1:J+KN of row J and update the */
@@ -215,7 +215,7 @@ static integer c__1 = 1;
 	    if (ajj <= 0.f) {
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    ab[j * ab_dim1 + 1] = ajj;
 
 /*           Compute elements J+1:J+KN of column J and update the */

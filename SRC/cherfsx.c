@@ -32,7 +32,7 @@ static logical c_false = FALSE_;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real illrcond_thresh__, unstable_thresh__, err_lbnd__;
@@ -217,17 +217,17 @@ static logical c_false = FALSE_;
 /*     three fields: */
 /*     err = 1 "Trust/don't trust" boolean. Trust the answer if the */
 /*              reciprocal condition number is less than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). */
+/*              sqrtf(n) * slamch('Epsilon'). */
 
 /*     err = 2 "Guaranteed" error bound: The estimated forward error, */
 /*              almost certainly within a factor of 10 of the true error */
 /*              so long as the next entry is greater than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). This error bound should only */
+/*              sqrtf(n) * slamch('Epsilon'). This error bound should only */
 /*              be trusted if the previous boolean is true. */
 
 /*     err = 3  Reciprocal condition number: Estimated normwise */
 /*              reciprocal condition number.  Compared with the threshold */
-/*              sqrt(n) * slamch('Epsilon') to determine if the error */
+/*              sqrtf(n) * slamch('Epsilon') to determine if the error */
 /*              estimate is "guaranteed". These reciprocal condition */
 /*              numbers are 1 / (norm(Z^{-1},inf) * norm(Z,inf)) for some */
 /*              appropriately scaled matrix Z. */
@@ -262,17 +262,17 @@ static logical c_false = FALSE_;
 /*     three fields: */
 /*     err = 1 "Trust/don't trust" boolean. Trust the answer if the */
 /*              reciprocal condition number is less than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). */
+/*              sqrtf(n) * slamch('Epsilon'). */
 
 /*     err = 2 "Guaranteed" error bound: The estimated forward error, */
 /*              almost certainly within a factor of 10 of the true error */
 /*              so long as the next entry is greater than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). This error bound should only */
+/*              sqrtf(n) * slamch('Epsilon'). This error bound should only */
 /*              be trusted if the previous boolean is true. */
 
 /*     err = 3  Reciprocal condition number: Estimated componentwise */
 /*              reciprocal condition number.  Compared with the threshold */
-/*              sqrt(n) * slamch('Epsilon') to determine if the error */
+/*              sqrtf(n) * slamch('Epsilon') to determine if the error */
 /*              estimate is "guaranteed". These reciprocal condition */
 /*              numbers are 1 / (norm(Z^{-1},inf) * norm(Z,inf)) for some */
 /*              appropriately scaled matrix Z. */
@@ -523,7 +523,7 @@ static logical c_false = FALSE_;
 		ignore_cwise__, info, (ftnlen)1);
     }
 /* Computing MAX */
-    r__1 = 10.f, r__2 = sqrt((real) (*n));
+    r__1 = 10.f, r__2 = sqrtf((real) (*n));
     err_lbnd__ = dmax(r__1,r__2) * slamch_("Epsilon");
     if (*n_err_bnds__ >= 1 && n_norms__ >= 1) {
 
@@ -579,7 +579,7 @@ static logical c_false = FALSE_;
 /*     the inverse condition number is set to 0.0 when the estimated */
 /*     cwise error is at least CWISE_WRONG. */
 
-	cwise_wrong__ = sqrt(slamch_("Epsilon"));
+	cwise_wrong__ = sqrtf(slamch_("Epsilon"));
 	i__1 = *nrhs;
 	for (j = 1; j <= i__1; ++j) {
 	    if (err_bnds_comp__[j + (err_bnds_comp_dim1 << 1)] < 

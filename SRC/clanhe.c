@@ -26,7 +26,7 @@ doublereal clanhe_(char *norm, char *uplo, integer *n, complex *a, integer *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -255,7 +255,7 @@ doublereal clanhe_(char *norm, char *uplo, integer *n, complex *a, integer *
 	    }
 /* L130: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

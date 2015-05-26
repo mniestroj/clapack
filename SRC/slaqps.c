@@ -29,7 +29,7 @@ static real c_b16 = 0.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     integer i_nint(real *);
 
     /* Local variables */
@@ -173,7 +173,7 @@ static real c_b16 = 0.f;
     lastrk = min(i__1,i__2);
     lsticc = 0;
     k = 0;
-    tol3z = sqrt(slamch_("Epsilon"));
+    tol3z = sqrtf(slamch_("Epsilon"));
 
 /*     Beginning of while loop. */
 
@@ -288,7 +288,7 @@ L10:
 			vn2[j] = (real) lsticc;
 			lsticc = j;
 		    } else {
-			vn1[j] *= sqrt(temp);
+			vn1[j] *= sqrtf(temp);
 		    }
 		}
 /* L30: */

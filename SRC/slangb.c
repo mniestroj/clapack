@@ -25,7 +25,7 @@ doublereal slangb_(char *norm, integer *n, integer *kl, integer *ku, real *ab,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, l;
@@ -215,7 +215,7 @@ doublereal slangb_(char *norm, integer *n, integer *kl, integer *ku, real *ab,
 	    slassq_(&i__4, &ab[k + j * ab_dim1], &c__1, &scale, &sum);
 /* L90: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

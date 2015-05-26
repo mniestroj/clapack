@@ -22,7 +22,7 @@
     real r__1, r__2, r__3, r__4, r__5, r__6;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -60,7 +60,7 @@
 /*  A       (input) REAL array, dimension (LDA, 2) */
 /*          On entry, the 2 x 2 matrix A.  It is assumed that its 1-norm */
 /*          is less than 1/SAFMIN.  Entries less than */
-/*          sqrt(SAFMIN)*norm(A) are subject to being treated as zero. */
+/*          sqrtf(SAFMIN)*norm(A) are subject to being treated as zero. */
 
 /*  LDA     (input) INTEGER */
 /*          The leading dimension of the array A.  LDA >= 2. */
@@ -68,9 +68,9 @@
 /*  B       (input) REAL array, dimension (LDB, 2) */
 /*          On entry, the 2 x 2 upper triangular matrix B.  It is */
 /*          assumed that the one-norm of B is less than 1/SAFMIN.  The */
-/*          diagonals should be at least sqrt(SAFMIN) times the largest */
+/*          diagonals should be at least sqrtf(SAFMIN) times the largest */
 /*          element of B (in absolute value); if a diagonal is smaller */
-/*          than that, then  +/- sqrt(SAFMIN) will be used instead of */
+/*          than that, then  +/- sqrtf(SAFMIN) will be used instead of */
 /*          that diagonal. */
 
 /*  LDB     (input) INTEGER */
@@ -137,7 +137,7 @@
     b -= b_offset;
 
     /* Function Body */
-    rtmin = sqrt(*safmin);
+    rtmin = sqrtf(*safmin);
     rtmax = 1.f / rtmin;
     safmax = 1.f / *safmin;
 
@@ -211,7 +211,7 @@
 /* Computing 2nd power */
 	r__1 = rtmin * pp;
 	discr = r__1 * r__1 + qq * *safmin;
-	r__ = sqrt((dabs(discr))) * rtmax;
+	r__ = sqrtf((dabs(discr))) * rtmax;
     } else {
 /* Computing 2nd power */
 	r__1 = pp;
@@ -219,12 +219,12 @@
 /* Computing 2nd power */
 	    r__1 = rtmax * pp;
 	    discr = r__1 * r__1 + qq * safmax;
-	    r__ = sqrt((dabs(discr))) * rtmin;
+	    r__ = sqrtf((dabs(discr))) * rtmin;
 	} else {
 /* Computing 2nd power */
 	    r__1 = pp;
 	    discr = r__1 * r__1 + qq;
-	    r__ = sqrt((dabs(discr)));
+	    r__ = sqrtf((dabs(discr)));
 	}
     }
 

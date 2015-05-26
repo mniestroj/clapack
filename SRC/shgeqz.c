@@ -31,7 +31,7 @@ static integer c__3 = 3;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real c__;
@@ -1309,7 +1309,7 @@ L250:
 		r__2 = u1;
 /* Computing 2nd power */
 		r__3 = u2;
-		t1 = sqrt(r__1 * r__1 + r__2 * r__2 + r__3 * r__3);
+		t1 = sqrtf(r__1 * r__1 + r__2 * r__2 + r__3 * r__3);
 		tau = scale / t1 + 1.f;
 		vs = -1.f / (scale + t1);
 		v[0] = 1.f;

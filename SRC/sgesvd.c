@@ -35,7 +35,7 @@ static real c_b443 = 1.f;
 
     /* Builtin functions */
     /* Subroutine */ int s_cat(char *, char **, integer *, integer *, ftnlen);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, ie, ir, iu, blk, ncu;
@@ -849,7 +849,7 @@ static real c_b443 = 1.f;
 /*     Get machine constants */
 
     eps = slamch_("P");
-    smlnum = sqrt(slamch_("S")) / eps;
+    smlnum = sqrtf(slamch_("S")) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

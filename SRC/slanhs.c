@@ -24,7 +24,7 @@ doublereal slanhs_(char *norm, integer *n, real *a, integer *lda, real *work)
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -193,7 +193,7 @@ doublereal slanhs_(char *norm, integer *n, real *a, integer *lda, real *work)
 	    slassq_(&i__2, &a[j * a_dim1 + 1], &c__1, &scale, &sum);
 /* L90: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

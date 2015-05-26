@@ -29,7 +29,7 @@ static integer c__1 = 1;
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double c_abs(complex *);
     void r_cnjg(complex *, complex *);
 
@@ -221,7 +221,7 @@ static integer c__1 = 1;
     clacpy_("Full", &m, &m, t, &c__2, &work[m * m], &m);
     i__1 = (m << 1) * m;
     classq_(&i__1, work, &c__1, &scale, &sum);
-    sa = scale * sqrt(sum);
+    sa = scale * sqrtf(sum);
 /* Computing MAX */
     r__1 = eps * 10.f * sa;
     thresh = dmax(r__1,smlnum);
@@ -314,7 +314,7 @@ static integer c__1 = 1;
 	sum = 1.f;
 	i__1 = (m << 1) * m;
 	classq_(&i__1, work, &c__1, &scale, &sum);
-	ss = scale * sqrt(sum);
+	ss = scale * sqrtf(sum);
 	strong = ss <= thresh;
 	if (! strong) {
 	    goto L20;

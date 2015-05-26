@@ -25,7 +25,7 @@ static real c_b5 = 1.f;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -144,7 +144,7 @@ static real c_b5 = 1.f;
 	    } else {
 		*s = alpha / s1;
 		*c__ = *gamma / s1;
-		tmp = sqrt(*s * *s + *c__ * *c__);
+		tmp = sqrtf(*s * *s + *c__ * *c__);
 		*s /= tmp;
 		*c__ /= tmp;
 		*sestpr = s1 * tmp;
@@ -156,7 +156,7 @@ static real c_b5 = 1.f;
 	    tmp = dmax(absest,absalp);
 	    s1 = absest / tmp;
 	    s2 = absalp / tmp;
-	    *sestpr = tmp * sqrt(s1 * s1 + s2 * s2);
+	    *sestpr = tmp * sqrtf(s1 * s1 + s2 * s2);
 	    return 0;
 	} else if (absalp <= eps * absest) {
 	    s1 = absgam;
@@ -176,13 +176,13 @@ static real c_b5 = 1.f;
 	    s2 = absalp;
 	    if (s1 <= s2) {
 		tmp = s1 / s2;
-		*s = sqrt(tmp * tmp + 1.f);
+		*s = sqrtf(tmp * tmp + 1.f);
 		*sestpr = s2 * *s;
 		*c__ = *gamma / s2 / *s;
 		*s = r_sign(&c_b5, &alpha) / *s;
 	    } else {
 		tmp = s2 / s1;
-		*c__ = sqrt(tmp * tmp + 1.f);
+		*c__ = sqrtf(tmp * tmp + 1.f);
 		*sestpr = s1 * *c__;
 		*s = alpha / s1 / *c__;
 		*c__ = r_sign(&c_b5, gamma) / *c__;
@@ -198,17 +198,17 @@ static real c_b5 = 1.f;
 	    b = (1.f - zeta1 * zeta1 - zeta2 * zeta2) * .5f;
 	    *c__ = zeta1 * zeta1;
 	    if (b > 0.f) {
-		t = *c__ / (b + sqrt(b * b + *c__));
+		t = *c__ / (b + sqrtf(b * b + *c__));
 	    } else {
-		t = sqrt(b * b + *c__) - b;
+		t = sqrtf(b * b + *c__) - b;
 	    }
 
 	    sine = -zeta1 / t;
 	    cosine = -zeta2 / (t + 1.f);
-	    tmp = sqrt(sine * sine + cosine * cosine);
+	    tmp = sqrtf(sine * sine + cosine * cosine);
 	    *s = sine / tmp;
 	    *c__ = cosine / tmp;
-	    *sestpr = sqrt(t + 1.f) * absest;
+	    *sestpr = sqrtf(t + 1.f) * absest;
 	    return 0;
 	}
 
@@ -232,7 +232,7 @@ static real c_b5 = 1.f;
 	    s1 = dmax(r__1,r__2);
 	    *s = sine / s1;
 	    *c__ = cosine / s1;
-	    tmp = sqrt(*s * *s + *c__ * *c__);
+	    tmp = sqrtf(*s * *s + *c__ * *c__);
 	    *s /= tmp;
 	    *c__ /= tmp;
 	    return 0;
@@ -259,13 +259,13 @@ static real c_b5 = 1.f;
 	    s2 = absalp;
 	    if (s1 <= s2) {
 		tmp = s1 / s2;
-		*c__ = sqrt(tmp * tmp + 1.f);
+		*c__ = sqrtf(tmp * tmp + 1.f);
 		*sestpr = absest * (tmp / *c__);
 		*s = -(*gamma / s2) / *c__;
 		*c__ = r_sign(&c_b5, &alpha) / *c__;
 	    } else {
 		tmp = s2 / s1;
-		*s = sqrt(tmp * tmp + 1.f);
+		*s = sqrtf(tmp * tmp + 1.f);
 		*sestpr = absest / *s;
 		*c__ = alpha / s1 / *s;
 		*s = -r_sign(&c_b5, gamma) / *s;
@@ -292,10 +292,10 @@ static real c_b5 = 1.f;
 
 		b = (zeta1 * zeta1 + zeta2 * zeta2 + 1.f) * .5f;
 		*c__ = zeta2 * zeta2;
-		t = *c__ / (b + sqrt((r__1 = b * b - *c__, dabs(r__1))));
+		t = *c__ / (b + sqrtf((r__1 = b * b - *c__, dabs(r__1))));
 		sine = zeta1 / (1.f - t);
 		cosine = -zeta2 / t;
-		*sestpr = sqrt(t + eps * 4.f * eps * norma) * absest;
+		*sestpr = sqrtf(t + eps * 4.f * eps * norma) * absest;
 	    } else {
 
 /*              root is closer to ONE, shift by that amount */
@@ -303,15 +303,15 @@ static real c_b5 = 1.f;
 		b = (zeta2 * zeta2 + zeta1 * zeta1 - 1.f) * .5f;
 		*c__ = zeta1 * zeta1;
 		if (b >= 0.f) {
-		    t = -(*c__) / (b + sqrt(b * b + *c__));
+		    t = -(*c__) / (b + sqrtf(b * b + *c__));
 		} else {
-		    t = b - sqrt(b * b + *c__);
+		    t = b - sqrtf(b * b + *c__);
 		}
 		sine = -zeta1 / t;
 		cosine = -zeta2 / (t + 1.f);
-		*sestpr = sqrt(t + 1.f + eps * 4.f * eps * norma) * absest;
+		*sestpr = sqrtf(t + 1.f + eps * 4.f * eps * norma) * absest;
 	    }
-	    tmp = sqrt(sine * sine + cosine * cosine);
+	    tmp = sqrtf(sine * sine + cosine * cosine);
 	    *s = sine / tmp;
 	    *c__ = cosine / tmp;
 	    return 0;

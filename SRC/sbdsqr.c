@@ -32,7 +32,7 @@ static real c_b72 = -1.f;
 
     /* Builtin functions */
     double pow_dd(doublereal *, doublereal *);
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -379,7 +379,7 @@ static real c_b72 = -1.f;
 /* L40: */
 	}
 L50:
-	sminoa /= sqrt((real) (*n));
+	sminoa /= sqrtf((real) (*n));
 /* Computing MAX */
 	r__1 = tol * sminoa, r__2 = *n * 6 * *n * unfl;
 	thresh = dmax(r__1,r__2);

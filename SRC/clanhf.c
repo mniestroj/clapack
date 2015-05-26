@@ -26,7 +26,7 @@ doublereal clanhf_(char *norm, char *transr, char *uplo, integer *n, complex *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, l;
@@ -1793,7 +1793,7 @@ L10:
 		}
 	    }
 	}
-	value = scale * sqrt(s);
+	value = scale * sqrtf(s);
     }
 
     ret_val = value;

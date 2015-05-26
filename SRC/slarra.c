@@ -21,7 +21,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -137,7 +137,7 @@
 	i__1 = *n - 1;
 	for (i__ = 1; i__ <= i__1; ++i__) {
 	    eabs = (r__1 = e[i__], dabs(r__1));
-	    if (eabs <= *spltol * sqrt((r__1 = d__[i__], dabs(r__1))) * sqrt((
+	    if (eabs <= *spltol * sqrtf((r__1 = d__[i__], dabs(r__1))) * sqrtf((
 		    r__2 = d__[i__ + 1], dabs(r__2)))) {
 		e[i__] = 0.f;
 		e2[i__] = 0.f;

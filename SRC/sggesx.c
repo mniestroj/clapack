@@ -34,7 +34,7 @@ static real c_b43 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, ip;
@@ -501,7 +501,7 @@ static real c_b43 = 1.f;
     safmin = slamch_("S");
     safmax = 1.f / safmin;
     slabad_(&safmin, &safmax);
-    smlnum = sqrt(safmin) / eps;
+    smlnum = sqrtf(safmin) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

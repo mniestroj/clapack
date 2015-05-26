@@ -27,7 +27,7 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     void r_cnjg(complex *, complex *);
     double c_abs(complex *);
 
@@ -149,7 +149,7 @@ static integer c__1 = 1;
 /* Computing MIN */
     i__1 = *m - *offset;
     mn = min(i__1,*n);
-    tol3z = sqrt(slamch_("Epsilon"));
+    tol3z = sqrtf(slamch_("Epsilon"));
 
 /*     Compute factorization. */
 
@@ -228,7 +228,7 @@ static integer c__1 = 1;
 			vn2[j] = 0.f;
 		    }
 		} else {
-		    vn1[j] *= sqrt(temp);
+		    vn1[j] *= sqrtf(temp);
 		}
 	    }
 /* L10: */

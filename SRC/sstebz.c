@@ -31,7 +31,8 @@ static integer c__0 = 0;
     real r__1, r__2, r__3, r__4, r__5;
 
     /* Builtin functions */
-    double sqrt(doublereal), log(doublereal);
+    float sqrtf(real);
+    double log(doublereal);
 
     /* Local variables */
     integer j, ib, jb, ie, je, nb;
@@ -395,7 +396,7 @@ static integer c__0 = 0;
 
 	i__1 = *n - 1;
 	for (j = 1; j <= i__1; ++j) {
-	    tmp2 = sqrt(work[j]);
+	    tmp2 = sqrtf(work[j]);
 /* Computing MAX */
 	    r__1 = gu, r__2 = d__[j] + tmp1 + tmp2;
 	    gu = dmax(r__1,r__2);

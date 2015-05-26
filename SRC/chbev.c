@@ -27,7 +27,7 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real eps;
@@ -211,8 +211,8 @@ static integer c__1 = 1;
     eps = slamch_("Precision");
     smlnum = safmin / eps;
     bignum = 1.f / smlnum;
-    rmin = sqrt(smlnum);
-    rmax = sqrt(bignum);
+    rmin = sqrtf(smlnum);
+    rmax = sqrtf(bignum);
 
 /*     Scale matrix to allowable range, if necessary. */
 

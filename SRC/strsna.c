@@ -30,7 +30,7 @@ static logical c_false = FALSE_;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, n2;
@@ -486,8 +486,8 @@ static logical c_false = FALSE_;
 /*                 position of WORK is the complex eigenvalue lambda */
 /*                 with negative imaginary  part. */
 
-		    mu = sqrt((r__1 = work[(work_dim1 << 1) + 1], dabs(r__1)))
-			     * sqrt((r__2 = work[work_dim1 + 2], dabs(r__2)));
+		    mu = sqrtf((r__1 = work[(work_dim1 << 1) + 1], dabs(r__1)))
+			     * sqrtf((r__2 = work[work_dim1 + 2], dabs(r__2)));
 		    delta = slapy2_(&mu, &work[work_dim1 + 2]);
 		    cs = mu / delta;
 		    sn = -work[work_dim1 + 2] / delta;

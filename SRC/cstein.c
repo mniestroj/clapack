@@ -29,7 +29,7 @@ static integer c_n1 = -1;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, b1, j1, bn, jr;
@@ -293,7 +293,7 @@ L30:
 	}
 	ortol = onenrm * .001f;
 
-	stpcrt = sqrt(.1f / blksiz);
+	stpcrt = sqrtf(.1f / blksiz);
 
 /*        Loop through eigenvalues of block nblk. */
 

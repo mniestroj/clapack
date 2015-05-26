@@ -26,7 +26,7 @@ doublereal clantb_(char *norm, char *uplo, char *diag, integer *n, integer *k,
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, l;
@@ -416,7 +416,7 @@ doublereal clantb_(char *norm, char *uplo, char *diag, integer *n, integer *k,
 		}
 	    }
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

@@ -26,7 +26,7 @@
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -489,7 +489,7 @@ L280:
 /*     Compute quantities for convergence test */
 
     tmp = 1.f / *ztz;
-    *nrminv = sqrt(tmp);
+    *nrminv = sqrtf(tmp);
     *resid = dabs(*mingma) * *nrminv;
     *rqcorr = *mingma * tmp;
 

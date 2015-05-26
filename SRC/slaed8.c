@@ -29,7 +29,7 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real c__;
@@ -255,7 +255,7 @@ static integer c__1 = 1;
 
 /*     Normalize z so that norm(z) = 1 */
 
-    t = 1.f / sqrt(2.f);
+    t = 1.f / sqrtf(2.f);
     i__1 = *n;
     for (j = 1; j <= i__1; ++j) {
 	indx[j] = j;
@@ -363,7 +363,7 @@ L80:
 	s = z__[jlam];
 	c__ = z__[j];
 
-/*        Find sqrt(a**2+b**2) without overflow or */
+/*        Find sqrtf(a**2+b**2) without overflow or */
 /*        destructive underflow. */
 
 	tau = slapy2_(&c__, &s);

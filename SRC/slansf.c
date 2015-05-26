@@ -25,7 +25,7 @@ doublereal slansf_(char *norm, char *transr, char *uplo, integer *n, real *a,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, l;
@@ -1002,7 +1002,7 @@ L10:
 		}
 	    }
 	}
-	value = scale * sqrt(s);
+	value = scale * sqrtf(s);
     }
 
     ret_val = value;

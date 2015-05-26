@@ -29,7 +29,7 @@ static real c_b18 = .003f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -404,9 +404,9 @@ static real c_b18 = .003f;
     eps = slamch_("Precision");
     smlnum = safmin / eps;
     bignum = 1.f / smlnum;
-    rmin = sqrt(smlnum);
+    rmin = sqrtf(smlnum);
 /* Computing MIN */
-    r__1 = sqrt(bignum), r__2 = 1.f / sqrt(sqrt(safmin));
+    r__1 = sqrtf(bignum), r__2 = 1.f / sqrtf(sqrtf(safmin));
     rmax = dmin(r__1,r__2);
 
     if (*info == 0) {
@@ -608,10 +608,10 @@ static real c_b18 = .003f;
 /*        need less accurate initial bisection in SLARRE. */
 /*        Note: these settings do only affect the subset case and SLARRE */
 /* Computing MAX */
-	r__1 = sqrt(eps) * .05f, r__2 = eps * 4.f;
+	r__1 = sqrtf(eps) * .05f, r__2 = eps * 4.f;
 	rtol1 = dmax(r__1,r__2);
 /* Computing MAX */
-	r__1 = sqrt(eps) * .005f, r__2 = eps * 4.f;
+	r__1 = sqrtf(eps) * .005f, r__2 = eps * 4.f;
 	rtol2 = dmax(r__1,r__2);
     }
     slarre_(range, n, &wl, &wu, &iil, &iiu, &d__[1], &e[1], &work[inde2], &

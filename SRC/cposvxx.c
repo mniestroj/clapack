@@ -295,17 +295,17 @@
 /*     three fields: */
 /*     err = 1 "Trust/don't trust" boolean. Trust the answer if the */
 /*              reciprocal condition number is less than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). */
+/*              sqrtf(n) * slamch('Epsilon'). */
 
 /*     err = 2 "Guaranteed" error bound: The estimated forward error, */
 /*              almost certainly within a factor of 10 of the true error */
 /*              so long as the next entry is greater than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). This error bound should only */
+/*              sqrtf(n) * slamch('Epsilon'). This error bound should only */
 /*              be trusted if the previous boolean is true. */
 
 /*     err = 3  Reciprocal condition number: Estimated normwise */
 /*              reciprocal condition number.  Compared with the threshold */
-/*              sqrt(n) * slamch('Epsilon') to determine if the error */
+/*              sqrtf(n) * slamch('Epsilon') to determine if the error */
 /*              estimate is "guaranteed". These reciprocal condition */
 /*              numbers are 1 / (norm(Z^{-1},inf) * norm(Z,inf)) for some */
 /*              appropriately scaled matrix Z. */
@@ -340,17 +340,17 @@
 /*     three fields: */
 /*     err = 1 "Trust/don't trust" boolean. Trust the answer if the */
 /*              reciprocal condition number is less than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). */
+/*              sqrtf(n) * slamch('Epsilon'). */
 
 /*     err = 2 "Guaranteed" error bound: The estimated forward error, */
 /*              almost certainly within a factor of 10 of the true error */
 /*              so long as the next entry is greater than the threshold */
-/*              sqrt(n) * slamch('Epsilon'). This error bound should only */
+/*              sqrtf(n) * slamch('Epsilon'). This error bound should only */
 /*              be trusted if the previous boolean is true. */
 
 /*     err = 3  Reciprocal condition number: Estimated componentwise */
 /*              reciprocal condition number.  Compared with the threshold */
-/*              sqrt(n) * slamch('Epsilon') to determine if the error */
+/*              sqrtf(n) * slamch('Epsilon') to determine if the error */
 /*              estimate is "guaranteed". These reciprocal condition */
 /*              numbers are 1 / (norm(Z^{-1},inf) * norm(Z,inf)) for some */
 /*              appropriately scaled matrix Z. */

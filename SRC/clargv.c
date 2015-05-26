@@ -25,7 +25,7 @@
     double log(doublereal);
     double pow_ri(real *, integer *);
     double r_imag(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */
@@ -235,14 +235,14 @@ L20:
 	    f2s = slapy2_(&r__1, &r__2);
 /*           G2 and G2S are accurate */
 /*           G2 is at least SAFMIN, and G2S is at least SAFMN2 */
-	    g2s = sqrt(g2);
+	    g2s = sqrtf(g2);
 /*           Error in CS from underflow in F2S is at most */
-/*           UNFL / SAFMN2 .lt. sqrt(UNFL*EPS) .lt. EPS */
+/*           UNFL / SAFMN2 .lt. sqrtf(UNFL*EPS) .lt. EPS */
 /*           If MAX(G2,ONE)=G2, then F2 .lt. G2*SAFMIN, */
-/*           and so CS .lt. sqrt(SAFMIN) */
+/*           and so CS .lt. sqrtf(SAFMIN) */
 /*           If MAX(G2,ONE)=ONE, then F2 .lt. SAFMIN */
-/*           and so CS .lt. sqrt(SAFMIN)/SAFMN2 = sqrt(EPS) */
-/*           Therefore, CS = F2S/G2S / sqrt( 1 + (F2S/G2S)**2 ) = F2S/G2S */
+/*           and so CS .lt. sqrtf(SAFMIN)/SAFMN2 = sqrtf(EPS) */
+/*           Therefore, CS = F2S/G2S / sqrtf( 1 + (F2S/G2S)**2 ) = F2S/G2S */
 	    cs = f2s / g2s;
 /*           Make sure abs(FF) = 1 */
 /*           Do complex/real division explicitly with 2 real divisions */
@@ -283,7 +283,7 @@ L20:
 /*           Neither F2 nor F2/G2 are less than SAFMIN */
 /*           F2S cannot overflow, and it is accurate */
 
-	    f2s = sqrt(g2 / f2 + 1.f);
+	    f2s = sqrtf(g2 / f2 + 1.f);
 /*           Do the F2S(real)*FS(complex) multiply with two real */
 /*           multiplies */
 	    r__1 = f2s * fs.r;

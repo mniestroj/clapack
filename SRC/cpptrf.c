@@ -27,7 +27,7 @@ static real c_b16 = -1.f;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer j, jc, jj;
@@ -181,7 +181,7 @@ static real c_b16 = -1.f;
 		goto L30;
 	    }
 	    i__2 = jj;
-	    r__1 = sqrt(ajj);
+	    r__1 = sqrtf(ajj);
 	    ap[i__2].r = r__1, ap[i__2].i = 0.f;
 /* L10: */
 	}
@@ -202,7 +202,7 @@ static real c_b16 = -1.f;
 		ap[i__2].r = ajj, ap[i__2].i = 0.f;
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = jj;
 	    ap[i__2].r = ajj, ap[i__2].i = 0.f;
 

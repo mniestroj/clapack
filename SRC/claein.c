@@ -27,7 +27,7 @@ static integer c__1 = 1;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_imag(complex *);
 
     /* Local variables */
@@ -150,7 +150,7 @@ static integer c__1 = 1;
 /*     GROWTO is the threshold used in the acceptance test for an */
 /*     eigenvector. */
 
-    rootn = sqrt((real) (*n));
+    rootn = sqrtf((real) (*n));
     growto = .1f / rootn;
 /* Computing MAX */
     r__1 = 1.f, r__2 = *eps3 * rootn;

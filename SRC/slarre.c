@@ -29,7 +29,7 @@ static integer c__2 = 2;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double log(doublereal);
 
     /* Local variables */
@@ -300,7 +300,7 @@ static integer c__2 = 2;
 /*     one should keep in mind that for the subset case, the extremal */
 /*     eigenvalues must be at least as accurate as the current setting */
 /*     (eigenvalues in the middle need not as much accuracy) */
-    bsrtol = sqrt(eps) * 5e-4f;
+    bsrtol = sqrtf(eps) * 5e-4f;
 /*     Treat case of 1x1 matrix for quick return */
     if (*n == 1) {
 	if (irange == 1 || irange == 3 && d__[1] > *vl && d__[1] <= *vu || 

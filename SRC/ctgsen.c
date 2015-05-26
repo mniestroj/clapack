@@ -30,7 +30,7 @@ static integer c__1 = 1;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double c_abs(complex *);
     void r_cnjg(complex *, complex *);
 
@@ -520,7 +520,7 @@ static integer c__1 = 1;
 		classq_(n, &b[i__ * b_dim1 + 1], &c__1, &dscale, &dsum);
 /* L20: */
 	    }
-	    dif[1] = dscale * sqrt(dsum);
+	    dif[1] = dscale * sqrtf(dsum);
 	    dif[2] = dif[1];
 	}
 	goto L70;
@@ -592,21 +592,21 @@ static integer c__1 = 1;
 	dsum = 1.f;
 	i__1 = n1 * n2;
 	classq_(&i__1, &work[1], &c__1, &rdscal, &dsum);
-	*pl = rdscal * sqrt(dsum);
+	*pl = rdscal * sqrtf(dsum);
 	if (*pl == 0.f) {
 	    *pl = 1.f;
 	} else {
-	    *pl = dscale / (sqrt(dscale * dscale / *pl + *pl) * sqrt(*pl));
+	    *pl = dscale / (sqrtf(dscale * dscale / *pl + *pl) * sqrtf(*pl));
 	}
 	rdscal = 0.f;
 	dsum = 1.f;
 	i__1 = n1 * n2;
 	classq_(&i__1, &work[n1 * n2 + 1], &c__1, &rdscal, &dsum);
-	*pr = rdscal * sqrt(dsum);
+	*pr = rdscal * sqrtf(dsum);
 	if (*pr == 0.f) {
 	    *pr = 1.f;
 	} else {
-	    *pr = dscale / (sqrt(dscale * dscale / *pr + *pr) * sqrt(*pr));
+	    *pr = dscale / (sqrtf(dscale * dscale / *pr + *pr) * sqrtf(*pr));
 	}
     }
     if (wantd) {

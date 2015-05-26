@@ -26,7 +26,7 @@ static real c_b9 = -1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer j, m, km;
@@ -204,7 +204,7 @@ static real c_b9 = -1.f;
 		ab[i__2].r = ajj, ab[i__2].i = 0.f;
 		goto L50;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = *kd + 1 + j * ab_dim1;
 	    ab[i__2].r = ajj, ab[i__2].i = 0.f;
 /* Computing MIN */
@@ -235,7 +235,7 @@ static real c_b9 = -1.f;
 		ab[i__2].r = ajj, ab[i__2].i = 0.f;
 		goto L50;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = *kd + 1 + j * ab_dim1;
 	    ab[i__2].r = ajj, ab[i__2].i = 0.f;
 /* Computing MIN */
@@ -271,7 +271,7 @@ static real c_b9 = -1.f;
 		ab[i__2].r = ajj, ab[i__2].i = 0.f;
 		goto L50;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = j * ab_dim1 + 1;
 	    ab[i__2].r = ajj, ab[i__2].i = 0.f;
 /* Computing MIN */
@@ -304,7 +304,7 @@ static real c_b9 = -1.f;
 		ab[i__2].r = ajj, ab[i__2].i = 0.f;
 		goto L50;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = j * ab_dim1 + 1;
 	    ab[i__2].r = ajj, ab[i__2].i = 0.f;
 /* Computing MIN */

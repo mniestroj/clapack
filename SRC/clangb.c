@@ -26,7 +26,7 @@ doublereal clangb_(char *norm, integer *n, integer *kl, integer *ku, complex *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, l;
@@ -214,7 +214,7 @@ doublereal clangb_(char *norm, integer *n, integer *kl, integer *ku, complex *
 	    classq_(&i__4, &ab[k + j * ab_dim1], &c__1, &scale, &sum);
 /* L90: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

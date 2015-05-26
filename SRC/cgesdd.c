@@ -31,7 +31,7 @@ static integer c__0 = 0;
 	    i__2, i__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, ie, il, ir, iu, blk;
@@ -661,7 +661,7 @@ static integer c__0 = 0;
 /*     Get machine constants */
 
     eps = slamch_("P");
-    smlnum = sqrt(slamch_("S")) / eps;
+    smlnum = sqrtf(slamch_("S")) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

@@ -20,7 +20,7 @@
     integer i__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real f, g;
@@ -107,13 +107,13 @@
 	    x[ix] = g;
 	} else if (dabs(f) > dabs(g)) {
 	    t = g / f;
-	    tt = sqrt(t * t + 1.f);
+	    tt = sqrtf(t * t + 1.f);
 	    c__[ic] = 1.f / tt;
 	    y[iy] = t * c__[ic];
 	    x[ix] = f * tt;
 	} else {
 	    t = f / g;
-	    tt = sqrt(t * t + 1.f);
+	    tt = sqrtf(t * t + 1.f);
 	    y[iy] = 1.f / tt;
 	    c__[ic] = t * y[iy];
 	    x[ix] = g * tt;

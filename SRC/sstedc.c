@@ -33,7 +33,7 @@ static integer c__1 = 1;
     /* Builtin functions */
     double log(doublereal);
     integer pow_ii(integer *, integer *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, m;
@@ -355,7 +355,7 @@ L10:
 	    finish = start;
 L20:
 	    if (finish < *n) {
-		tiny = eps * sqrt((r__1 = d__[finish], dabs(r__1))) * sqrt((
+		tiny = eps * sqrtf((r__1 = d__[finish], dabs(r__1))) * sqrtf((
 			r__2 = d__[finish + 1], dabs(r__2)));
 		if ((r__1 = e[finish], dabs(r__1)) > tiny) {
 		    ++finish;

@@ -21,7 +21,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real a, b, c__;
@@ -218,9 +218,9 @@
 			;
 		b = z__[*n] * z__[*n] * del;
 		if (a < 0.f) {
-		    tau = b * 2.f / (sqrt(a * a + b * 4.f * c__) - a);
+		    tau = b * 2.f / (sqrtf(a * a + b * 4.f * c__) - a);
 		} else {
-		    tau = (a + sqrt(a * a + b * 4.f * c__)) / (c__ * 2.f);
+		    tau = (a + sqrtf(a * a + b * 4.f * c__)) / (c__ * 2.f);
 		}
 	    }
 
@@ -234,9 +234,9 @@
 	    a = -c__ * del + z__[*n - 1] * z__[*n - 1] + z__[*n] * z__[*n];
 	    b = z__[*n] * z__[*n] * del;
 	    if (a < 0.f) {
-		tau = b * 2.f / (sqrt(a * a + b * 4.f * c__) - a);
+		tau = b * 2.f / (sqrtf(a * a + b * 4.f * c__) - a);
 	    } else {
-		tau = (a + sqrt(a * a + b * 4.f * c__)) / (c__ * 2.f);
+		tau = (a + sqrtf(a * a + b * 4.f * c__)) / (c__ * 2.f);
 	    }
 
 /*           It can be proved that */
@@ -305,10 +305,10 @@
 /*           ETA = RHO - TAU */
 	    eta = dltub - tau;
 	} else if (a >= 0.f) {
-	    eta = (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
+	    eta = (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
 		    c__ * 2.f);
 	} else {
-	    eta = b * 2.f / (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+	    eta = b * 2.f / (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 		    r__1))));
 	}
 
@@ -388,10 +388,10 @@
 		    (dpsi + dphi);
 	    b = delta[*n - 1] * delta[*n] * w;
 	    if (a >= 0.f) {
-		eta = (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		eta = (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    } else {
-		eta = b * 2.f / (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		eta = b * 2.f / (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    }
 
@@ -499,10 +499,10 @@
 	    a = c__ * del + z__[*i__] * z__[*i__] + z__[ip1] * z__[ip1];
 	    b = z__[*i__] * z__[*i__] * del;
 	    if (a > 0.f) {
-		tau = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		tau = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    } else {
-		tau = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		tau = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    }
 	    dltlb = 0.f;
@@ -517,10 +517,10 @@
 	    a = c__ * del - z__[*i__] * z__[*i__] - z__[ip1] * z__[ip1];
 	    b = z__[ip1] * z__[ip1] * del;
 	    if (a < 0.f) {
-		tau = b * 2.f / (a - sqrt((r__1 = a * a + b * 4.f * c__, dabs(
+		tau = b * 2.f / (a - sqrtf((r__1 = a * a + b * 4.f * c__, dabs(
 			r__1))));
 	    } else {
-		tau = -(a + sqrt((r__1 = a * a + b * 4.f * c__, dabs(r__1)))) 
+		tau = -(a + sqrtf((r__1 = a * a + b * 4.f * c__, dabs(r__1)))) 
 			/ (c__ * 2.f);
 	    }
 	    dltlb = -midpt;
@@ -649,10 +649,10 @@
 		}
 		eta = b / a;
 	    } else if (a <= 0.f) {
-		eta = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		eta = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    } else {
-		eta = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		eta = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    }
 	} else {
@@ -823,10 +823,10 @@
 		    }
 		    eta = b / a;
 		} else if (a <= 0.f) {
-		    eta = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1))
+		    eta = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1))
 			    )) / (c__ * 2.f);
 		} else {
-		    eta = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, 
+		    eta = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, 
 			    dabs(r__1))));
 		}
 	    } else {

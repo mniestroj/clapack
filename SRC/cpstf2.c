@@ -28,7 +28,7 @@ static integer c__1 = 1;
 
     /* Builtin functions */
     void r_cnjg(complex *, complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, maxlocval;
@@ -291,7 +291,7 @@ static integer c__1 = 1;
 		piv[j] = itemp;
 	    }
 
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = j + j * a_dim1;
 	    a[i__2].r = ajj, a[i__2].i = 0.f;
 
@@ -394,7 +394,7 @@ static integer c__1 = 1;
 		piv[j] = itemp;
 	    }
 
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    i__2 = j + j * a_dim1;
 	    a[i__2].r = ajj, a[i__2].i = 0.f;
 

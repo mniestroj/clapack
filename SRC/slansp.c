@@ -24,7 +24,7 @@ doublereal slansp_(char *norm, char *uplo, integer *n, real *ap, real *work)
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k;
@@ -251,7 +251,7 @@ doublereal slansp_(char *norm, char *uplo, integer *n, real *ap, real *work)
 	    }
 /* L130: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

@@ -30,7 +30,7 @@ static real c_b26 = 0.f;
 
     /* Builtin functions */
     integer pow_ii(integer *, integer *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, k, mid, ptr, curr;
@@ -187,8 +187,8 @@ static real c_b26 = 0.f;
 /*     the SQRT in case the machine underestimates one of these square */
 /*     roots. */
 
-    bsiz1 = (integer) (sqrt((real) (qptr[curr + 1] - qptr[curr])) + .5f);
-    bsiz2 = (integer) (sqrt((real) (qptr[curr + 2] - qptr[curr + 1])) + .5f);
+    bsiz1 = (integer) (sqrtf((real) (qptr[curr + 1] - qptr[curr])) + .5f);
+    bsiz2 = (integer) (sqrtf((real) (qptr[curr + 2] - qptr[curr + 1])) + .5f);
     i__1 = mid - bsiz1 - 1;
     for (k = 1; k <= i__1; ++k) {
 	z__[k] = 0.f;
@@ -254,8 +254,8 @@ static real c_b26 = 0.f;
 /*        the SQRT in case the machine underestimates one of these */
 /*        square roots. */
 
-	bsiz1 = (integer) (sqrt((real) (qptr[curr + 1] - qptr[curr])) + .5f);
-	bsiz2 = (integer) (sqrt((real) (qptr[curr + 2] - qptr[curr + 1])) + 
+	bsiz1 = (integer) (sqrtf((real) (qptr[curr + 1] - qptr[curr])) + .5f);
+	bsiz2 = (integer) (sqrtf((real) (qptr[curr + 2] - qptr[curr + 1])) + 
 		.5f);
 	if (bsiz1 > 0) {
 	    sgemv_("T", &bsiz1, &bsiz1, &c_b24, &q[qptr[curr]], &bsiz1, &

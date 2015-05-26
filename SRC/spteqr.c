@@ -27,7 +27,7 @@ static integer c__1 = 1;
     integer z_dim1, z_offset, i__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real c__[1]	/* was [1][1] */;
@@ -201,7 +201,7 @@ static integer c__1 = 1;
     }
     i__1 = *n;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	d__[i__] = sqrt(d__[i__]);
+	d__[i__] = sqrtf(d__[i__]);
 /* L10: */
     }
     i__1 = *n - 1;

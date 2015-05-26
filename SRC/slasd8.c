@@ -28,7 +28,8 @@ static real c_b8 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    float sqrtf(real);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;
@@ -275,7 +276,7 @@ static real c_b8 = 1.f;
 
     i__1 = *k;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	r__2 = sqrt((r__1 = work[iwk3i + i__], dabs(r__1)));
+	r__2 = sqrtf((r__1 = work[iwk3i + i__], dabs(r__1)));
 	z__[i__] = r_sign(&r__2, &z__[i__]);
 /* L50: */
     }

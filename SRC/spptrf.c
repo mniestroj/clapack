@@ -25,7 +25,7 @@ static real c_b16 = -1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer j, jc, jj;
@@ -172,7 +172,7 @@ static real c_b16 = -1.f;
 		ap[jj] = ajj;
 		goto L30;
 	    }
-	    ap[jj] = sqrt(ajj);
+	    ap[jj] = sqrtf(ajj);
 /* L10: */
 	}
     } else {
@@ -190,7 +190,7 @@ static real c_b16 = -1.f;
 		ap[jj] = ajj;
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    ap[jj] = ajj;
 
 /*           Compute elements J+1:N of column J and update the trailing */

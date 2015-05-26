@@ -26,7 +26,7 @@ doublereal clange_(char *norm, integer *m, integer *n, complex *a, integer *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -189,7 +189,7 @@ doublereal clange_(char *norm, integer *m, integer *n, complex *a, integer *
 	    classq_(m, &a[j * a_dim1 + 1], &c__1, &scale, &sum);
 /* L90: */
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

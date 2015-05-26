@@ -21,7 +21,7 @@
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double log(doublereal);
     double pow_ri(real *, integer *);
 
@@ -168,10 +168,10 @@
 	if (c__ == 0.f) {
 	    *tau = b / a;
 	} else if (a <= 0.f) {
-	    *tau = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
+	    *tau = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
 		    c__ * 2.f);
 	} else {
-	    *tau = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+	    *tau = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 		    r__1))));
 	}
 	if (*tau < lbd || *tau > ubd) {
@@ -319,10 +319,10 @@
 	if (c__ == 0.f) {
 	    eta = b / a;
 	} else if (a <= 0.f) {
-	    eta = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
+	    eta = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
 		    c__ * 2.f);
 	} else {
-	    eta = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+	    eta = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 		    r__1))));
 	}
 	if (f * eta >= 0.f) {

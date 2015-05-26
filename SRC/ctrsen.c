@@ -26,7 +26,7 @@ static integer c_n1 = -1;
     integer q_dim1, q_offset, t_dim1, t_offset, i__1, i__2, i__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer k, n1, n2, nn, ks;
@@ -133,7 +133,7 @@ static integer c_n1 = -1;
 /*          If JOB = 'E' or 'B', S is a lower bound on the reciprocal */
 /*          condition number for the selected cluster of eigenvalues. */
 /*          S cannot underestimate the true reciprocal condition number */
-/*          by more than a factor of sqrt(N). If M = 0 or N, S = 1. */
+/*          by more than a factor of sqrtf(N). If M = 0 or N, S = 1. */
 /*          If JOB = 'N' or 'V', S is not referenced. */
 
 /*  SEP     (output) REAL */
@@ -200,7 +200,7 @@ static integer c_n1 = -1;
 
 /*  on the reciprocal of 2-norm(P), the true reciprocal condition number. */
 /*  S cannot underestimate 1 / 2-norm(P) by more than a factor of */
-/*  sqrt(N). */
+/*  sqrtf(N). */
 
 /*  An approximate error bound for the computed average of the */
 /*  eigenvalues of T11 is */
@@ -223,7 +223,7 @@ static integer c_n1 = -1;
 /*  I(m) is an m by m identity matrix, and kprod denotes the Kronecker */
 /*  product. We estimate sigma-min(C) by the reciprocal of an estimate of */
 /*  the 1-norm of inverse(C). The true reciprocal 1-norm of inverse(C) */
-/*  cannot differ from sigma-min(C) by more than a factor of sqrt(n1*n2). */
+/*  cannot differ from sigma-min(C) by more than a factor of sqrtf(n1*n2). */
 
 /*  When SEP is small, small changes in T can cause large changes in */
 /*  the invariant subspace. An approximate bound on the maximum angular */
@@ -367,7 +367,7 @@ static integer c_n1 = -1;
 	if (rnorm == 0.f) {
 	    *s = 1.f;
 	} else {
-	    *s = scale / (sqrt(scale * scale / rnorm + rnorm) * sqrt(rnorm));
+	    *s = scale / (sqrtf(scale * scale / rnorm + rnorm) * sqrtf(rnorm));
 	}
     }
 

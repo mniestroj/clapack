@@ -26,7 +26,7 @@ doublereal clansy_(char *norm, char *uplo, integer *n, complex *a, integer *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -227,7 +227,7 @@ doublereal clansy_(char *norm, char *uplo, integer *n, complex *a, integer *
 	sum *= 2;
 	i__1 = *lda + 1;
 	classq_(n, &a[a_offset], &i__1, &scale, &sum);
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

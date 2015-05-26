@@ -32,7 +32,8 @@ static real c_b28 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    float sqrtf(real);
+    double r_sign(real *, real *);
 
     /* Local variables */
     integer i__, k, n1, n2, kk, ks, mn2, ijb;
@@ -549,7 +550,7 @@ static real c_b28 = 1.f;
 		slassq_(n, &b[i__ * b_dim1 + 1], &c__1, &dscale, &dsum);
 /* L20: */
 	    }
-	    dif[1] = dscale * sqrt(dsum);
+	    dif[1] = dscale * sqrtf(dsum);
 	    dif[2] = dif[1];
 	}
 	goto L60;
@@ -636,21 +637,21 @@ static real c_b28 = 1.f;
 	dsum = 1.f;
 	i__1 = n1 * n2;
 	slassq_(&i__1, &work[1], &c__1, &rdscal, &dsum);
-	*pl = rdscal * sqrt(dsum);
+	*pl = rdscal * sqrtf(dsum);
 	if (*pl == 0.f) {
 	    *pl = 1.f;
 	} else {
-	    *pl = dscale / (sqrt(dscale * dscale / *pl + *pl) * sqrt(*pl));
+	    *pl = dscale / (sqrtf(dscale * dscale / *pl + *pl) * sqrtf(*pl));
 	}
 	rdscal = 0.f;
 	dsum = 1.f;
 	i__1 = n1 * n2;
 	slassq_(&i__1, &work[n1 * n2 + 1], &c__1, &rdscal, &dsum);
-	*pr = rdscal * sqrt(dsum);
+	*pr = rdscal * sqrtf(dsum);
 	if (*pr == 0.f) {
 	    *pr = 1.f;
 	} else {
-	    *pr = dscale / (sqrt(dscale * dscale / *pr + *pr) * sqrt(*pr));
+	    *pr = dscale / (sqrtf(dscale * dscale / *pr + *pr) * sqrtf(*pr));
 	}
     }
 

@@ -416,7 +416,7 @@ L100:
 	    s = z__[jprev];
 	    c__ = z__[j];
 
-/*           Find sqrt(a**2+b**2) without overflow or */
+/*           Find sqrtf(a**2+b**2) without overflow or */
 /*           destructive underflow. */
 
 	    tau = slapy2_(&c__, &s);

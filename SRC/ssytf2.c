@@ -25,7 +25,7 @@ static integer c__1 = 1;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k;
@@ -209,7 +209,7 @@ static integer c__1 = 1;
 
 /*     Initialize ALPHA for use in choosing pivot block size. */
 
-    alpha = (sqrt(17.f) + 1.f) / 8.f;
+    alpha = (sqrtf(17.f) + 1.f) / 8.f;
 
     if (upper) {
 

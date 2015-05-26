@@ -25,7 +25,7 @@ doublereal clanht_(char *norm, integer *n, real *d__, complex *e)
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -156,7 +156,7 @@ doublereal clanht_(char *norm, integer *n, real *d__, complex *e)
 	    sum *= 2;
 	}
 	slassq_(n, &d__[1], &c__1, &scale, &sum);
-	anorm = scale * sqrt(sum);
+	anorm = scale * sqrtf(sum);
     }
 
     ret_val = anorm;

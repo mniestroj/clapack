@@ -25,7 +25,7 @@ static integer c__2 = 2;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real d__, e, g;
@@ -188,9 +188,9 @@ static integer c__2 = 2;
 	    t = (z__[1] - z__[3] + z__[2]) * .5f;
 	    s = z__[3] * (z__[2] / t);
 	    if (s <= t) {
-		s = z__[3] * (z__[2] / (t * (sqrt(s / t + 1.f) + 1.f)));
+		s = z__[3] * (z__[2] / (t * (sqrtf(s / t + 1.f) + 1.f)));
 	    } else {
-		s = z__[3] * (z__[2] / (t + sqrt(t) * sqrt(t + s)));
+		s = z__[3] * (z__[2] / (t + sqrtf(t) * sqrtf(t + s)));
 	    }
 	    t = z__[1] + (s + z__[2]);
 	    z__[3] *= z__[1] / t;
@@ -483,7 +483,7 @@ L100:
 /*        Put -(initial shift) into DMIN. */
 
 /* Computing MAX */
-	r__1 = 0.f, r__2 = qmin - sqrt(qmin) * 2.f * sqrt(emax);
+	r__1 = 0.f, r__2 = qmin - sqrtf(qmin) * 2.f * sqrtf(emax);
 	dmin__ = -dmax(r__1,r__2);
 
 /*        Now I0:N0 is unreduced. */

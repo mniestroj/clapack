@@ -67,7 +67,7 @@
 /*  to a power of the radix.  Baring over- and underflow, scaling by */
 /*  these factors introduces no additional rounding errors.  However, the */
 /*  scaled entries' magnitured are no longer approximately 1 but lie */
-/*  between sqrt(radix) and 1/sqrt(radix). */
+/*  between sqrtf(radix) and 1/sqrtf(radix). */
 
 /*  Arguments */
 /*  ========= */

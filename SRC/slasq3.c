@@ -24,7 +24,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real s, t;
@@ -186,9 +186,9 @@ L40:
 	t = (z__[nn - 7] - z__[nn - 3] + z__[nn - 5]) * .5f;
 	s = z__[nn - 3] * (z__[nn - 5] / t);
 	if (s <= t) {
-	    s = z__[nn - 3] * (z__[nn - 5] / (t * (sqrt(s / t + 1.f) + 1.f)));
+	    s = z__[nn - 3] * (z__[nn - 5] / (t * (sqrtf(s / t + 1.f) + 1.f)));
 	} else {
-	    s = z__[nn - 3] * (z__[nn - 5] / (t + sqrt(t) * sqrt(t + s)));
+	    s = z__[nn - 3] * (z__[nn - 5] / (t + sqrtf(t) * sqrtf(t + s)));
 	}
 	t = z__[nn - 7] + (s + z__[nn - 5]);
 	z__[nn - 3] *= z__[nn - 7] / t;

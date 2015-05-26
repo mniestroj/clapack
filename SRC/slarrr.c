@@ -20,7 +20,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -99,7 +99,7 @@
     safmin = slamch_("Safe minimum");
     eps = slamch_("Precision");
     smlnum = safmin / eps;
-    rmin = sqrt(smlnum);
+    rmin = sqrtf(smlnum);
 /*     Tests for relative accuracy */
 
 /*     Test for scaled diagonal dominance */
@@ -119,7 +119,7 @@
 
     yesrel = TRUE_;
     offdig = 0.f;
-    tmp = sqrt((dabs(d__[1])));
+    tmp = sqrtf((dabs(d__[1])));
     if (tmp < rmin) {
 	yesrel = FALSE_;
     }
@@ -128,7 +128,7 @@
     }
     i__1 = *n;
     for (i__ = 2; i__ <= i__1; ++i__) {
-	tmp2 = sqrt((r__1 = d__[i__], dabs(r__1)));
+	tmp2 = sqrtf((r__1 = d__[i__], dabs(r__1)));
 	if (tmp2 < rmin) {
 	    yesrel = FALSE_;
 	}

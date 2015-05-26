@@ -24,7 +24,7 @@ doublereal slangt_(char *norm, integer *n, real *dl, real *d__, real *du)
     real ret_val, r__1, r__2, r__3, r__4, r__5;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -185,7 +185,7 @@ doublereal slangt_(char *norm, integer *n, real *dl, real *d__, real *du)
 	    i__1 = *n - 1;
 	    slassq_(&i__1, &du[1], &c__1, &scale, &sum);
 	}
-	anorm = scale * sqrt(sum);
+	anorm = scale * sqrtf(sum);
     }
 
     ret_val = anorm;

@@ -27,7 +27,7 @@ static integer c__0 = 0;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -177,7 +177,7 @@ static integer c__0 = 0;
 
     eps = slamch_("Precision");
     safmin = slamch_("Safe minimum");
-    scale = sqrt(eps / safmin);
+    scale = sqrtf(eps / safmin);
     scopy_(n, &d__[1], &c__1, &work[1], &c__2);
     i__1 = *n - 1;
     scopy_(&i__1, &e[1], &c__1, &work[2], &c__2);
@@ -202,7 +202,7 @@ static integer c__0 = 0;
     if (*info == 0) {
 	i__1 = *n;
 	for (i__ = 1; i__ <= i__1; ++i__) {
-	    d__[i__] = sqrt(work[i__]);
+	    d__[i__] = sqrtf(work[i__]);
 /* L40: */
 	}
 	slascl_("G", &c__0, &c__0, &scale, &sigmx, n, &c__1, &d__[1], n, &

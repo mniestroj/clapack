@@ -25,7 +25,7 @@ doublereal slansy_(char *norm, char *uplo, integer *n, real *a, integer *lda,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j;
@@ -228,7 +228,7 @@ doublereal slansy_(char *norm, char *uplo, integer *n, real *a, integer *lda,
 	sum *= 2;
 	i__1 = *lda + 1;
 	slassq_(n, &a[a_offset], &i__1, &scale, &sum);
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

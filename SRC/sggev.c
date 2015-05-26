@@ -32,7 +32,7 @@ static real c_b37 = 1.f;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer jc, in, jr, ihi, ilo;
@@ -353,7 +353,7 @@ static real c_b37 = 1.f;
     smlnum = slamch_("S");
     bignum = 1.f / smlnum;
     slabad_(&smlnum, &bignum);
-    smlnum = sqrt(smlnum) / eps;
+    smlnum = sqrtf(smlnum) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

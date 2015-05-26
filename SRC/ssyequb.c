@@ -25,7 +25,9 @@ static integer c__1 = 1;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal), log(doublereal), pow_ri(real *, integer *);
+    float sqrtf(real);
+    double log(doublereal);
+    double pow_ri(real *, integer *);
 
     /* Local variables */
     real d__;
@@ -65,7 +67,7 @@ static integer c__1 = 1;
 /*  SSYEQUB computes row and column scalings intended to equilibrate a */
 /*  symmetric matrix A and reduce its condition number */
 /*  (with respect to the two-norm).  S contains the scale factors, */
-/*  S(i) = 1/sqrt(A(i,i)), chosen so that the scaled matrix B with */
+/*  S(i) = 1/sqrtf(A(i,i)), chosen so that the scaled matrix B with */
 /*  elements B(i,j) = S(i)*A(i,j)*S(j) has ones on the diagonal.  This */
 /*  choice of S puts the condition number of B within a factor N of the */
 /*  smallest possible condition number over all possible diagonal */
@@ -210,7 +212,7 @@ static integer c__1 = 1;
     for (j = 1; j <= i__1; ++j) {
 	s[j] = 1.f / s[j];
     }
-    tol = 1.f / sqrt(*n * 2.f);
+    tol = 1.f / sqrtf(*n * 2.f);
     for (iter = 1; iter <= 100; ++iter) {
 	scale = 0.f;
 	sumsq = 0.f;
@@ -259,7 +261,7 @@ static integer c__1 = 1;
 	    work[i__] = s[i__ - (*n << 1)] * work[i__ - (*n << 1)] - avg;
 	}
 	slassq_(n, &work[(*n << 1) + 1], &c__1, &scale, &sumsq);
-	std = scale * sqrt(sumsq / *n);
+	std = scale * sqrtf(sumsq / *n);
 	if (std < tol * avg) {
 	    goto L999;
 	}
@@ -275,7 +277,7 @@ static integer c__1 = 1;
 		*info = -1;
 		return 0;
 	    }
-	    si = c0 * -2 / (c1 + sqrt(d__));
+	    si = c0 * -2 / (c1 + sqrtf(d__));
 	    d__ = si - s[i__];
 	    u = 0.f;
 	    if (up) {
@@ -314,7 +316,7 @@ L999:
     bignum = 1.f / smlnum;
     smin = bignum;
     smax = 0.f;
-    t = 1.f / sqrt(avg);
+    t = 1.f / sqrtf(avg);
     base = slamch_("B");
     u = 1.f / log(base);
     i__1 = *n;

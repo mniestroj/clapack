@@ -27,7 +27,7 @@ static integer c__1 = 1;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -210,7 +210,7 @@ static integer c__1 = 1;
     s = slamch_("S");
     smlgrowth = 1.f / s;
     fail = (real) (*n - 1) * mingap / (*spdiam * eps);
-    fail2 = (real) (*n - 1) * mingap / (*spdiam * sqrt(eps));
+    fail2 = (real) (*n - 1) * mingap / (*spdiam * sqrtf(eps));
     bestshift = lsigma;
 
 /*     while (KTRY <= KTRYMAX) */
@@ -345,7 +345,7 @@ L5:
 		tmp = dmax(r__2,r__3);
 /* L15: */
 	    }
-	    rrr1 = tmp / (*spdiam * sqrt(znm2));
+	    rrr1 = tmp / (*spdiam * sqrtf(znm2));
 	    if (rrr1 <= 8.f) {
 		*sigma = lsigma;
 		shift = 1;
@@ -372,7 +372,7 @@ L5:
 		tmp = dmax(r__2,r__3);
 /* L16: */
 	    }
-	    rrr2 = tmp / (*spdiam * sqrt(znm2));
+	    rrr2 = tmp / (*spdiam * sqrtf(znm2));
 	    if (rrr2 <= 8.f) {
 		*sigma = rsigma;
 		shift = 2;

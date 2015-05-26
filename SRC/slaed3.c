@@ -28,7 +28,7 @@ static real c_b23 = 0.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -279,7 +279,7 @@ static real c_b23 = 0.f;
     }
     i__1 = *k;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	r__1 = sqrt(-w[i__]);
+	r__1 = sqrtf(-w[i__]);
 	w[i__] = r_sign(&r__1, &s[i__]);
 /* L70: */
     }

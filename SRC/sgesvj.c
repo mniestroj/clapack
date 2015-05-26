@@ -30,7 +30,7 @@ static integer c__2 = 2;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -446,7 +446,7 @@ static integer c__2 = 2;
     } else {
 /*        ... default */
 	if (lsvec || rsvec || applv) {
-	    ctol = sqrt((real) (*m));
+	    ctol = sqrtf((real) (*m));
 	} else {
 	    ctol = (real) (*m);
 	}
@@ -455,17 +455,17 @@ static integer c__2 = 2;
 /* [!]  (Make sure that SLAMCH() works properly on the target machine.) */
 
     epsilon = slamch_("Epsilon");
-    rooteps = sqrt(epsilon);
+    rooteps = sqrtf(epsilon);
     sfmin = slamch_("SafeMinimum");
-    rootsfmin = sqrt(sfmin);
+    rootsfmin = sqrtf(sfmin);
     small = sfmin / epsilon;
     big = slamch_("Overflow");
     rootbig = 1.f / rootsfmin;
-    large = big / sqrt((real) (*m * *n));
+    large = big / sqrtf((real) (*m * *n));
     bigtheta = 1.f / rooteps;
 
     tol = ctol * epsilon;
-    roottol = sqrt(tol);
+    roottol = sqrtf(tol);
 
     if ((real) (*m) * epsilon >= 1.f) {
 	*info = -5;
@@ -493,7 +493,7 @@ static integer c__2 = 2;
 /*     SQRT(N)*max_i SVA(i) does not overflow. If INFinite entries */
 /*     in A are detected, the procedure returns with INFO=-6. */
 
-    scale = 1.f / sqrt((real) (*m) * (real) (*n));
+    scale = 1.f / sqrtf((real) (*m) * (real) (*n));
     noscale = TRUE_;
     goscale = TRUE_;
 
@@ -511,7 +511,7 @@ static integer c__2 = 2;
 		xerbla_("SGESVJ", &i__2);
 		return 0;
 	    }
-	    aaqq = sqrt(aaqq);
+	    aaqq = sqrtf(aaqq);
 	    if (aapp < big / aaqq && noscale) {
 		sva[p] = aapp * aaqq;
 	    } else {
@@ -541,7 +541,7 @@ static integer c__2 = 2;
 		xerbla_("SGESVJ", &i__2);
 		return 0;
 	    }
-	    aaqq = sqrt(aaqq);
+	    aaqq = sqrtf(aaqq);
 	    if (aapp < big / aaqq && noscale) {
 		sva[p] = aapp * aaqq;
 	    } else {
@@ -571,7 +571,7 @@ static integer c__2 = 2;
 		xerbla_("SGESVJ", &i__2);
 		return 0;
 	    }
-	    aaqq = sqrt(aaqq);
+	    aaqq = sqrtf(aaqq);
 	    if (aapp < big / aaqq && noscale) {
 		sva[p] = aapp * aaqq;
 	    } else {
@@ -651,8 +651,8 @@ static integer c__2 = 2;
 /*     Protect small singular values from underflow, and try to */
 /*     avoid underflows/overflows in computing Jacobi rotations. */
 
-    sn = sqrt(sfmin / epsilon);
-    temp1 = sqrt(big / (real) (*n));
+    sn = sqrtf(sfmin / epsilon);
+    temp1 = sqrtf(big / (real) (*n));
     if (aapp <= sn || aaqq >= temp1 || sn <= aaqq && aapp <= temp1) {
 /* Computing MIN */
 	r__1 = big, r__2 = temp1 / aapp;
@@ -661,7 +661,7 @@ static integer c__2 = 2;
 /*         AAPP  = AAPP*TEMP1 */
     } else if (aaqq <= sn && aapp <= temp1) {
 /* Computing MIN */
-	r__1 = sn / aaqq, r__2 = big / (aapp * sqrt((real) (*n)));
+	r__1 = sn / aaqq, r__2 = big / (aapp * sqrtf((real) (*n)));
 	temp1 = dmin(r__1,r__2);
 /*         AAQQ  = AAQQ*TEMP1 */
 /*         AAPP  = AAPP*TEMP1 */
@@ -673,7 +673,7 @@ static integer c__2 = 2;
 /*         AAPP  = AAPP*TEMP1 */
     } else if (aaqq <= sn && aapp >= temp1) {
 /* Computing MIN */
-	r__1 = sn / aaqq, r__2 = big / (sqrt((real) (*n)) * aapp);
+	r__1 = sn / aaqq, r__2 = big / (sqrtf((real) (*n)) * aapp);
 	temp1 = dmin(r__1,r__2);
 /*         AAQQ  = AAQQ*TEMP1 */
 /*         AAPP  = AAPP*TEMP1 */
@@ -917,7 +917,7 @@ static integer c__2 = 2;
 			    aapp = 0.f;
 			    slassq_(m, &a[p * a_dim1 + 1], &c__1, &temp1, &
 				    aapp);
-			    sva[p] = temp1 * sqrt(aapp) * work[p];
+			    sva[p] = temp1 * sqrtf(aapp) * work[p];
 			}
 			aapp = sva[p];
 		    } else {
@@ -1013,9 +1013,9 @@ static integer c__2 = 2;
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
-					    aapp *= sqrt(1.f - t * aqoap * 
+					    aapp *= sqrtf(1.f - t * aqoap * 
 						    aapq);
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(t);
@@ -1026,9 +1026,9 @@ static integer c__2 = 2;
 /*                 .. choose correct signum for THETA and rotate */
 
 					    thsign = -r_sign(&c_b18, &aapq);
-					    t = 1.f / (theta + thsign * sqrt(
+					    t = 1.f / (theta + thsign * sqrtf(
 						    theta * theta + 1.f));
-					    cs = sqrt(1.f / (t * t + 1.f));
+					    cs = sqrtf(1.f / (t * t + 1.f));
 					    sn = t * cs;
 
 /* Computing MAX */
@@ -1037,12 +1037,12 @@ static integer c__2 = 2;
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - t * 
 						    aqoap * aapq;
-					    aapp *= sqrt((dmax(r__1,r__2)));
+					    aapp *= sqrtf((dmax(r__1,r__2)));
 
 					    apoaq = work[p] / work[q];
 					    aqoap = work[q] / work[p];
@@ -1157,7 +1157,7 @@ static integer c__2 = 2;
 						+ 1], lda, &ierr);
 /* Computing MAX */
 					r__1 = 0.f, r__2 = 1.f - aapq * aapq;
-					sva[q] = aaqq * sqrt((dmax(r__1,r__2))
+					sva[q] = aaqq * sqrtf((dmax(r__1,r__2))
 						);
 					mxsinj = dmax(mxsinj,sfmin);
 				    }
@@ -1178,7 +1178,7 @@ static integer c__2 = 2;
 					    aaqq = 0.f;
 					    slassq_(m, &a[q * a_dim1 + 1], &
 						    c__1, &t, &aaqq);
-					    sva[q] = t * sqrt(aaqq) * work[q];
+					    sva[q] = t * sqrtf(aaqq) * work[q];
 					}
 				    }
 				    if (aapp / aapp0 <= rooteps) {
@@ -1191,7 +1191,7 @@ static integer c__2 = 2;
 					    aapp = 0.f;
 					    slassq_(m, &a[p * a_dim1 + 1], &
 						    c__1, &t, &aapp);
-					    aapp = t * sqrt(aapp) * work[p];
+					    aapp = t * sqrtf(aapp) * work[p];
 					}
 					sva[p] = aapp;
 				    }
@@ -1361,12 +1361,12 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - t * 
 						    aqoap * aapq;
-					    aapp *= sqrt((dmax(r__1,r__2)));
+					    aapp *= sqrtf((dmax(r__1,r__2)));
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(t);
 					    mxsinj = dmax(r__1,r__2);
@@ -1378,9 +1378,9 @@ L2103:
 					    if (aaqq > aapp0) {
 			  thsign = -thsign;
 					    }
-					    t = 1.f / (theta + thsign * sqrt(
+					    t = 1.f / (theta + thsign * sqrtf(
 						    theta * theta + 1.f));
-					    cs = sqrt(1.f / (t * t + 1.f));
+					    cs = sqrtf(1.f / (t * t + 1.f));
 					    sn = t * cs;
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(sn);
@@ -1388,9 +1388,9 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
-					    aapp *= sqrt(1.f - t * aqoap * 
+					    aapp *= sqrtf(1.f - t * aqoap * 
 						    aapq);
 
 					    apoaq = work[p] / work[q];
@@ -1509,7 +1509,7 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - aapq * 
 						    aapq;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 					    mxsinj = dmax(mxsinj,sfmin);
 					} else {
@@ -1532,7 +1532,7 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - aapq * 
 						    aapq;
-					    sva[p] = aapp * sqrt((dmax(r__1,
+					    sva[p] = aapp * sqrtf((dmax(r__1,
 						    r__2)));
 					    mxsinj = dmax(mxsinj,sfmin);
 					}
@@ -1553,7 +1553,7 @@ L2103:
 					    aaqq = 0.f;
 					    slassq_(m, &a[q * a_dim1 + 1], &
 						    c__1, &t, &aaqq);
-					    sva[q] = t * sqrt(aaqq) * work[q];
+					    sva[q] = t * sqrtf(aaqq) * work[q];
 					}
 				    }
 /* Computing 2nd power */
@@ -1568,7 +1568,7 @@ L2103:
 					    aapp = 0.f;
 					    slassq_(m, &a[p * a_dim1 + 1], &
 						    c__1, &t, &aapp);
-					    aapp = t * sqrt(aapp) * work[p];
+					    aapp = t * sqrtf(aapp) * work[p];
 					}
 					sva[p] = aapp;
 				    }
@@ -1643,7 +1643,7 @@ L2011:
 	    t = 0.f;
 	    aapp = 0.f;
 	    slassq_(m, &a[*n * a_dim1 + 1], &c__1, &t, &aapp);
-	    sva[*n] = t * sqrt(aapp) * work[*n];
+	    sva[*n] = t * sqrtf(aapp) * work[*n];
 	}
 
 /*     Additional steering devices */
@@ -1652,7 +1652,7 @@ L2011:
 	    swband = i__;
 	}
 
-	if (i__ > swband + 1 && mxaapq < sqrt((real) (*n)) * tol && (real) (*
+	if (i__ > swband + 1 && mxaapq < sqrtf((real) (*n)) * tol && (real) (*
 		n) * mxaapq * mxsinj < tol) {
 	    goto L1994;
 	}

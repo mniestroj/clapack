@@ -29,7 +29,7 @@ static real c_b37 = -1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k;
@@ -277,7 +277,7 @@ static real c_b37 = -1.f;
 
 	i__1 = *n - 1;
 	slaswp_(&c__1, xm, ldz, &c__1, &i__1, &ipiv[1], &c_n1);
-	temp = 1.f / sqrt(sdot_(n, xm, &c__1, xm, &c__1));
+	temp = 1.f / sqrtf(sdot_(n, xm, &c__1, xm, &c__1));
 	sscal_(n, &temp, xm, &c__1);
 	scopy_(n, xm, &c__1, xp, &c__1);
 	saxpy_(n, &c_b23, &rhs[1], &c__1, xp, &c__1);

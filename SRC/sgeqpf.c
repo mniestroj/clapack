@@ -25,7 +25,7 @@ static integer c__1 = 1;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, ma, mn;
@@ -166,7 +166,7 @@ static integer c__1 = 1;
     }
 
     mn = min(*m,*n);
-    tol3z = sqrt(slamch_("Epsilon"));
+    tol3z = sqrtf(slamch_("Epsilon"));
 
 /*     Move initial columns up front */
 
@@ -287,7 +287,7 @@ static integer c__1 = 1;
 			    work[*n + j] = 0.f;
 			}
 		    } else {
-			work[j] *= sqrt(temp);
+			work[j] *= sqrtf(temp);
 		    }
 		}
 /* L30: */

@@ -25,7 +25,7 @@ doublereal slantb_(char *norm, char *uplo, char *diag, integer *n, integer *k,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, l;
@@ -423,7 +423,7 @@ doublereal slantb_(char *norm, char *uplo, char *diag, integer *n, integer *k,
 		}
 	    }
 	}
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

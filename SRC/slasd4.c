@@ -21,7 +21,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real a, b, c__;
@@ -171,7 +171,7 @@
 
 /*        Presumably, I=1 upon entry */
 
-	*sigma = sqrt(d__[1] * d__[1] + *rho * z__[1] * z__[1]);
+	*sigma = sqrtf(d__[1] * d__[1] + *rho * z__[1] * z__[1]);
 	delta[1] = 1.f;
 	work[1] = 1.f;
 	return 0;
@@ -202,7 +202,7 @@
 /*        If ||Z||_2 is not one, then TEMP should be set to */
 /*        RHO * ||Z||_2^2 / TWO */
 
-	temp1 = temp / (d__[*n] + sqrt(d__[*n] * d__[*n] + temp));
+	temp1 = temp / (d__[*n] + sqrtf(d__[*n] * d__[*n] + temp));
 	i__1 = *n;
 	for (j = 1; j <= i__1; ++j) {
 	    work[j] = d__[j] + d__[*n] + temp1;
@@ -222,7 +222,7 @@
 		n] / (delta[*n] * work[*n]);
 
 	if (w <= 0.f) {
-	    temp1 = sqrt(d__[*n] * d__[*n] + *rho);
+	    temp1 = sqrtf(d__[*n] * d__[*n] + *rho);
 	    temp = z__[*n - 1] * z__[*n - 1] / ((d__[*n - 1] + temp1) * (d__[*
 		    n] - d__[*n - 1] + *rho / (d__[*n] + temp1))) + z__[*n] * 
 		    z__[*n] / *rho;
@@ -238,9 +238,9 @@
 			n];
 		b = z__[*n] * z__[*n] * delsq;
 		if (a < 0.f) {
-		    tau = b * 2.f / (sqrt(a * a + b * 4.f * c__) - a);
+		    tau = b * 2.f / (sqrtf(a * a + b * 4.f * c__) - a);
 		} else {
-		    tau = (a + sqrt(a * a + b * 4.f * c__)) / (c__ * 2.f);
+		    tau = (a + sqrtf(a * a + b * 4.f * c__)) / (c__ * 2.f);
 		}
 	    }
 
@@ -256,9 +256,9 @@
 /*           SIGMA_n^2 - D( N )*D( N ) */
 
 	    if (a < 0.f) {
-		tau = b * 2.f / (sqrt(a * a + b * 4.f * c__) - a);
+		tau = b * 2.f / (sqrtf(a * a + b * 4.f * c__) - a);
 	    } else {
-		tau = (a + sqrt(a * a + b * 4.f * c__)) / (c__ * 2.f);
+		tau = (a + sqrtf(a * a + b * 4.f * c__)) / (c__ * 2.f);
 	    }
 
 /*           It can be proved that */
@@ -268,7 +268,7 @@
 
 /*        The following ETA is to approximate SIGMA_n - D( N ) */
 
-	eta = tau / (d__[*n] + sqrt(d__[*n] * d__[*n] + tau));
+	eta = tau / (d__[*n] + sqrtf(d__[*n] * d__[*n] + tau));
 
 	*sigma = d__[*n] + eta;
 	i__1 = *n;
@@ -323,10 +323,10 @@
 	if (c__ == 0.f) {
 	    eta = *rho - *sigma * *sigma;
 	} else if (a >= 0.f) {
-	    eta = (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
+	    eta = (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) / (
 		    c__ * 2.f);
 	} else {
-	    eta = b * 2.f / (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+	    eta = b * 2.f / (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 		    r__1))));
 	}
 
@@ -345,7 +345,7 @@
 	}
 
 	tau += eta;
-	eta /= *sigma + sqrt(eta + *sigma * *sigma);
+	eta /= *sigma + sqrtf(eta + *sigma * *sigma);
 	i__1 = *n;
 	for (j = 1; j <= i__1; ++j) {
 	    delta[j] -= eta;
@@ -400,10 +400,10 @@
 	    a = (dtnsq + dtnsq1) * w - dtnsq1 * dtnsq * (dpsi + dphi);
 	    b = dtnsq1 * dtnsq * w;
 	    if (a >= 0.f) {
-		eta = (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		eta = (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    } else {
-		eta = b * 2.f / (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		eta = b * 2.f / (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    }
 
@@ -422,7 +422,7 @@
 	    }
 
 	    tau += eta;
-	    eta /= *sigma + sqrt(eta + *sigma * *sigma);
+	    eta /= *sigma + sqrtf(eta + *sigma * *sigma);
 	    i__1 = *n;
 	    for (j = 1; j <= i__1; ++j) {
 		delta[j] -= eta;
@@ -477,7 +477,7 @@
 
 	delsq = (d__[ip1] - d__[*i__]) * (d__[ip1] + d__[*i__]);
 	delsq2 = delsq / 2.f;
-	temp = delsq2 / (d__[*i__] + sqrt(d__[*i__] * d__[*i__] + delsq2));
+	temp = delsq2 / (d__[*i__] + sqrtf(d__[*i__] * d__[*i__] + delsq2));
 	i__1 = *n;
 	for (j = 1; j <= i__1; ++j) {
 	    work[j] = d__[j] + d__[*i__] + temp;
@@ -514,10 +514,10 @@
 	    a = c__ * delsq + z__[*i__] * z__[*i__] + z__[ip1] * z__[ip1];
 	    b = z__[*i__] * z__[*i__] * delsq;
 	    if (a > 0.f) {
-		tau = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		tau = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    } else {
-		tau = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		tau = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    }
 
@@ -525,7 +525,7 @@
 /*           following, however, is the corresponding estimation of */
 /*           SIGMA - D( I ). */
 
-	    eta = tau / (d__[*i__] + sqrt(d__[*i__] * d__[*i__] + tau));
+	    eta = tau / (d__[*i__] + sqrtf(d__[*i__] * d__[*i__] + tau));
 	} else {
 
 /*           (d(i)^2+d(i+1)^2)/2 <= the ith sigma^2 < d(i+1)^2/2 */
@@ -538,10 +538,10 @@
 	    a = c__ * delsq - z__[*i__] * z__[*i__] - z__[ip1] * z__[ip1];
 	    b = z__[ip1] * z__[ip1] * delsq;
 	    if (a < 0.f) {
-		tau = b * 2.f / (a - sqrt((r__1 = a * a + b * 4.f * c__, dabs(
+		tau = b * 2.f / (a - sqrtf((r__1 = a * a + b * 4.f * c__, dabs(
 			r__1))));
 	    } else {
-		tau = -(a + sqrt((r__1 = a * a + b * 4.f * c__, dabs(r__1)))) 
+		tau = -(a + sqrtf((r__1 = a * a + b * 4.f * c__, dabs(r__1)))) 
 			/ (c__ * 2.f);
 	    }
 
@@ -549,7 +549,7 @@
 /*           following, however, is the corresponding estimation of */
 /*           SIGMA - D( IP1 ). */
 
-	    eta = tau / (d__[ip1] + sqrt((r__1 = d__[ip1] * d__[ip1] + tau, 
+	    eta = tau / (d__[ip1] + sqrtf((r__1 = d__[ip1] * d__[ip1] + tau, 
 		    dabs(r__1))));
 	}
 
@@ -670,10 +670,10 @@
 		}
 		eta = b / a;
 	    } else if (a <= 0.f) {
-		eta = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
+		eta = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1)))) /
 			 (c__ * 2.f);
 	    } else {
-		eta = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, dabs(
+		eta = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, dabs(
 			r__1))));
 	    }
 	} else {
@@ -741,7 +741,7 @@
 	}
 
 	tau += eta;
-	eta /= *sigma + sqrt(*sigma * *sigma + eta);
+	eta /= *sigma + sqrtf(*sigma * *sigma + eta);
 
 	prew = w;
 
@@ -859,10 +859,10 @@
 		    }
 		    eta = b / a;
 		} else if (a <= 0.f) {
-		    eta = (a - sqrt((r__1 = a * a - b * 4.f * c__, dabs(r__1))
+		    eta = (a - sqrtf((r__1 = a * a - b * 4.f * c__, dabs(r__1))
 			    )) / (c__ * 2.f);
 		} else {
-		    eta = b * 2.f / (a + sqrt((r__1 = a * a - b * 4.f * c__, 
+		    eta = b * 2.f / (a + sqrtf((r__1 = a * a - b * 4.f * c__, 
 			    dabs(r__1))));
 		}
 	    } else {
@@ -937,7 +937,7 @@
 	    }
 
 	    tau += eta;
-	    eta /= *sigma + sqrt(*sigma * *sigma + eta);
+	    eta /= *sigma + sqrtf(*sigma * *sigma + eta);
 
 	    *sigma += eta;
 	    i__1 = *n;

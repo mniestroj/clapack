@@ -28,7 +28,7 @@ static integer c__1 = 1;
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_imag(complex *);
     void c_div(complex *, complex *, complex *);
 
@@ -173,7 +173,7 @@ static integer c__1 = 1;
 
 /*     Initialize ALPHA for use in choosing pivot block size. */
 
-    alpha = (sqrt(17.f) + 1.f) / 8.f;
+    alpha = (sqrtf(17.f) + 1.f) / 8.f;
 
     if (lsame_(uplo, "U")) {
 

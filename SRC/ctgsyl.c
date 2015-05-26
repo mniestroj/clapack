@@ -36,7 +36,7 @@ static complex c_b45 = {1.f,0.f};
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, k, p, q, ie, je, mb, nb, is, js, pq;
@@ -388,10 +388,10 @@ static complex c_b45 = {1.f,0.f};
 		    lde, &f[f_offset], ldf, scale, &dsum, &dscale, info);
 	    if (dscale != 0.f) {
 		if (*ijob == 1 || *ijob == 3) {
-		    *dif = sqrt((real) ((*m << 1) * *n)) / (dscale * sqrt(
+		    *dif = sqrtf((real) ((*m << 1) * *n)) / (dscale * sqrtf(
 			    dsum));
 		} else {
-		    *dif = sqrt((real) pq) / (dscale * sqrt(dsum));
+		    *dif = sqrtf((real) pq) / (dscale * sqrtf(dsum));
 		}
 	    }
 	    if (isolve == 2 && iround == 1) {
@@ -562,10 +562,10 @@ L70:
 	    }
 	    if (dscale != 0.f) {
 		if (*ijob == 1 || *ijob == 3) {
-		    *dif = sqrt((real) ((*m << 1) * *n)) / (dscale * sqrt(
+		    *dif = sqrtf((real) ((*m << 1) * *n)) / (dscale * sqrtf(
 			    dsum));
 		} else {
-		    *dif = sqrt((real) pq) / (dscale * sqrt(dsum));
+		    *dif = sqrtf((real) pq) / (dscale * sqrtf(dsum));
 		}
 	    }
 	    if (isolve == 2 && iround == 1) {

@@ -28,7 +28,7 @@ static integer c_n1 = -1;
     integer a_dim1, a_offset, vs_dim1, vs_offset, i__1, i__2, i__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -105,7 +105,7 @@ static integer c_n1 = -1;
 /*          [  a  b  ] */
 /*          [  c  a  ] */
 
-/*  where b*c < 0. The eigenvalues of such a block are a +- sqrt(bc). */
+/*  where b*c < 0. The eigenvalues of such a block are a +- sqrtf(bc). */
 
 /*  Arguments */
 /*  ========= */
@@ -125,7 +125,7 @@ static integer c_n1 = -1;
 /*          If SORT = 'S', SELECT is used to select eigenvalues to sort */
 /*          to the top left of the Schur form. */
 /*          If SORT = 'N', SELECT is not referenced. */
-/*          An eigenvalue WR(j)+sqrt(-1)*WI(j) is selected if */
+/*          An eigenvalue WR(j)+sqrtf(-1)*WI(j) is selected if */
 /*          SELECT(WR(j),WI(j)) is true; i.e., if either one of a complex */
 /*          conjugate pair of eigenvalues is selected, then both complex */
 /*          eigenvalues are selected. */
@@ -314,7 +314,7 @@ static integer c_n1 = -1;
     smlnum = slamch_("S");
     bignum = 1.f / smlnum;
     slabad_(&smlnum, &bignum);
-    smlnum = sqrt(smlnum) / eps;
+    smlnum = sqrtf(smlnum) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

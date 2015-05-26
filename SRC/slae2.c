@@ -19,7 +19,7 @@
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real ab, df, tb, sm, rt, adf, acmn, acmx;
@@ -100,16 +100,16 @@
     if (adf > ab) {
 /* Computing 2nd power */
 	r__1 = ab / adf;
-	rt = adf * sqrt(r__1 * r__1 + 1.f);
+	rt = adf * sqrtf(r__1 * r__1 + 1.f);
     } else if (adf < ab) {
 /* Computing 2nd power */
 	r__1 = adf / ab;
-	rt = ab * sqrt(r__1 * r__1 + 1.f);
+	rt = ab * sqrtf(r__1 * r__1 + 1.f);
     } else {
 
 /*        Includes case AB=ADF=0 */
 
-	rt = ab * sqrt(2.f);
+	rt = ab * sqrtf(2.f);
     }
     if (sm < 0.f) {
 	*rt1 = (sm - rt) * .5f;

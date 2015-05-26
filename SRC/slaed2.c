@@ -28,7 +28,7 @@ static integer c__1 = 1;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real c__;
@@ -235,9 +235,9 @@ static integer c__1 = 1;
     }
 
 /*     Normalize z so that norm(z) = 1.  Since z is the concatenation of */
-/*     two normalized vectors, norm2(z) = sqrt(2). */
+/*     two normalized vectors, norm2(z) = sqrtf(2). */
 
-    t = 1.f / sqrt(2.f);
+    t = 1.f / sqrtf(2.f);
     sscal_(n, &t, &z__[1], &c__1);
 
 /*     RHO = ABS( norm(z)**2 * RHO ) */
@@ -355,7 +355,7 @@ L80:
 	s = z__[pj];
 	c__ = z__[nj];
 
-/*        Find sqrt(a**2+b**2) without overflow or */
+/*        Find sqrtf(a**2+b**2) without overflow or */
 /*        destructive underflow. */
 
 	tau = slapy2_(&c__, &s);

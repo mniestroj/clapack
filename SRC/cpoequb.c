@@ -23,7 +23,7 @@
     /* Builtin functions */
     double log(doublereal);
     double pow_ri(real *, integer *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -52,7 +52,7 @@
 /*  CPOEQUB computes row and column scalings intended to equilibrate a */
 /*  symmetric positive definite matrix A and reduce its condition number */
 /*  (with respect to the two-norm).  S contains the scale factors, */
-/*  S(i) = 1/sqrt(A(i,i)), chosen so that the scaled matrix B with */
+/*  S(i) = 1/sqrtf(A(i,i)), chosen so that the scaled matrix B with */
 /*  elements B(i,j) = S(i)*A(i,j)*S(j) has ones on the diagonal.  This */
 /*  choice of S puts the condition number of B within a factor N of the */
 /*  smallest possible condition number over all possible diagonal */
@@ -187,7 +187,7 @@
 
 /*        Compute SCOND = min(S(I)) / max(S(I)). */
 
-	*scond = sqrt(smin) / sqrt(*amax);
+	*scond = sqrtf(smin) / sqrtf(*amax);
     }
 
     return 0;

@@ -34,7 +34,7 @@ static integer c__0 = 0;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real f, g;
@@ -283,7 +283,7 @@ static integer c__0 = 0;
     slacpy_("Full", &m, &m, t, &c__4, &work[1], &m);
     i__1 = m * m;
     slassq_(&i__1, &work[1], &c__1, &dscale, &dsum);
-    dnorm = dscale * sqrt(dsum);
+    dnorm = dscale * sqrtf(dsum);
 /* Computing MAX */
     r__1 = eps * 10.f * dnorm;
     thresh = dmax(r__1,smlnum);
@@ -347,7 +347,7 @@ static integer c__0 = 0;
 		    c_b42, &work[m * m + 1], &m);
 	    i__1 = m * m;
 	    slassq_(&i__1, &work[m * m + 1], &c__1, &dscale, &dsum);
-	    ss = dscale * sqrt(dsum);
+	    ss = dscale * sqrtf(dsum);
 	    strong = ss <= thresh;
 	    if (! strong) {
 		goto L70;
@@ -493,7 +493,7 @@ static integer c__0 = 0;
 	    slassq_(n1, &s[*n2 + 1 + (i__ << 2) - 5], &c__1, &dscale, &dsum);
 /* L30: */
 	}
-	brqa21 = dscale * sqrt(dsum);
+	brqa21 = dscale * sqrtf(dsum);
 
 /*        Triangularize the B-part by a QR factorization. */
 /*        Apply transformation (from right) to A-part, giving S. */
@@ -520,7 +520,7 @@ static integer c__0 = 0;
 		    dsum);
 /* L40: */
 	}
-	bqra21 = dscale * sqrt(dsum);
+	bqra21 = dscale * sqrtf(dsum);
 
 /*        Decide which method to use. */
 /*          Weak stability test: */
@@ -565,7 +565,7 @@ static integer c__0 = 0;
 		    c_b42, &work[m * m + 1], &m);
 	    i__1 = m * m;
 	    slassq_(&i__1, &work[m * m + 1], &c__1, &dscale, &dsum);
-	    ss = dscale * sqrt(dsum);
+	    ss = dscale * sqrtf(dsum);
 	    strong = ss <= thresh;
 	    if (! strong) {
 		goto L70;

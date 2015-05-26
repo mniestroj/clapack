@@ -33,7 +33,7 @@ static integer c_n1 = -1;
 	    vsr_dim1, vsr_offset, i__1, i__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__;
@@ -465,7 +465,7 @@ static integer c_n1 = -1;
     smlnum = slamch_("S");
     bignum = 1.f / smlnum;
     slabad_(&smlnum, &bignum);
-    smlnum = sqrt(smlnum) / eps;
+    smlnum = sqrtf(smlnum) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */

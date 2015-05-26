@@ -27,7 +27,7 @@ static real c_b12 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer j;
@@ -157,7 +157,7 @@ static real c_b12 = 1.f;
 		a[j + j * a_dim1] = ajj;
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    a[j + j * a_dim1] = ajj;
 
 /*           Compute elements J+1:N of row J. */
@@ -190,7 +190,7 @@ static real c_b12 = 1.f;
 		a[j + j * a_dim1] = ajj;
 		goto L30;
 	    }
-	    ajj = sqrt(ajj);
+	    ajj = sqrtf(ajj);
 	    a[j + j * a_dim1] = ajj;
 
 /*           Compute elements J+1:N of column J. */

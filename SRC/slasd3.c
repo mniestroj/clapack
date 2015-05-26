@@ -32,7 +32,7 @@ static real c_b26 = 0.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -332,7 +332,7 @@ static real c_b26 = 0.f;
 		    i__] - dsigma[j + 1]) / (dsigma[i__] + dsigma[j + 1]);
 /* L50: */
 	}
-	r__2 = sqrt((r__1 = z__[i__], dabs(r__1)));
+	r__2 = sqrtf((r__1 = z__[i__], dabs(r__1)));
 	z__[i__] = r_sign(&r__2, &q[i__ + q_dim1]);
 /* L60: */
     }

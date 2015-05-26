@@ -26,7 +26,7 @@ doublereal clansb_(char *norm, char *uplo, integer *n, integer *k, complex *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, l;
@@ -251,7 +251,7 @@ doublereal clansb_(char *norm, char *uplo, integer *n, integer *k, complex *
 	    l = 1;
 	}
 	classq_(n, &ab[l + ab_dim1], ldab, &scale, &sum);
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

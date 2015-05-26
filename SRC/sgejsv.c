@@ -32,7 +32,7 @@ static integer c_n1 = -1;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double log(doublereal);
     double r_sign(real *, real *);
     integer i_nint(real *);
@@ -596,7 +596,7 @@ static integer c_n1 = -1;
 /*     overflow. It is possible that this scaling pushes the smallest */
 /*     column norm left from the underflow threshold (extreme case). */
 
-    scalem = 1.f / sqrt((real) (*m) * (real) (*n));
+    scalem = 1.f / sqrtf((real) (*m) * (real) (*n));
     noscal = TRUE_;
     goscal = TRUE_;
     i__1 = *n;
@@ -610,7 +610,7 @@ static integer c_n1 = -1;
 	    xerbla_("SGEJSV", &i__2);
 	    return 0;
 	}
-	aaqq = sqrt(aaqq);
+	aaqq = sqrtf(aaqq);
 	if (aapp < big / aaqq && noscal) {
 	    sva[p] = aapp * aaqq;
 	} else {
@@ -758,7 +758,7 @@ static integer c_n1 = -1;
 /*              SLASSQ gets both the ell_2 and the ell_infinity norm */
 /*              in one pass through the vector */
 		work[*m + *n + p] = xsc * scalem;
-		work[*n + p] = xsc * (scalem * sqrt(temp1));
+		work[*n + p] = xsc * (scalem * sqrtf(temp1));
 /* Computing MAX */
 		r__1 = aatmax, r__2 = work[*n + p];
 		aatmax = dmax(r__1,r__2);
@@ -887,8 +887,8 @@ static integer c_n1 = -1;
 /*     from SFMIN to BIG, then SGESVJ will compute them. So, in that case, */
 /*     one should use SGESVJ instead of SGEJSV. */
 
-    big1 = sqrt(big);
-    temp1 = sqrt(big / (real) (*n));
+    big1 = sqrtf(big);
+    temp1 = sqrtf(big / (real) (*n));
 
     slascl_("G", &c__0, &c__0, &aapp, &temp1, n, &c__1, &sva[1], n, &ierr);
     if (aaqq > aapp * sfmin) {
@@ -909,7 +909,7 @@ static integer c_n1 = -1;
 /*        L2KILL enforces computation of nonzero singular values in */
 /*        the restricted range of condition number of the initial A, */
 /*        sigma_max(A) / sigma_min(A) approx. SQRT(BIG)/SQRT(SFMIN). */
-	xsc = sqrt(sfmin);
+	xsc = sqrtf(sfmin);
     } else {
 	xsc = small;
 
@@ -921,7 +921,7 @@ static integer c_n1 = -1;
 /*        time. Depending on the concrete implementation of BLAS and LAPACK */
 /*        (i.e. how they behave in presence of extreme ill-conditioning) the */
 /*        implementor may decide to remove this switch. */
-	if (aaqq < sqrt(sfmin) && lsvec && rsvec) {
+	if (aaqq < sqrtf(sfmin) && lsvec && rsvec) {
 	    jracc = TRUE_;
 	}
 
@@ -1002,7 +1002,7 @@ static integer c_n1 = -1;
 /*        sigma_i < N*EPSLN*||A|| are flushed to zero. This is an */
 /*        agressive enforcement of lower numerical rank by introducing a */
 /*        backward error of the order of N*EPSLN*||A||. */
-	temp1 = sqrt((real) (*n)) * epsln;
+	temp1 = sqrtf((real) (*n)) * epsln;
 	i__1 = *n;
 	for (p = 2; p <= i__1; ++p) {
 	    if ((r__2 = a[p + p * a_dim1], dabs(r__2)) >= temp1 * (r__1 = a[
@@ -1019,7 +1019,7 @@ L3002:
 /*        .. similarly as above, only slightly more gentle (less agressive). */
 /*        Sudden drop on the diagonal of R1 is used as the criterion for */
 /*        close-to-rank-defficient. */
-	temp1 = sqrt(sfmin);
+	temp1 = sqrtf(sfmin);
 	i__1 = *n;
 	for (p = 2; p <= i__1; ++p) {
 	    if ((r__2 = a[p + p * a_dim1], dabs(r__2)) < epsln * (r__1 = a[p 
@@ -1042,7 +1042,7 @@ L3402:
 /*        Here we just remove the underflowed part of the triangular */
 /*        factor. This prevents the situation in which the code is */
 /*        working hard to get the accuracy not warranted by the data. */
-	temp1 = sqrt(sfmin);
+	temp1 = sqrtf(sfmin);
 	i__1 = *n;
 	for (p = 2; p <= i__1; ++p) {
 	    if ((r__1 = a[p + p * a_dim1], dabs(r__1)) < small || l2kill && (
@@ -1117,7 +1117,7 @@ L3302:
 		spocon_("U", n, &work[*n + 1], n, &c_b35, &temp1, &work[*n + *
 			n * *n + 1], &iwork[(*n << 1) + *m + 1], &ierr);
 	    }
-	    sconda = 1.f / sqrt(temp1);
+	    sconda = 1.f / sqrtf(temp1);
 /*           SCONDA is an estimate of SQRT(||(R^t * R)^(-1)||_1). */
 /*           N^(-1/4) * SCONDA <= ||R^(-1)||_2 <= N^(1/4) * SCONDA */
 	} else {
@@ -1126,7 +1126,7 @@ L3302:
     }
 
     l2pert = l2pert && (r__1 = a[a_dim1 + 1] / a[nr + nr * a_dim1], dabs(r__1)
-	    ) > sqrt(big1);
+	    ) > sqrtf(big1);
 /*     If there is no violent scaling, artificial perturbation is not needed. */
 
 /*     Phase 3: */
@@ -1439,7 +1439,7 @@ L3302:
 /*           transposed copy above. */
 
 		if (l2pert) {
-		    xsc = sqrt(small);
+		    xsc = sqrtf(small);
 		    i__1 = nr;
 		    for (q = 1; q <= i__1; ++q) {
 			temp1 = xsc * (r__1 = v[q + q * v_dim1], dabs(r__1));
@@ -1484,13 +1484,13 @@ L3302:
 		spocon_("Lower", &nr, &work[(*n << 1) + 1], &nr, &c_b35, &
 			temp1, &work[(*n << 1) + nr * nr + 1], &iwork[*m + (*
 			n << 1) + 1], &ierr);
-		condr1 = 1.f / sqrt(temp1);
+		condr1 = 1.f / sqrtf(temp1);
 /*           .. here need a second oppinion on the condition number */
 /*           .. then assume worst case scenario */
 /*           R1 is OK for inverse <=> CONDR1 .LT. FLOAT(N) */
 /*           more conservative    <=> CONDR1 .LT. SQRT(FLOAT(N)) */
 
-		cond_ok__ = sqrt((real) nr);
+		cond_ok__ = sqrtf((real) nr);
 /* [TP]       COND_OK is a tuning parameter. */
 		if (condr1 < cond_ok__) {
 /*              .. the second QRF without pivoting. Note: in an optimized */
@@ -1502,7 +1502,7 @@ L3302:
 			    n << 1) + 1], &i__1, &ierr);
 
 		    if (l2pert) {
-			xsc = sqrt(small) / epsln;
+			xsc = sqrtf(small) / epsln;
 			i__1 = nr;
 			for (p = 2; p <= i__1; ++p) {
 			    i__2 = p - 1;
@@ -1561,7 +1561,7 @@ L3302:
 /* *               CALL SGEQRF( N, NR, V, LDV, WORK(N+1), WORK(2*N+1), */
 /* *     &              LWORK-2*N, IERR ) */
 		    if (l2pert) {
-			xsc = sqrt(small);
+			xsc = sqrtf(small);
 			i__1 = nr;
 			for (p = 2; p <= i__1; ++p) {
 			    i__2 = p - 1;
@@ -1586,7 +1586,7 @@ L3302:
 			    1], n);
 
 		    if (l2pert) {
-			xsc = sqrt(small);
+			xsc = sqrtf(small);
 			i__1 = nr;
 			for (p = 2; p <= i__1; ++p) {
 			    i__2 = p - 1;
@@ -1629,7 +1629,7 @@ L3302:
 			    nr, &c_b35, &temp1, &work[(*n << 1) + *n * nr + 
 			    nr + nr * nr + 1], &iwork[*m + (*n << 1) + 1], &
 			    ierr);
-		    condr2 = 1.f / sqrt(temp1);
+		    condr2 = 1.f / sqrtf(temp1);
 
 		    if (condr2 >= cond_ok__) {
 /*                 .. save the Householder vectors used for Q3 */
@@ -1645,7 +1645,7 @@ L3302:
 		}
 
 		if (l2pert) {
-		    xsc = sqrt(small);
+		    xsc = sqrtf(small);
 		    i__1 = nr;
 		    for (q = 2; q <= i__1; ++q) {
 			temp1 = xsc * v[q + q * v_dim1];
@@ -1839,7 +1839,7 @@ L3302:
 /*           first QRF. Also, scale the columns to make them unit in */
 /*           Euclidean norm. This applies to all cases. */
 
-		temp1 = sqrt((real) (*n)) * epsln;
+		temp1 = sqrtf((real) (*n)) * epsln;
 		i__1 = *n;
 		for (q = 1; q <= i__1; ++q) {
 		    i__2 = *n;
@@ -1884,7 +1884,7 @@ L3302:
 		sormqr_("Left", "No_Tr", m, &n1, n, &a[a_offset], lda, &work[
 			1], &u[u_offset], ldu, &work[*n + 1], &i__1, &ierr);
 /*           The columns of U are normalized. The cost is O(M*N) flops. */
-		temp1 = sqrt((real) (*m)) * epsln;
+		temp1 = sqrtf((real) (*m)) * epsln;
 		i__1 = nr;
 		for (p = 1; p <= i__1; ++p) {
 		    xsc = 1.f / snrm2_(m, &u[p * u_dim1 + 1], &c__1);
@@ -1910,7 +1910,7 @@ L3302:
 
 		slacpy_("Upper", n, n, &a[a_offset], lda, &work[*n + 1], n);
 		if (l2pert) {
-		    xsc = sqrt(small);
+		    xsc = sqrtf(small);
 		    i__1 = *n;
 		    for (p = 2; p <= i__1; ++p) {
 			temp1 = xsc * work[*n + (p - 1) * *n + p];
@@ -1951,7 +1951,7 @@ L3302:
 		    scopy_(n, &work[*n + p], n, &v[iwork[p] + v_dim1], ldv);
 /* L6972: */
 		}
-		temp1 = sqrt((real) (*n)) * epsln;
+		temp1 = sqrtf((real) (*n)) * epsln;
 		i__1 = *n;
 		for (p = 1; p <= i__1; ++p) {
 		    xsc = 1.f / snrm2_(n, &v[p * v_dim1 + 1], &c__1);
@@ -1980,7 +1980,7 @@ L3302:
 		i__1 = *lwork - *n;
 		sormqr_("Left", "No Tr", m, &n1, n, &a[a_offset], lda, &work[
 			1], &u[u_offset], ldu, &work[*n + 1], &i__1, &ierr);
-		temp1 = sqrt((real) (*m)) * epsln;
+		temp1 = sqrtf((real) (*m)) * epsln;
 		i__1 = n1;
 		for (p = 1; p <= i__1; ++p) {
 		    xsc = 1.f / snrm2_(m, &u[p * u_dim1 + 1], &c__1);
@@ -2021,7 +2021,7 @@ L3302:
 	    }
 
 	    if (l2pert) {
-		xsc = sqrt(small / epsln);
+		xsc = sqrtf(small / epsln);
 		i__1 = nr;
 		for (q = 1; q <= i__1; ++q) {
 		    temp1 = xsc * (r__1 = v[q + q * v_dim1], dabs(r__1));
@@ -2058,7 +2058,7 @@ L3302:
 /* L7969: */
 	    }
 	    if (l2pert) {
-		xsc = sqrt(small / epsln);
+		xsc = sqrtf(small / epsln);
 		i__1 = nr;
 		for (q = 2; q <= i__1; ++q) {
 		    i__2 = q - 1;
@@ -2106,7 +2106,7 @@ L3302:
 /*           first QRF. Also, scale the columns to make them unit in */
 /*           Euclidean norm. This applies to all cases. */
 
-	    temp1 = sqrt((real) (*n)) * epsln;
+	    temp1 = sqrtf((real) (*n)) * epsln;
 	    i__1 = *n;
 	    for (q = 1; q <= i__1; ++q) {
 		i__2 = *n;

@@ -22,7 +22,7 @@
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     real s, a2, b1, b2;
@@ -128,8 +128,8 @@
 
 	if (*dmin__ == *dn || *dmin__ == *dn1) {
 
-	    b1 = sqrt(z__[nn - 3]) * sqrt(z__[nn - 5]);
-	    b2 = sqrt(z__[nn - 7]) * sqrt(z__[nn - 9]);
+	    b1 = sqrtf(z__[nn - 3]) * sqrtf(z__[nn - 5]);
+	    b2 = sqrtf(z__[nn - 7]) * sqrtf(z__[nn - 9]);
 	    a2 = z__[nn - 7] + z__[nn - 5];
 
 /*           Cases 2 and 3. */
@@ -215,7 +215,7 @@ L20:
 /*              Rayleigh quotient residual bound. */
 
 		if (a2 < .563f) {
-		    s = gam * (1.f - sqrt(a2)) / (a2 + 1.f);
+		    s = gam * (1.f - sqrtf(a2)) / (a2 + 1.f);
 		}
 	    }
 	} else if (*dmin__ == *dn2) {
@@ -262,7 +262,7 @@ L40:
 	    }
 
 	    if (a2 < .563f) {
-		s = gam * (1.f - sqrt(a2)) / (a2 + 1.f);
+		s = gam * (1.f - sqrtf(a2)) / (a2 + 1.f);
 	    }
 	} else {
 
@@ -311,7 +311,7 @@ L40:
 /* L50: */
 	    }
 L60:
-	    b2 = sqrt(b2 * 1.05f);
+	    b2 = sqrtf(b2 * 1.05f);
 /* Computing 2nd power */
 	    r__1 = b2;
 	    a2 = *dmin1 / (r__1 * r__1 + 1.f);
@@ -367,11 +367,11 @@ L60:
 /* L70: */
 	    }
 L80:
-	    b2 = sqrt(b2 * 1.05f);
+	    b2 = sqrtf(b2 * 1.05f);
 /* Computing 2nd power */
 	    r__1 = b2;
 	    a2 = *dmin2 / (r__1 * r__1 + 1.f);
-	    gap2 = z__[nn - 7] + z__[nn - 9] - sqrt(z__[nn - 11]) * sqrt(z__[
+	    gap2 = z__[nn - 7] + z__[nn - 9] - sqrtf(z__[nn - 11]) * sqrtf(z__[
 		    nn - 9]) - a2;
 	    if (gap2 > 0.f && gap2 > b2 * a2) {
 /* Computing MAX */

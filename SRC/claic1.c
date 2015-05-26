@@ -27,7 +27,7 @@ static integer c__1 = 1;
     /* Builtin functions */
     double c_abs(complex *);
     void r_cnjg(complex *, complex *), c_sqrt(complex *, complex *);
-    double sqrt(doublereal);
+    float sqrtf(real);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */
@@ -176,7 +176,7 @@ static integer c__1 = 1;
 	    tmp = dmax(absest,absalp);
 	    s1 = absest / tmp;
 	    s2 = absalp / tmp;
-	    *sestpr = tmp * sqrt(s1 * s1 + s2 * s2);
+	    *sestpr = tmp * sqrtf(s1 * s1 + s2 * s2);
 	    return 0;
 	} else if (absalp <= eps * absest) {
 	    s1 = absgam;
@@ -196,7 +196,7 @@ static integer c__1 = 1;
 	    s2 = absalp;
 	    if (s1 <= s2) {
 		tmp = s1 / s2;
-		scl = sqrt(tmp * tmp + 1.f);
+		scl = sqrtf(tmp * tmp + 1.f);
 		*sestpr = s2 * scl;
 		q__2.r = alpha.r / s2, q__2.i = alpha.i / s2;
 		q__1.r = q__2.r / scl, q__1.i = q__2.i / scl;
@@ -206,7 +206,7 @@ static integer c__1 = 1;
 		c__->r = q__1.r, c__->i = q__1.i;
 	    } else {
 		tmp = s2 / s1;
-		scl = sqrt(tmp * tmp + 1.f);
+		scl = sqrtf(tmp * tmp + 1.f);
 		*sestpr = s1 * scl;
 		q__2.r = alpha.r / s1, q__2.i = alpha.i / s1;
 		q__1.r = q__2.r / scl, q__1.i = q__2.i / scl;
@@ -263,7 +263,7 @@ static integer c__1 = 1;
 	    s->r = q__1.r, s->i = q__1.i;
 	    q__1.r = cosine.r / tmp, q__1.i = cosine.i / tmp;
 	    c__->r = q__1.r, c__->i = q__1.i;
-	    *sestpr = sqrt(t + 1.f) * absest;
+	    *sestpr = sqrtf(t + 1.f) * absest;
 	    return 0;
 	}
 
@@ -329,7 +329,7 @@ static integer c__1 = 1;
 	    s2 = absalp;
 	    if (s1 <= s2) {
 		tmp = s1 / s2;
-		scl = sqrt(tmp * tmp + 1.f);
+		scl = sqrtf(tmp * tmp + 1.f);
 		*sestpr = absest * (tmp / scl);
 		r_cnjg(&q__4, gamma);
 		q__3.r = q__4.r / s2, q__3.i = q__4.i / s2;
@@ -342,7 +342,7 @@ static integer c__1 = 1;
 		c__->r = q__1.r, c__->i = q__1.i;
 	    } else {
 		tmp = s2 / s1;
-		scl = sqrt(tmp * tmp + 1.f);
+		scl = sqrtf(tmp * tmp + 1.f);
 		*sestpr = absest / scl;
 		r_cnjg(&q__4, gamma);
 		q__3.r = q__4.r / s1, q__3.i = q__4.i / s1;
@@ -379,7 +379,7 @@ static integer c__1 = 1;
 		c__->r = r__1, c__->i = 0.f;
 		r__2 = b * b;
 		q__2.r = r__2 - c__->r, q__2.i = -c__->i;
-		r__1 = b + sqrt(c_abs(&q__2));
+		r__1 = b + sqrtf(c_abs(&q__2));
 		q__1.r = c__->r / r__1, q__1.i = c__->i / r__1;
 		t = q__1.r;
 		q__2.r = alpha.r / absest, q__2.i = alpha.i / absest;
@@ -390,7 +390,7 @@ static integer c__1 = 1;
 		q__2.r = -q__3.r, q__2.i = -q__3.i;
 		q__1.r = q__2.r / t, q__1.i = q__2.i / t;
 		cosine.r = q__1.r, cosine.i = q__1.i;
-		*sestpr = sqrt(t + eps * 4.f * eps * norma) * absest;
+		*sestpr = sqrtf(t + eps * 4.f * eps * norma) * absest;
 	    } else {
 
 /*              root is closer to ONE, shift by that amount */
@@ -422,7 +422,7 @@ static integer c__1 = 1;
 		r__1 = t + 1.f;
 		q__1.r = q__2.r / r__1, q__1.i = q__2.i / r__1;
 		cosine.r = q__1.r, cosine.i = q__1.i;
-		*sestpr = sqrt(t + 1.f + eps * 4.f * eps * norma) * absest;
+		*sestpr = sqrtf(t + 1.f + eps * 4.f * eps * norma) * absest;
 	    }
 	    r_cnjg(&q__4, &sine);
 	    q__3.r = sine.r * q__4.r - sine.i * q__4.i, q__3.i = sine.r * 

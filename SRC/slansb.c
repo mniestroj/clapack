@@ -25,7 +25,7 @@ doublereal slansb_(char *norm, char *uplo, integer *n, integer *k, real *ab,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, l;
@@ -252,7 +252,7 @@ doublereal slansb_(char *norm, char *uplo, integer *n, integer *k, real *ab,
 	    l = 1;
 	}
 	slassq_(n, &ab[l + ab_dim1], ldab, &scale, &sum);
-	value = scale * sqrt(sum);
+	value = scale * sqrtf(sum);
     }
 
     ret_val = value;

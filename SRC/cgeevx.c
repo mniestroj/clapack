@@ -32,7 +32,7 @@ static integer c_n1 = -1;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
@@ -426,7 +426,7 @@ static integer c_n1 = -1;
     smlnum = slamch_("S");
     bignum = 1.f / smlnum;
     slabad_(&smlnum, &bignum);
-    smlnum = sqrt(smlnum) / eps;
+    smlnum = sqrtf(smlnum) / eps;
     bignum = 1.f / smlnum;
 
 /*     Scale A if max element outside range [SMLNUM,BIGNUM] */
@@ -600,7 +600,7 @@ static integer c_n1 = -1;
 	    }
 	    k = isamax_(n, &rwork[1], &c__1);
 	    r_cnjg(&q__2, &vl[k + i__ * vl_dim1]);
-	    r__1 = sqrt(rwork[k]);
+	    r__1 = sqrtf(rwork[k]);
 	    q__1.r = q__2.r / r__1, q__1.i = q__2.i / r__1;
 	    tmp.r = q__1.r, tmp.i = q__1.i;
 	    cscal_(n, &tmp, &vl[i__ * vl_dim1 + 1], &c__1);
@@ -638,7 +638,7 @@ static integer c_n1 = -1;
 	    }
 	    k = isamax_(n, &rwork[1], &c__1);
 	    r_cnjg(&q__2, &vr[k + i__ * vr_dim1]);
-	    r__1 = sqrt(rwork[k]);
+	    r__1 = sqrtf(rwork[k]);
 	    q__1.r = q__2.r / r__1, q__1.i = q__2.i / r__1;
 	    tmp.r = q__1.r, tmp.i = q__1.i;
 	    cscal_(n, &tmp, &vr[i__ * vr_dim1 + 1], &c__1);

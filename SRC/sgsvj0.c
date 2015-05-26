@@ -30,7 +30,7 @@ static real c_b42 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
     double r_sign(real *, real *);
 
     /* Local variables */
@@ -265,13 +265,13 @@ static real c_b42 = 1.f;
 	mvl = *mv;
     }
     rsvec = rsvec || applv;
-    rooteps = sqrt(*eps);
-    rootsfmin = sqrt(*sfmin);
+    rooteps = sqrtf(*eps);
+    rootsfmin = sqrtf(*sfmin);
     small = *sfmin / *eps;
     big = 1.f / *sfmin;
     rootbig = 1.f / rootsfmin;
     bigtheta = 1.f / rooteps;
-    roottol = sqrt(*tol);
+    roottol = sqrtf(*tol);
 
 
 /*     -#- Row-cyclic Jacobi SVD algorithm with column pivoting -#- */
@@ -374,7 +374,7 @@ static real c_b42 = 1.f;
 			    aapp = 0.f;
 			    slassq_(m, &a[p * a_dim1 + 1], &c__1, &temp1, &
 				    aapp);
-			    sva[p] = temp1 * sqrt(aapp) * d__[p];
+			    sva[p] = temp1 * sqrtf(aapp) * d__[p];
 			}
 			aapp = sva[p];
 		    } else {
@@ -469,9 +469,9 @@ static real c_b42 = 1.f;
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
-					    aapp *= sqrt(1.f - t * aqoap * 
+					    aapp *= sqrtf(1.f - t * aqoap * 
 						    aapq);
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(t);
@@ -482,9 +482,9 @@ static real c_b42 = 1.f;
 /*                 .. choose correct signum for THETA and rotate */
 
 					    thsign = -r_sign(&c_b42, &aapq);
-					    t = 1.f / (theta + thsign * sqrt(
+					    t = 1.f / (theta + thsign * sqrtf(
 						    theta * theta + 1.f));
-					    cs = sqrt(1.f / (t * t + 1.f));
+					    cs = sqrtf(1.f / (t * t + 1.f));
 					    sn = t * cs;
 
 /* Computing MAX */
@@ -493,12 +493,12 @@ static real c_b42 = 1.f;
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - t * 
 						    aqoap * aapq;
-					    aapp *= sqrt((dmax(r__1,r__2)));
+					    aapp *= sqrtf((dmax(r__1,r__2)));
 
 					    apoaq = d__[p] / d__[q];
 					    aqoap = d__[q] / d__[p];
@@ -612,7 +612,7 @@ static real c_b42 = 1.f;
 						+ 1], lda, &ierr);
 /* Computing MAX */
 					r__1 = 0.f, r__2 = 1.f - aapq * aapq;
-					sva[q] = aaqq * sqrt((dmax(r__1,r__2))
+					sva[q] = aaqq * sqrtf((dmax(r__1,r__2))
 						);
 					mxsinj = dmax(mxsinj,*sfmin);
 				    }
@@ -632,7 +632,7 @@ static real c_b42 = 1.f;
 					    aaqq = 0.f;
 					    slassq_(m, &a[q * a_dim1 + 1], &
 						    c__1, &t, &aaqq);
-					    sva[q] = t * sqrt(aaqq) * d__[q];
+					    sva[q] = t * sqrtf(aaqq) * d__[q];
 					}
 				    }
 				    if (aapp / aapp0 <= rooteps) {
@@ -645,7 +645,7 @@ static real c_b42 = 1.f;
 					    aapp = 0.f;
 					    slassq_(m, &a[p * a_dim1 + 1], &
 						    c__1, &t, &aapp);
-					    aapp = t * sqrt(aapp) * d__[p];
+					    aapp = t * sqrtf(aapp) * d__[p];
 					}
 					sva[p] = aapp;
 				    }
@@ -815,12 +815,12 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - t * 
 						    aqoap * aapq;
-					    aapp *= sqrt((dmax(r__1,r__2)));
+					    aapp *= sqrtf((dmax(r__1,r__2)));
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(t);
 					    mxsinj = dmax(r__1,r__2);
@@ -832,9 +832,9 @@ L2103:
 					    if (aaqq > aapp0) {
 			  thsign = -thsign;
 					    }
-					    t = 1.f / (theta + thsign * sqrt(
+					    t = 1.f / (theta + thsign * sqrtf(
 						    theta * theta + 1.f));
-					    cs = sqrt(1.f / (t * t + 1.f));
+					    cs = sqrtf(1.f / (t * t + 1.f));
 					    sn = t * cs;
 /* Computing MAX */
 					    r__1 = mxsinj, r__2 = dabs(sn);
@@ -842,9 +842,9 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = t * apoaq * 
 						    aapq + 1.f;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
-					    aapp *= sqrt(1.f - t * aqoap * 
+					    aapp *= sqrtf(1.f - t * aqoap * 
 						    aapq);
 
 					    apoaq = d__[p] / d__[q];
@@ -962,7 +962,7 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - aapq * 
 						    aapq;
-					    sva[q] = aaqq * sqrt((dmax(r__1,
+					    sva[q] = aaqq * sqrtf((dmax(r__1,
 						    r__2)));
 					    mxsinj = dmax(mxsinj,*sfmin);
 					} else {
@@ -984,7 +984,7 @@ L2103:
 /* Computing MAX */
 					    r__1 = 0.f, r__2 = 1.f - aapq * 
 						    aapq;
-					    sva[p] = aapp * sqrt((dmax(r__1,
+					    sva[p] = aapp * sqrtf((dmax(r__1,
 						    r__2)));
 					    mxsinj = dmax(mxsinj,*sfmin);
 					}
@@ -1005,7 +1005,7 @@ L2103:
 					    aaqq = 0.f;
 					    slassq_(m, &a[q * a_dim1 + 1], &
 						    c__1, &t, &aaqq);
-					    sva[q] = t * sqrt(aaqq) * d__[q];
+					    sva[q] = t * sqrtf(aaqq) * d__[q];
 					}
 				    }
 /* Computing 2nd power */
@@ -1020,7 +1020,7 @@ L2103:
 					    aapp = 0.f;
 					    slassq_(m, &a[p * a_dim1 + 1], &
 						    c__1, &t, &aapp);
-					    aapp = t * sqrt(aapp) * d__[p];
+					    aapp = t * sqrtf(aapp) * d__[p];
 					}
 					sva[p] = aapp;
 				    }
@@ -1091,7 +1091,7 @@ L2011:
 	    t = 0.f;
 	    aapp = 0.f;
 	    slassq_(m, &a[*n * a_dim1 + 1], &c__1, &t, &aapp);
-	    sva[*n] = t * sqrt(aapp) * d__[*n];
+	    sva[*n] = t * sqrtf(aapp) * d__[*n];
 	}
 
 /*     Additional steering devices */

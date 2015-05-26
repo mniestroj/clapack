@@ -32,7 +32,7 @@ static integer c__1 = 1;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, j, jj;
@@ -350,9 +350,9 @@ static integer c__1 = 1;
     eps = slamch_("Precision");
     smlnum = safmin / eps;
     bignum = 1.f / smlnum;
-    rmin = sqrt(smlnum);
+    rmin = sqrtf(smlnum);
 /* Computing MIN */
-    r__1 = sqrt(bignum), r__2 = 1.f / sqrt(sqrt(safmin));
+    r__1 = sqrtf(bignum), r__2 = 1.f / sqrtf(sqrtf(safmin));
     rmax = dmin(r__1,r__2);
 
 /*     Scale matrix to allowable range, if necessary. */

@@ -34,7 +34,7 @@ static integer c__3 = 3;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal);
+    float sqrtf(real);
 
     /* Local variables */
     integer i__, k;
@@ -614,11 +614,11 @@ static integer c__3 = 3;
 		alprqt = 1.f;
 		c1 = (alphar * alphar + alphai * alphai + beta * beta) * 2.f;
 		c2 = beta * 4.f * beta * alphai * alphai;
-		root1 = c1 + sqrt(c1 * c1 - c2 * 4.f);
+		root1 = c1 + sqrtf(c1 * c1 - c2 * 4.f);
 		root2 = c2 / root1;
 		root1 /= 2.f;
 /* Computing MIN */
-		r__1 = sqrt(root1), r__2 = sqrt(root2);
+		r__1 = sqrtf(root1), r__2 = sqrtf(root2);
 		cond = dmin(r__1,r__2);
 	    }
 
