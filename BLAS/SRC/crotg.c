@@ -20,7 +20,8 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double c_abs(complex *), sqrt(doublereal);
+    double c_abs(complex *);
+    float sqrtf(real);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */
@@ -55,7 +56,7 @@ L10:
     q__2.r = cb->r / scale, q__2.i = cb->i / scale;
 /* Computing 2nd power */
     r__2 = c_abs(&q__2);
-    norm = scale * sqrt(r__1 * r__1 + r__2 * r__2);
+    norm = scale * sqrtf(r__1 * r__1 + r__2 * r__2);
     r__1 = c_abs(ca);
     q__1.r = ca->r / r__1, q__1.i = ca->i / r__1;
     alpha.r = q__1.r, alpha.i = q__1.i;

@@ -20,7 +20,8 @@ doublereal scnrm2_(integer *n, complex *x, integer *incx)
     real ret_val, r__1;
 
     /* Builtin functions */
-    double r_imag(complex *), sqrt(doublereal);
+    double r_imag(complex *);
+    float sqrtf(real);
 
     /* Local variables */
     integer ix;
@@ -37,7 +38,7 @@ doublereal scnrm2_(integer *n, complex *x, integer *incx)
 /*  SCNRM2 returns the euclidean norm of a vector via the function */
 /*  name, so that */
 
-/*     SCNRM2 := sqrt( conjg( x' )*x ) */
+/*     SCNRM2 := sqrtf( conjg( x' )*x ) */
 
 
 
@@ -98,7 +99,7 @@ doublereal scnrm2_(integer *n, complex *x, integer *incx)
 	    }
 /* L10: */
 	}
-	norm = scale * sqrt(ssq);
+	norm = scale * sqrtf(ssq);
     }
 
     ret_val = norm;

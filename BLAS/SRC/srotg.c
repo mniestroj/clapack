@@ -23,7 +23,8 @@ static real c_b4 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    float sqrtf(real);
+    double r_sign(real *, real *);
 
     /* Local variables */
     real r__, z__, roe, scale;
@@ -60,7 +61,7 @@ L10:
     r__1 = *sa / scale;
 /* Computing 2nd power */
     r__2 = *sb / scale;
-    r__ = scale * sqrt(r__1 * r__1 + r__2 * r__2);
+    r__ = scale * sqrtf(r__1 * r__1 + r__2 * r__2);
     r__ = r_sign(&c_b4, &roe) * r__;
     *c__ = *sa / r__;
     *s = *sb / r__;
