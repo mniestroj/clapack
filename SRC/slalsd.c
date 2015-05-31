@@ -30,7 +30,7 @@ static real c_b11 = 1.f;
 
     /* Builtin functions */
     float logf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer c__, i__, j, k;

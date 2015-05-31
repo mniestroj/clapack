@@ -34,7 +34,7 @@ static real c_b72 = -1.f;
     /* Builtin functions */
     double pow_dd(doublereal *, doublereal *);
     float sqrtf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     real f, g, h__;

@@ -33,7 +33,8 @@ static real c_b64 = 1.f;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double sqrt(doublereal), r_sign(real *, real *);
+    double sqrt(doublereal);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;

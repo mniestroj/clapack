@@ -23,7 +23,7 @@
 
     /* Builtin functions */
     float r_imag(complex *);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;

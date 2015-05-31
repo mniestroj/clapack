@@ -28,7 +28,7 @@ static integer c__0 = 0;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer j, info;

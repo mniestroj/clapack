@@ -119,7 +119,7 @@ static logical c_false = FALSE_;
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */

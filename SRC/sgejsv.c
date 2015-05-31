@@ -34,7 +34,7 @@ static integer c_n1 = -1;
     /* Builtin functions */
     float sqrtf(real);
     float logf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     integer i_nint(real *);
 
     /* Local variables */

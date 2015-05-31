@@ -33,7 +33,7 @@ static real c_b28 = 1.f;
 
     /* Builtin functions */
     float sqrtf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer i__, k, n1, n2, kk, ks, mn2, ijb;

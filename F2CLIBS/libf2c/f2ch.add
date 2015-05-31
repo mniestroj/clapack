@@ -118,7 +118,7 @@ extern double r_lg10(float *);
 extern double r_log(float *);
 extern double r_mod(float *, float *);
 extern double r_nint(float *);
-extern double r_sign(float *, float *);
+extern float r_sign(float *, float *);
 extern double r_sin(float *);
 extern double r_sinh(float *);
 extern double r_sqrt(float *);

@@ -27,7 +27,7 @@ static integer c__1 = 1;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j;

@@ -27,7 +27,7 @@ static complex c_b5 = {1.f,0.f};
 
     /* Builtin functions */
     float r_imag(complex *);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer j, knt;

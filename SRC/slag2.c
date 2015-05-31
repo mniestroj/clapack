@@ -23,7 +23,7 @@
 
     /* Builtin functions */
     float sqrtf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     real r__, c1, c2, c3, c4, c5, s1, s2, a11, a12, a21, a22, b11, b12, b22, 

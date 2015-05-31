@@ -31,8 +31,8 @@ static real c_b48 = 1.f;
 
     /* Builtin functions */
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
-    double pow_dd(doublereal *, doublereal *), sqrt(doublereal), r_sign(real *
-	    , real *);
+    double pow_dd(doublereal *, doublereal *), sqrt(doublereal);
+    float r_sign(real *, real *);
 
     /* Local variables */
     real c__;

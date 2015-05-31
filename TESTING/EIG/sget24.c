@@ -53,7 +53,8 @@ static real c_b44 = -1.f;
 
     /* Builtin functions */
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_sign(real *, real *), sqrt(doublereal);
+    float r_sign(real *, real *);
+    double sqrt(doublereal);
 
     /* Local variables */
     integer i__, j;

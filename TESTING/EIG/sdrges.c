@@ -117,7 +117,7 @@ static integer c__0 = 0;
     real r__1, r__2, r__3, r__4, r__5, r__6, r__7, r__8, r__9, r__10;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */

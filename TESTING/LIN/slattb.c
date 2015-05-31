@@ -32,8 +32,9 @@ static integer c_n1 = -1;
 
     /* Builtin functions */
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
-    double sqrt(doublereal), r_sign(real *, real *), pow_dd(doublereal *, 
-	    doublereal *);
+    double sqrt(doublereal);
+    float r_sign(real *, real *);
+    double pow_dd(doublereal *, doublereal *);
 
     /* Local variables */
     integer i__, j, kl, ku, iy;

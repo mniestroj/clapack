@@ -28,7 +28,7 @@ static integer c__1 = 1;
     real r__1;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer j, kbeg, jcol;

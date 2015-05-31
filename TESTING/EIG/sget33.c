@@ -24,7 +24,7 @@ static real c_b19 = 1.f;
     real r__1, r__2, r__3;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     real q[4]	/* was [2][2] */, t[4]	/* was [2][2] */;

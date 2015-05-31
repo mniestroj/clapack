@@ -24,7 +24,7 @@ static real c_b4 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     float sqrtf(real);
 
     /* Local variables */

@@ -31,7 +31,7 @@ static real c_b72 = .5f;
     double r_lg10(real *);
     float r_imag(complex *);
     double c_abs(complex *);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     double pow_ri(real *, integer *);
 
     /* Local variables */

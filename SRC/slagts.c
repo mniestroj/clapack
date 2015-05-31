@@ -21,7 +21,7 @@
     real r__1, r__2, r__3, r__4, r__5;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer k;

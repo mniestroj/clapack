@@ -23,7 +23,7 @@ logical slctes_(real *zr, real *zi, real *d__)
     logical ret_val;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
 
 /*  -- LAPACK test routine (version 3.1) -- */

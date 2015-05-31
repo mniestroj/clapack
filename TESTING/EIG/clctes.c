@@ -25,7 +25,7 @@ logical clctes_(complex *z__, complex *d__)
 
     /* Builtin functions */
     float r_imag(complex *);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     real zmax;

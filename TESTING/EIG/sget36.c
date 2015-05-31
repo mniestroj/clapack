@@ -32,7 +32,7 @@ static integer c__200 = 200;
     /* Builtin functions */
     integer s_rsle(cilist *), do_lio(integer *, integer *, char *, ftnlen), 
 	    e_rsle(void);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer i__, j, n;

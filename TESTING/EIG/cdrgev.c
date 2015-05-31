@@ -112,7 +112,8 @@ static integer c__0 = 0;
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double r_sign(real *, real *), c_abs(complex *);
+    float r_sign(real *, real *);
+    double c_abs(complex *);
     void r_cnjg(complex *, complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 

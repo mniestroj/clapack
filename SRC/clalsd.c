@@ -34,7 +34,7 @@ static real c_b35 = 0.f;
     /* Builtin functions */
     float r_imag(complex *);
     float logf(real);
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
 
     /* Local variables */
     integer c__, i__, j, k;

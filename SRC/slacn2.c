@@ -26,7 +26,7 @@ static real c_b11 = 1.f;
     real r__1;
 
     /* Builtin functions */
-    double r_sign(real *, real *);
+    float r_sign(real *, real *);
     integer i_nint(real *);
 
     /* Local variables */
