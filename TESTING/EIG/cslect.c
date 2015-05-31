@@ -31,7 +31,7 @@ logical cslect_(complex *z__)
     logical ret_val;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__;

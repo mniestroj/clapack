@@ -74,7 +74,8 @@ static integer c__4 = 4;
     complex q__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), c_abs(complex *);
+    double sqrt(doublereal);
+    float c_abs(complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
     void r_cnjg(complex *, complex *);
 

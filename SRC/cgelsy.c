@@ -33,7 +33,7 @@ static integer c__2 = 2;
     complex q__1;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, j;

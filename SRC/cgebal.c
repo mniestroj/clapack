@@ -26,7 +26,7 @@ static integer c__1 = 1;
 
     /* Builtin functions */
     float r_imag(complex *);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     real c__, f, g;

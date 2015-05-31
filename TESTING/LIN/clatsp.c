@@ -26,7 +26,8 @@ static integer c__2 = 2;
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double sqrt(doublereal), c_abs(complex *);
+    double sqrt(doublereal);
+    float c_abs(complex *);
 
     /* Local variables */
     complex a, b, c__;

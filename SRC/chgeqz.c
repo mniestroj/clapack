@@ -33,7 +33,7 @@ static integer c__2 = 2;
     complex q__1, q__2, q__3, q__4, q__5, q__6;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
     float r_imag(complex *);
     void c_div(complex *, complex *, complex *), pow_ci(complex *, complex *, 

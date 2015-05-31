@@ -91,7 +91,7 @@ static integer c__2 = 2;
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
     double sqrt(doublereal);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double c_abs(complex *);
+    float c_abs(complex *);
     float r_imag(complex *);
 
     /* Local variables */

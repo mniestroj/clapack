@@ -65,7 +65,7 @@ static integer c__6 = 6;
     /* Builtin functions */
     double sqrt(doublereal);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, j, k, n, n1, jj, in, ihi, ilo;

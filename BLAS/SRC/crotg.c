@@ -20,7 +20,7 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     float sqrtf(real);
     void r_cnjg(complex *, complex *);
 

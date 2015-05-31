@@ -122,7 +122,7 @@ static logical c_false = FALSE_;
 
     /* Builtin functions */
     float r_sign(real *, real *);
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
     float r_imag(complex *);

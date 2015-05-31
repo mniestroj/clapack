@@ -27,7 +27,7 @@ static complex c_b10 = {-1.f,-0.f};
     complex q__1;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

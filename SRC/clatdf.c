@@ -30,7 +30,7 @@ static real c_b24 = 1.f;
 
     /* Builtin functions */
     void c_div(complex *, complex *, complex *);
-    double c_abs(complex *);
+    float c_abs(complex *);
     void c_sqrt(complex *, complex *);
 
     /* Local variables */

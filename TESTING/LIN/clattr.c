@@ -37,7 +37,7 @@ static integer c_n1 = -1;
     void c_div(complex *, complex *, complex *);
     double pow_dd(doublereal *, doublereal *), sqrt(doublereal);
     void r_cnjg(complex *, complex *);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     real c__;

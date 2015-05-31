@@ -33,7 +33,8 @@ static integer c__24 = 24;
 
     /* Builtin functions */
     void r_cnjg(complex *, complex *);
-    double c_abs(complex *), sqrt(doublereal);
+    float c_abs(complex *);
+    double sqrt(doublereal);
 
     /* Local variables */
     integer i__, j;

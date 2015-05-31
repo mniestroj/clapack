@@ -25,7 +25,7 @@ doublereal clange_(char *norm, integer *m, integer *n, complex *a, integer *
     real ret_val, r__1, r__2;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     float sqrtf(real);
 
     /* Local variables */

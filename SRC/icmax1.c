@@ -19,7 +19,7 @@ integer icmax1_(integer *n, complex *cx, integer *incx)
     integer ret_val, i__1;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, ix;

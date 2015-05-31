@@ -30,7 +30,7 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

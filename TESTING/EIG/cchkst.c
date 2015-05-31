@@ -90,7 +90,7 @@ static integer c__11 = 11;
     /* Builtin functions */
     double log(doublereal), sqrt(doublereal);
     integer pow_ii(integer *, integer *);
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 

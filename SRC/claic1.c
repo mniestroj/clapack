@@ -25,7 +25,7 @@ static integer c__1 = 1;
     complex q__1, q__2, q__3, q__4, q__5, q__6;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *), c_sqrt(complex *, complex *);
     float sqrtf(real);
     void c_div(complex *, complex *, complex *);

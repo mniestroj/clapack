@@ -46,7 +46,7 @@ static integer c__20 = 20;
     /* Builtin functions */
     integer s_rsle(cilist *), do_lio(integer *, integer *, char *, ftnlen), 
 	    e_rsle(void);
-    double c_abs(complex *);
+    float c_abs(complex *);
     integer s_wsfe(cilist *), e_wsfe(void), do_fio(integer *, char *, ftnlen);
 
     /* Local variables */

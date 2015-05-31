@@ -80,7 +80,7 @@ static integer c__7 = 7;
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
     /* Subroutine */ int s_cat(char *, char **, integer *, integer *, ftnlen);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, j, k, n, i1, i2, k1, nb, in, kl, ku, nt, lda, ldb, ikl, nkl, 

@@ -31,7 +31,7 @@ static integer c__1 = 1;
 
     /* Builtin functions */
     float sqrtf(real);
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

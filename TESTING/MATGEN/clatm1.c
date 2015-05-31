@@ -28,8 +28,10 @@ static integer c__3 = 3;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double pow_dd(doublereal *, doublereal *), pow_ri(real *, integer *), log(
-	    doublereal), exp(doublereal), c_abs(complex *);
+    double pow_dd(doublereal *, doublereal *);
+    double pow_ri(real *, integer *);
+    double log(doublereal), exp(doublereal);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__;

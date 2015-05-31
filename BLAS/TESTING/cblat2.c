@@ -4796,7 +4796,8 @@ L180:
     /* Builtin functions */
     float r_imag(complex *);
     void r_cnjg(complex *, complex *);
-    double c_abs(complex *), sqrt(doublereal);
+    float c_abs(complex *);
+    double sqrt(doublereal);
     integer s_wsfe(cilist *), e_wsfe(void), do_fio(integer *, char *, ftnlen);
 
     /* Local variables */

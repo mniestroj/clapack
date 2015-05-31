@@ -33,7 +33,7 @@ static complex c_b43 = {1.f,0.f};
     double sqrt(doublereal);
     integer s_rsle(cilist *), do_lio(integer *, integer *, char *, ftnlen), 
 	    e_rsle(void);
-    double c_abs(complex *);
+    float c_abs(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

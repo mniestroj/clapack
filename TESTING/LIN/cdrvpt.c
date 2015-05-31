@@ -59,7 +59,7 @@ static complex c_b62 = {0.f,0.f};
 
     /* Builtin functions */
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
-    double c_abs(complex *);
+    float c_abs(complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */

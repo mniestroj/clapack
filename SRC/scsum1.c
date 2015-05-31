@@ -20,7 +20,7 @@ doublereal scsum1_(integer *n, complex *cx, integer *incx)
     real ret_val;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, nincx;

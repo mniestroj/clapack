@@ -36,7 +36,8 @@ static integer c_n1 = -1;
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
     double sqrt(doublereal);
     void c_div(complex *, complex *, complex *);
-    double pow_dd(doublereal *, doublereal *), c_abs(complex *);
+    double pow_dd(doublereal *, doublereal *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, j, kl, ku, iy;

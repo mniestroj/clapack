@@ -25,7 +25,7 @@ doublereal clantb_(char *norm, char *uplo, char *diag, integer *n, integer *k,
     real ret_val, r__1, r__2;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     float sqrtf(real);
 
     /* Local variables */

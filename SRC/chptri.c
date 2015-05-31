@@ -27,7 +27,7 @@ static integer c__1 = 1;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

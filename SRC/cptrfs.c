@@ -33,7 +33,7 @@ static complex c_b16 = {1.f,0.f};
     /* Builtin functions */
     float r_imag(complex *);
     void r_cnjg(complex *, complex *);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, j;

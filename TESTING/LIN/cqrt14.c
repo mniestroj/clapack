@@ -30,7 +30,7 @@ doublereal cqrt14_(char *trans, integer *m, integer *n, integer *nrhs,
     complex q__1;
 
     /* Builtin functions */
-    double c_abs(complex *);
+    float c_abs(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

@@ -81,7 +81,7 @@ static real c_b197 = 0.f;
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
     /* Subroutine */ int s_cat(char *, char **, integer *, integer *, ftnlen);
-    double c_abs(complex *);
+    float c_abs(complex *);
 
     /* Local variables */
     extern /* Subroutine */ int cebchvxx_(real *, char *);

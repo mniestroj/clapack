@@ -4,7 +4,7 @@
 #ifdef __cplusplus
 extern "C" {
 extern int abort_(void);
-extern double c_abs(complex *);
+extern float c_abs(complex *);
 extern void c_cos(complex *, complex *);
 extern void c_div(complex *, complex *, complex *);
 extern void c_exp(complex *, complex *);

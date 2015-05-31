@@ -29,8 +29,9 @@ static integer c__3 = 3;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double pow_dd(doublereal *, doublereal *), log(doublereal), exp(
-	    doublereal), c_abs(complex *);
+    double pow_dd(doublereal *, doublereal *), log(doublereal);
+    double exp(doublereal);
+    float c_abs(complex *);
 
     /* Local variables */
     integer i__, k, jc, jd, jr, kbeg, isdb, kend, isde, klen;
