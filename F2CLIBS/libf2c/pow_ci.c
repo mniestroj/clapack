@@ -7,20 +7,54 @@ extern "C" {
 VOID pow_ci(p, a, b) 	/* p = a**b  */
  complex *p, *a; integer *b;
 #else
-extern void pow_zi(doublecomplex*, doublecomplex*, integer*);
+extern void c_div(complex*, complex*, complex*);
 void pow_ci(complex *p, complex *a, integer *b) 	/* p = a**b  */
 #endif
 {
-doublecomplex p1, a1;
+	integer n;
+	unsigned long u;
+	float t;
+	complex q, x;
+	static complex one = {1.0f, 0.0f};
 
-a1.r = a->r;
-a1.i = a->i;
+	n = *b;
+	q.r = 1;
+	q.i = 0;
 
-pow_zi(&p1, &a1, b);
+	if(n == 0)
+		goto done;
+	if(n < 0)
+		{
+		n = -n;
+		c_div(&x, &one, a);
+		}
+	else
+		{
+		x.r = a->r;
+		x.i = a->i;
+		}
 
-p->r = p1.r;
-p->i = p1.i;
-}
+	for(u = n; ; )
+		{
+		if(u & 01)
+			{
+			t = q.r * x.r - q.i * x.i;
+			q.i = q.r * x.i + q.i * x.r;
+			q.r = t;
+			}
+		if(u >>= 1)
+			{
+			t = x.r * x.r - x.i * x.i;
+			x.i = 2 * x.r * x.i;
+			x.r = t;
+			}
+		else
+			break;
+		}
+ done:
+	p->i = q.i;
+	p->r = q.r;
+	}
 #ifdef __cplusplus
 }
 #endif
