@@ -20,7 +20,7 @@ static integer c__1 = 1;
 static integer c_n1 = -1;
 static integer c__3 = 3;
 static integer c__2 = 2;
-static integer c__65 = 65;
+static integer c__65 = T1_S;
 
 /* Subroutine */ int zgehrd_(integer *n, integer *ilo, integer *ihi, 
 	doublecomplex *a, integer *lda, doublecomplex *tau, doublecomplex *
@@ -32,7 +32,7 @@ static integer c__65 = 65;
 
     /* Local variables */
     integer i__, j;
-    doublecomplex t[4160]	/* was [65][64] */;
+    doublecomplex t[T1_S*(T1_S-1)]	/* was [65][64] */;
     integer ib;
     doublecomplex ei;
     integer nb, nh, nx, iws, nbmin, iinfo;
@@ -186,7 +186,7 @@ static integer c__65 = 65;
     /* Function Body */
     *info = 0;
 /* Computing MIN */
-    i__1 = 64, i__2 = ilaenv_(&c__1, "ZGEHRD", " ", n, ilo, ihi, &c_n1);
+    i__1 = (T1_S-1), i__2 = ilaenv_(&c__1, "ZGEHRD", " ", n, ilo, ihi, &c_n1);
     nb = min(i__1,i__2);
     lwkopt = *n * nb;
     work[1].r = (doublereal) lwkopt, work[1].i = 0.;
@@ -236,7 +236,7 @@ static integer c__65 = 65;
 /*     Determine the block size */
 
 /* Computing MIN */
-    i__1 = 64, i__2 = ilaenv_(&c__1, "ZGEHRD", " ", n, ilo, ihi, &c_n1);
+    i__1 = (T1_S-1), i__2 = ilaenv_(&c__1, "ZGEHRD", " ", n, ilo, ihi, &c_n1);
     nb = min(i__1,i__2);
     nbmin = 2;
     iws = 1;

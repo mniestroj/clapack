@@ -16,7 +16,7 @@
 /* Table of constant values */
 
 static integer c__1 = 1;
-static integer c__65 = 65;
+static integer c__65 = T1_S;
 static real c_b18 = -1.f;
 static real c_b31 = 1.f;
 
@@ -36,7 +36,7 @@ static real c_b31 = 1.f;
     extern /* Subroutine */ int sscal_(integer *, real *, real *, integer *), 
 	    sgemm_(char *, char *, integer *, integer *, integer *, real *, 
 	    real *, integer *, real *, integer *, real *, real *, integer *);
-    real work13[4160]	/* was [65][64] */, work31[4160]	/* was [65][
+    real work13[T1_S*(T1_S-1)]	/* was [65][64] */, work31[T1_S*(T1_S-1)]	/* was [65][
 	    64] */;
     extern /* Subroutine */ int scopy_(integer *, real *, integer *, real *, 
 	    integer *), sswap_(integer *, real *, integer *, real *, integer *
@@ -191,7 +191,7 @@ static real c_b31 = 1.f;
 /*     The block size must not exceed the limit set by the size of the */
 /*     local arrays WORK13 and WORK31. */
 
-    nb = min(nb,64);
+    nb = min(nb,(T1_S-1));
 
     if (nb <= 1 || nb > *kl) {
 
@@ -208,7 +208,7 @@ static real c_b31 = 1.f;
 	for (j = 1; j <= i__1; ++j) {
 	    i__2 = j - 1;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
-		work13[i__ + j * 65 - 66] = 0.f;
+		work13[i__ + j * T1_S - (T1_S+1)] = 0.f;
 /* L10: */
 	    }
 /* L20: */
@@ -220,7 +220,7 @@ static real c_b31 = 1.f;
 	for (j = 1; j <= i__1; ++j) {
 	    i__2 = nb;
 	    for (i__ = j + 1; i__ <= i__2; ++i__) {
-		work31[i__ + j * 65 - 66] = 0.f;
+		work31[i__ + j * T1_S - (T1_S+1)] = 0.f;
 /* L30: */
 	    }
 /* L40: */
@@ -369,7 +369,7 @@ static real c_b31 = 1.f;
 		nw = min(i__4,i3);
 		if (nw > 0) {
 		    scopy_(&nw, &ab[kv + *kl + 1 - jj + j + jj * ab_dim1], &
-			    c__1, &work31[(jj - j + 1) * 65 - 65], &c__1);
+			    c__1, &work31[(jj - j + 1) * T1_S - T1_S], &c__1);
 		}
 /* L80: */
 	    }
@@ -468,7 +468,7 @@ static real c_b31 = 1.f;
 		    for (jj = 1; jj <= i__3; ++jj) {
 			i__4 = jb;
 			for (ii = jj; ii <= i__4; ++ii) {
-			    work13[ii + jj * 65 - 66] = ab[ii - jj + 1 + (jj 
+			    work13[ii + jj * T1_S - (T1_S+1)] = ab[ii - jj + 1 + (jj 
 				    + j + kv - 1) * ab_dim1];
 /* L120: */
 			}
@@ -512,7 +512,7 @@ static real c_b31 = 1.f;
 			i__4 = jb;
 			for (ii = jj; ii <= i__4; ++ii) {
 			    ab[ii - jj + 1 + (jj + j + kv - 1) * ab_dim1] = 
-				    work13[ii + jj * 65 - 66];
+				    work13[ii + jj * T1_S - (T1_S+1)];
 /* L140: */
 			}
 /* L150: */
@@ -567,7 +567,7 @@ static real c_b31 = 1.f;
 		i__4 = i3, i__5 = jj - j + 1;
 		nw = min(i__4,i__5);
 		if (nw > 0) {
-		    scopy_(&nw, &work31[(jj - j + 1) * 65 - 65], &c__1, &ab[
+		    scopy_(&nw, &work31[(jj - j + 1) * T1_S - T1_S], &c__1, &ab[
 			    kv + *kl + 1 - jj + j + jj * ab_dim1], &c__1);
 		}
 /* L170: */

@@ -18,7 +18,7 @@
 static integer c__1 = 1;
 static integer c_n1 = -1;
 static integer c__2 = 2;
-static integer c__65 = 65;
+static integer c__65 = T1_S;
 
 /* Subroutine */ int sormlq_(char *side, char *trans, integer *m, integer *n, 
 	integer *k, real *a, integer *lda, real *tau, real *c__, integer *ldc, 
@@ -35,7 +35,7 @@ static integer c__65 = 65;
 
     /* Local variables */
     integer i__;
-    real t[4160]	/* was [65][64] */;
+    real t[T1_S*(T1_S-1)]	/* was [65][64] */;
     integer i1, i2, i3, ib, ic, jc, nb, mi, ni, nq, nw, iws;
     logical left;
     extern logical lsame_(char *, char *);
@@ -218,7 +218,7 @@ static integer c__65 = 65;
 	i__3[0] = 1, a__1[0] = side;
 	i__3[1] = 1, a__1[1] = trans;
 	s_cat(ch__1, a__1, i__3, &c__2, (ftnlen)2);
-	i__1 = 64, i__2 = ilaenv_(&c__1, "SORMLQ", ch__1, m, n, k, &c_n1);
+	i__1 = (T1_S-1), i__2 = ilaenv_(&c__1, "SORMLQ", ch__1, m, n, k, &c_n1);
 	nb = min(i__1,i__2);
 	lwkopt = max(1,nw) * nb;
 	work[1] = (real) lwkopt;

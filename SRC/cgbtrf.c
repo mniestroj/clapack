@@ -17,7 +17,7 @@
 
 static complex c_b1 = {1.f,0.f};
 static integer c__1 = 1;
-static integer c__65 = 65;
+static integer c__65 = T1_S;
 
 /* Subroutine */ int cgbtrf_(integer *m, integer *n, integer *kl, integer *ku, 
 	 complex *ab, integer *ldab, integer *ipiv, integer *info)
@@ -41,7 +41,7 @@ static integer c__65 = 65;
 	    complex *, integer *), ccopy_(integer *, complex *, integer *, 
 	    complex *, integer *), cswap_(integer *, complex *, integer *, 
 	    complex *, integer *);
-    complex work13[4160]	/* was [65][64] */, work31[4160]	/* 
+    complex work13[T1_S*(T1_S-1)]	/* was [65][64] */, work31[T1_S*(T1_S-1)]	/* 
 	    was [65][64] */;
     extern /* Subroutine */ int ctrsm_(char *, char *, char *, char *, 
 	    integer *, integer *, complex *, complex *, integer *, complex *, 
@@ -196,7 +196,7 @@ static integer c__65 = 65;
 /*     The block size must not exceed the limit set by the size of the */
 /*     local arrays WORK13 and WORK31. */
 
-    nb = min(nb,64);
+    nb = min(nb,(T1_S-1));
 
     if (nb <= 1 || nb > *kl) {
 
@@ -213,7 +213,7 @@ static integer c__65 = 65;
 	for (j = 1; j <= i__1; ++j) {
 	    i__2 = j - 1;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
-		i__3 = i__ + j * 65 - 66;
+		i__3 = i__ + j * T1_S - (T1_S+1);
 		work13[i__3].r = 0.f, work13[i__3].i = 0.f;
 /* L10: */
 	    }
@@ -226,7 +226,7 @@ static integer c__65 = 65;
 	for (j = 1; j <= i__1; ++j) {
 	    i__2 = nb;
 	    for (i__ = j + 1; i__ <= i__2; ++i__) {
-		i__3 = i__ + j * 65 - 66;
+		i__3 = i__ + j * T1_S - (T1_S+1);
 		work31[i__3].r = 0.f, work31[i__3].i = 0.f;
 /* L30: */
 	    }
@@ -380,7 +380,7 @@ static integer c__65 = 65;
 		nw = min(i__4,i3);
 		if (nw > 0) {
 		    ccopy_(&nw, &ab[kv + *kl + 1 - jj + j + jj * ab_dim1], &
-			    c__1, &work31[(jj - j + 1) * 65 - 65], &c__1);
+			    c__1, &work31[(jj - j + 1) * T1_S - T1_S], &c__1);
 		}
 /* L80: */
 	    }
@@ -484,7 +484,7 @@ static integer c__65 = 65;
 		    for (jj = 1; jj <= i__3; ++jj) {
 			i__4 = jb;
 			for (ii = jj; ii <= i__4; ++ii) {
-			    i__5 = ii + jj * 65 - 66;
+			    i__5 = ii + jj * T1_S - (T1_S+1);
 			    i__6 = ii - jj + 1 + (jj + j + kv - 1) * ab_dim1;
 			    work13[i__5].r = ab[i__6].r, work13[i__5].i = ab[
 				    i__6].i;
@@ -531,7 +531,7 @@ static integer c__65 = 65;
 			i__4 = jb;
 			for (ii = jj; ii <= i__4; ++ii) {
 			    i__5 = ii - jj + 1 + (jj + j + kv - 1) * ab_dim1;
-			    i__6 = ii + jj * 65 - 66;
+			    i__6 = ii + jj * T1_S - (T1_S+1);
 			    ab[i__5].r = work13[i__6].r, ab[i__5].i = work13[
 				    i__6].i;
 /* L140: */
@@ -588,7 +588,7 @@ static integer c__65 = 65;
 		i__4 = i3, i__5 = jj - j + 1;
 		nw = min(i__4,i__5);
 		if (nw > 0) {
-		    ccopy_(&nw, &work31[(jj - j + 1) * 65 - 65], &c__1, &ab[
+		    ccopy_(&nw, &work31[(jj - j + 1) * T1_S - T1_S], &c__1, &ab[
 			    kv + *kl + 1 - jj + j + jj * ab_dim1], &c__1);
 		}
 /* L170: */

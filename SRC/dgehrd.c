@@ -19,7 +19,7 @@ static integer c__1 = 1;
 static integer c_n1 = -1;
 static integer c__3 = 3;
 static integer c__2 = 2;
-static integer c__65 = 65;
+static integer c__65 = T1_S;
 static doublereal c_b25 = -1.;
 static doublereal c_b26 = 1.;
 
@@ -32,7 +32,7 @@ static doublereal c_b26 = 1.;
 
     /* Local variables */
     integer i__, j;
-    doublereal t[4160]	/* was [65][64] */;
+    doublereal t[T1_S*(T1_S-1)]	/* was [65][64] */;
     integer ib;
     doublereal ei;
     integer nb, nh, nx, iws;
@@ -184,7 +184,7 @@ static doublereal c_b26 = 1.;
     /* Function Body */
     *info = 0;
 /* Computing MIN */
-    i__1 = 64, i__2 = ilaenv_(&c__1, "DGEHRD", " ", n, ilo, ihi, &c_n1);
+    i__1 = (T1_S-1), i__2 = ilaenv_(&c__1, "DGEHRD", " ", n, ilo, ihi, &c_n1);
     nb = min(i__1,i__2);
     lwkopt = *n * nb;
     work[1] = (doublereal) lwkopt;
@@ -232,7 +232,7 @@ static doublereal c_b26 = 1.;
 /*     Determine the block size */
 
 /* Computing MIN */
-    i__1 = 64, i__2 = ilaenv_(&c__1, "DGEHRD", " ", n, ilo, ihi, &c_n1);
+    i__1 = (T1_S-1), i__2 = ilaenv_(&c__1, "DGEHRD", " ", n, ilo, ihi, &c_n1);
     nb = min(i__1,i__2);
     nbmin = 2;
     iws = 1;
