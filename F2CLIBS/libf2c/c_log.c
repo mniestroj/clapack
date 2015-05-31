@@ -1,7 +1,7 @@
 #include "f2c.h"
 
 #ifdef KR_headers
-extern double log(), f__cabs(), atan2();
+extern float logf(), f__cabsf(), atan2f();
 VOID c_log(r, z) complex *r, *z;
 #else
 #undef abs
@@ -9,14 +9,14 @@ VOID c_log(r, z) complex *r, *z;
 #ifdef __cplusplus
 extern "C" {
 #endif
-extern double f__cabs(double, double);
+extern float f__cabsf(float, float);
 
 void c_log(complex *r, complex *z)
 #endif
 {
-	double zi, zr;
-	r->i = atan2(zi = z->i, zr = z->r);
-	r->r = log( f__cabs(zr, zi) );
+	float zi, zr;
+	r->i = atan2f(zi = z->i, zr = z->r);
+	r->r = logf( f__cabsf(zr, zi) );
 	}
 #ifdef __cplusplus
 }
