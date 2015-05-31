@@ -22,7 +22,7 @@
     /* Builtin functions */
     float logf(real);
     float sqrtf(real);
-    double cos(doublereal);
+    float cosf(real);
 
     /* Local variables */
     integer i__;
@@ -134,7 +134,7 @@
 
 	    i__2 = il;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
-		x[iv + i__ - 1] = sqrtf(logf(u[(i__ << 1) - 2]) * -2.f) * cos(u[
+		x[iv + i__ - 1] = sqrtf(logf(u[(i__ << 1) - 2]) * -2.f) * cosf(u[
 			(i__ << 1) - 1] * 6.2831853071795864769252867663f);
 /* L30: */
 	    }
