@@ -29,7 +29,7 @@ static integer c__1 = 1;
 
     /* Builtin functions */
     float sqrtf(real);
-    double r_imag(complex *);
+    float r_imag(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

@@ -29,7 +29,7 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j, k;

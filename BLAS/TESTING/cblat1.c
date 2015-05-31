@@ -676,7 +676,7 @@ doublereal sdiff_(real *sa, real *sb)
     integer i__1, i__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__;

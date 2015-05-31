@@ -28,7 +28,7 @@ static real c_b17 = 1.f;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j, k, kc, ml, mu;

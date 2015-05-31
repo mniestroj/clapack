@@ -23,7 +23,7 @@
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

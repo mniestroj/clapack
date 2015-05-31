@@ -124,7 +124,7 @@ static logical c_false = FALSE_;
     double r_sign(real *, real *), c_abs(complex *);
     void r_cnjg(complex *, complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer j, n, i1, n1, jc, nb, in, jr, ns, nbz;

@@ -26,7 +26,7 @@ doublereal clansp_(char *norm, char *uplo, integer *n, complex *ap, real *
 
     /* Builtin functions */
     double c_abs(complex *);
-    double r_imag(complex *);
+    float r_imag(complex *);
     float sqrtf(real);
 
     /* Local variables */

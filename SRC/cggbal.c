@@ -29,7 +29,7 @@ static real c_b72 = .5f;
 
     /* Builtin functions */
     double r_lg10(real *);
-    double r_imag(complex *);
+    float r_imag(complex *);
     double c_abs(complex *);
     double r_sign(real *, real *);
     double pow_ri(real *, integer *);

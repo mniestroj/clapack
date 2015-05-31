@@ -36,7 +36,7 @@ static real c_b33 = 1.f;
     real r__1, r__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     real dxratmax, dzratmax;

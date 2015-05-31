@@ -20,7 +20,7 @@ doublereal scnrm2_(integer *n, complex *x, integer *incx)
     real ret_val, r__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     float sqrtf(real);
 
     /* Local variables */

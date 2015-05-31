@@ -33,7 +33,7 @@ static real c_b29 = 1.f;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer jc, nb, in, jr, nb1, nb2, nb3, ihi, ilo;

@@ -33,7 +33,7 @@ static integer c_n1 = -1;
 
     /* Builtin functions */
     float sqrtf(real);
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

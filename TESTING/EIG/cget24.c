@@ -53,7 +53,7 @@ static integer c__4 = 4;
 
     /* Builtin functions */
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

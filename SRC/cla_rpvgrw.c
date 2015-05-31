@@ -21,7 +21,7 @@ doublereal cla_rpvgrw__(integer *n, integer *ncols, complex *a, integer *lda,
     real ret_val, r__1, r__2, r__3;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

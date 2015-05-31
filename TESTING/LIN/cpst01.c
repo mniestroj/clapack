@@ -29,7 +29,7 @@ static real c_b20 = 1.f;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

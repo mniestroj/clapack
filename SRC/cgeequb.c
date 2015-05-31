@@ -23,7 +23,7 @@
 
     /* Builtin functions */
     float logf(real);
-    double r_imag(complex *);
+    float r_imag(complex *);
     double pow_ri(real *, integer *);
 
     /* Local variables */

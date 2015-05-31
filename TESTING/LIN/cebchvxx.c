@@ -63,7 +63,7 @@ static integer c__8 = 8;
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
     double sqrt(doublereal);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
     void c_div(complex *, complex *, complex *);
     integer s_wsle(cilist *), e_wsle(void);
 

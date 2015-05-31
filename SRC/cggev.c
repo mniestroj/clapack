@@ -34,7 +34,7 @@ static integer c_n1 = -1;
 
     /* Builtin functions */
     float sqrtf(real);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer jc, in, jr, ihi, ilo;

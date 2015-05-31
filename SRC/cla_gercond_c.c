@@ -27,7 +27,7 @@ doublereal cla_gercond_c__(char *trans, integer *n, complex *a, integer *lda,
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

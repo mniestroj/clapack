@@ -20,7 +20,7 @@ logical cgennd_(integer *m, integer *n, complex *a, integer *lda)
     logical ret_val;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, k;

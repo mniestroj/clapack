@@ -20,7 +20,7 @@ doublereal scasum_(integer *n, complex *cx, integer *incx)
     real ret_val, r__1, r__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, nincx;

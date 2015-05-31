@@ -30,7 +30,7 @@ static integer c__1 = 1;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

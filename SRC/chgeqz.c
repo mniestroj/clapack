@@ -35,7 +35,7 @@ static integer c__2 = 2;
     /* Builtin functions */
     double c_abs(complex *);
     void r_cnjg(complex *, complex *);
-    double r_imag(complex *);
+    float r_imag(complex *);
     void c_div(complex *, complex *, complex *), pow_ci(complex *, complex *, 
 	    integer *), c_sqrt(complex *, complex *);
 

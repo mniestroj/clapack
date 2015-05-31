@@ -28,7 +28,7 @@ doublereal cla_gbrcond_x__(char *trans, integer *n, integer *kl, integer *ku,
     complex q__1, q__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void c_div(complex *, complex *, complex *);
 
     /* Local variables */

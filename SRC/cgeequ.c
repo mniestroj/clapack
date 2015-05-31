@@ -22,7 +22,7 @@
     real r__1, r__2, r__3, r__4;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

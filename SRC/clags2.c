@@ -23,7 +23,7 @@
 
     /* Builtin functions */
     double c_abs(complex *);
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

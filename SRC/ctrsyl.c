@@ -28,7 +28,7 @@ static integer c__1 = 1;
     complex q__1, q__2, q__3, q__4;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
 
     /* Local variables */

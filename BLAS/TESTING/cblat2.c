@@ -4794,7 +4794,7 @@ L180:
     complex q__1, q__2, q__3;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
     double c_abs(complex *), sqrt(doublereal);
     integer s_wsfe(cilist *), e_wsfe(void), do_fio(integer *, char *, ftnlen);

@@ -24,7 +24,7 @@
     /* Builtin functions */
     float logf(real);
     double pow_ri(real *, integer *);
-    double r_imag(complex *);
+    float r_imag(complex *);
     float sqrtf(real);
     void r_cnjg(complex *, complex *);
 

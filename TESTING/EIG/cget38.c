@@ -33,7 +33,7 @@ static integer c__1200 = 1200;
     double sqrt(doublereal);
     integer s_rsle(cilist *), do_lio(integer *, integer *, char *, ftnlen), 
 	    e_rsle(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j, m, n;

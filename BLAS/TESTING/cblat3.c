@@ -4666,7 +4666,7 @@ L100:
     complex q__1, q__2, q__3, q__4;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
     double sqrt(doublereal);
     integer s_wsfe(cilist *), e_wsfe(void), do_fio(integer *, char *, ftnlen);

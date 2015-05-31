@@ -35,7 +35,7 @@ static integer c__2 = 2;
     complex q__1;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     integer pow_ii(integer *, integer *);
 
     /* Local variables */

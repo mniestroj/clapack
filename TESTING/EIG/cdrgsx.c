@@ -97,7 +97,7 @@ static integer c__4 = 4;
     /* Builtin functions */
     double sqrt(doublereal);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
     integer s_rsle(cilist *), do_lio(integer *, integer *, char *, ftnlen), 
 	    e_rsle(void);
 

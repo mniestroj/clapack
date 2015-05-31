@@ -31,7 +31,7 @@ static complex c_b2 = {1.f,0.f};
     real r__1, r__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j;

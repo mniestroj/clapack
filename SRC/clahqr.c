@@ -29,7 +29,7 @@ static integer c__2 = 2;
     complex q__1, q__2, q__3, q__4, q__5, q__6, q__7;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
     void r_cnjg(complex *, complex *);
     double c_abs(complex *);
     void c_sqrt(complex *, complex *), pow_ci(complex *, complex *, integer *)

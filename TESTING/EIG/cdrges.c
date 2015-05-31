@@ -123,7 +123,7 @@ static integer c__0 = 0;
     double r_sign(real *, real *), c_abs(complex *);
     void r_cnjg(complex *, complex *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, j, n, n1, jc, nb, in, jr;

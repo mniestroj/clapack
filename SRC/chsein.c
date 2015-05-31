@@ -31,7 +31,7 @@ static logical c_true = TRUE_;
     complex q__1, q__2;
 
     /* Builtin functions */
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer i__, k, kl, kr, ks;

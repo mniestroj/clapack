@@ -112,7 +112,7 @@ extern double r_cos(float *);
 extern double r_cosh(float *);
 extern double r_dim(float *, float *);
 extern double r_exp(float *);
-extern double r_imag(complex *);
+extern float r_imag(complex *);
 extern double r_int(float *);
 extern double r_lg10(float *);
 extern double r_log(float *);

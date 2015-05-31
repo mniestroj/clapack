@@ -37,7 +37,7 @@ static integer c__2 = 2;
 
     /* Builtin functions */
     void r_cnjg(complex *, complex *);
-    double r_imag(complex *);
+    float r_imag(complex *);
 
     /* Local variables */
     integer j, k, m, i2, j2, i4, j4, k1;
