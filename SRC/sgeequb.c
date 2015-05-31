@@ -23,7 +23,7 @@
 
     /* Builtin functions */
     float logf(real);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j;

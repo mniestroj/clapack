@@ -99,7 +99,7 @@ extern double pow_dd(double *, double *);
 extern double pow_di(double *, integer *);
 extern short pow_hh(short *, shortint *);
 extern integer pow_ii(integer *, integer *);
-extern double pow_ri(float *, integer *);
+extern float pow_ri(float *, integer *);
 extern void pow_zi(doublecomplex *, doublecomplex *, integer *);
 extern void pow_zz(doublecomplex *, doublecomplex *, doublecomplex *);
 extern double r_abs(float *);

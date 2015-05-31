@@ -24,7 +24,7 @@
     /* Builtin functions */
     float logf(real);
     float r_imag(complex *);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j;

@@ -29,7 +29,7 @@ static integer c__3 = 3;
 
     /* Builtin functions */
     double pow_dd(doublereal *, doublereal *);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
     double log(doublereal), exp(doublereal);
     float c_abs(complex *);
 

@@ -22,8 +22,9 @@
     doublereal d__1, d__2;
 
     /* Builtin functions */
-    double pow_dd(doublereal *, doublereal *), pow_ri(real *, integer *), log(
-	    doublereal), exp(doublereal);
+    double pow_dd(doublereal *, doublereal *);
+    float pow_ri(real *, integer *);
+    double log(doublereal), exp(doublereal);
 
     /* Local variables */
     integer i__;

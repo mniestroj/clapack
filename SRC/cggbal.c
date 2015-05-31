@@ -32,7 +32,7 @@ static real c_b72 = .5f;
     float r_imag(complex *);
     float c_abs(complex *);
     float r_sign(real *, real *);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j, k, l, m;

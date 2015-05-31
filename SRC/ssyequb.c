@@ -27,7 +27,7 @@ static integer c__1 = 1;
     /* Builtin functions */
     float sqrtf(real);
     float logf(real);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     real d__;

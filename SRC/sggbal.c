@@ -30,7 +30,7 @@ static real c_b71 = .5f;
     /* Builtin functions */
     double r_lg10(real *);
     float r_sign(real *, real *);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     integer i__, j, k, l, m;

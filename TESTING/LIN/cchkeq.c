@@ -44,7 +44,7 @@ static integer c__1 = 1;
 
     /* Builtin functions */
     /* Subroutine */ int s_copy(char *, char *, ftnlen, ftnlen);
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
     integer pow_ii(integer *, integer *), s_wsle(cilist *), e_wsle(void), 
 	    s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 

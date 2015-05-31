@@ -29,7 +29,7 @@ doublereal slamch_(char *cmach)
     real ret_val;
 
     /* Builtin functions */
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
 
     /* Local variables */
     static real t;
@@ -392,7 +392,7 @@ L30:
     real r__1, r__2, r__3, r__4, r__5;
 
     /* Builtin functions */
-    double pow_ri(real *, integer *);
+    float pow_ri(real *, integer *);
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */
