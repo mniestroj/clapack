@@ -19,7 +19,7 @@ static integer c__1 = 1;
 static integer c_n1 = -1;
 static real c_b18 = 1.f;
 static real c_b21 = -1.f;
-static integer c__33 = 33;
+static integer c__33 = T3_S;
 
 /* Subroutine */ int spbtrf_(char *uplo, integer *n, integer *kd, real *ab, 
 	integer *ldab, integer *info)
@@ -29,7 +29,7 @@ static integer c__33 = 33;
 
     /* Local variables */
     integer i__, j, i2, i3, ib, nb, ii, jj;
-    real work[1056]	/* was [33][32] */;
+    real work[T3_S*(T3_S-1)]	/* was [33][32] */;
     extern logical lsame_(char *, char *);
     extern /* Subroutine */ int sgemm_(char *, char *, integer *, integer *, 
 	    integer *, real *, real *, integer *, real *, integer *, real *, 
@@ -178,7 +178,7 @@ static integer c__33 = 33;
 /*     The block size must not exceed the semi-bandwidth KD, and must not */
 /*     exceed the limit set by the size of the local array WORK. */
 
-    nb = min(nb,32);
+    nb = min(nb,(T3_S-1));
 
     if (nb <= 1 || nb > *kd) {
 
@@ -201,7 +201,7 @@ static integer c__33 = 33;
 	    for (j = 1; j <= i__1; ++j) {
 		i__2 = j - 1;
 		for (i__ = 1; i__ <= i__2; ++i__) {
-		    work[i__ + j * 33 - 34] = 0.f;
+		    work[i__ + j * T3_S - (T3_S+1)] = 0.f;
 /* L10: */
 		}
 /* L20: */
@@ -276,7 +276,7 @@ static integer c__33 = 33;
 			for (jj = 1; jj <= i__3; ++jj) {
 			    i__4 = ib;
 			    for (ii = jj; ii <= i__4; ++ii) {
-				work[ii + jj * 33 - 34] = ab[ii - jj + 1 + (
+				work[ii + jj * T3_S - (T3_S+1)] = ab[ii - jj + 1 + (
 					jj + i__ + *kd - 1) * ab_dim1];
 /* L30: */
 			    }
@@ -315,7 +315,7 @@ static integer c__33 = 33;
 			    i__4 = ib;
 			    for (ii = jj; ii <= i__4; ++ii) {
 				ab[ii - jj + 1 + (jj + i__ + *kd - 1) * 
-					ab_dim1] = work[ii + jj * 33 - 34];
+					ab_dim1] = work[ii + jj * T3_S - (T3_S+1)];
 /* L50: */
 			    }
 /* L60: */
@@ -336,7 +336,7 @@ static integer c__33 = 33;
 	    for (j = 1; j <= i__2; ++j) {
 		i__1 = nb;
 		for (i__ = j + 1; i__ <= i__1; ++i__) {
-		    work[i__ + j * 33 - 34] = 0.f;
+		    work[i__ + j * T3_S - (T3_S+1)] = 0.f;
 /* L80: */
 		}
 /* L90: */
@@ -409,7 +409,7 @@ static integer c__33 = 33;
 			for (jj = 1; jj <= i__3; ++jj) {
 			    i__4 = min(jj,i3);
 			    for (ii = 1; ii <= i__4; ++ii) {
-				work[ii + jj * 33 - 34] = ab[*kd + 1 - jj + 
+				work[ii + jj * T3_S - (T3_S+1)] = ab[*kd + 1 - jj + 
 					ii + (jj + i__ - 1) * ab_dim1];
 /* L100: */
 			    }
@@ -448,7 +448,7 @@ static integer c__33 = 33;
 			    i__4 = min(jj,i3);
 			    for (ii = 1; ii <= i__4; ++ii) {
 				ab[*kd + 1 - jj + ii + (jj + i__ - 1) * 
-					ab_dim1] = work[ii + jj * 33 - 34];
+					ab_dim1] = work[ii + jj * T3_S - (T3_S+1)];
 /* L120: */
 			    }
 /* L130: */

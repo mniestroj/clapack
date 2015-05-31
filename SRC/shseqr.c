@@ -19,7 +19,7 @@ static real c_b11 = 0.f;
 static real c_b12 = 1.f;
 static integer c__12 = 12;
 static integer c__2 = 2;
-static integer c__49 = 49;
+static integer c__49 = T2_S;
 
 /* Subroutine */ int shseqr_(char *job, char *compz, integer *n, integer *ilo, 
 	 integer *ihi, real *h__, integer *ldh, real *wr, real *wi, real *z__, 
@@ -36,11 +36,11 @@ static integer c__49 = 49;
 
     /* Local variables */
     integer i__;
-    real hl[2401]	/* was [49][49] */;
+    real hl[T2_S*T2_S]	/* was [49][49] */;
     integer kbot, nmin;
     extern logical lsame_(char *, char *);
     logical initz;
-    real workl[49];
+    real workl[T2_S];
     logical wantt, wantz;
     extern /* Subroutine */ int slaqr0_(logical *, logical *, integer *, 
 	    integer *, integer *, real *, integer *, real *, real *, integer *
@@ -431,7 +431,7 @@ static integer c__49 = 49;
 
 		kbot = *info;
 
-		if (*n >= 49) {
+		if (*n >= T2_S) {
 
 /*                 ==== Larger matrices have enough subdiagonal scratch */
 /*                 .    space to call SLAQR0 directly. ==== */
@@ -448,10 +448,10 @@ static integer c__49 = 49;
 /*                 .    array before calling SLAQR0. ==== */
 
 		    slacpy_("A", n, n, &h__[h_offset], ldh, hl, &c__49);
-		    hl[*n + 1 + *n * 49 - 50] = 0.f;
-		    i__1 = 49 - *n;
+		    hl[*n + 1 + *n * T2_S - (T2_S+1)] = 0.f;
+		    i__1 = T2_S - *n;
 		    slaset_("A", &c__49, &i__1, &c_b11, &c_b11, &hl[(*n + 1) *
-			     49 - 49], &c__49);
+			     T2_S - T2_S], &c__49);
 		    slaqr0_(&wantt, &wantz, &c__49, ilo, &kbot, hl, &c__49, &
 			    wr[1], &wi[1], ilo, ihi, &z__[z_offset], ldz, 
 			    workl, &c__49, info);

@@ -20,7 +20,7 @@ static doublecomplex c_b2 = {1.,0.};
 static integer c__1 = 1;
 static integer c__12 = 12;
 static integer c__2 = 2;
-static integer c__49 = 49;
+static integer c__49 = T2_S;
 
 /* Subroutine */ int zhseqr_(char *job, char *compz, integer *n, integer *ilo, 
 	 integer *ihi, doublecomplex *h__, integer *ldh, doublecomplex *w, 
@@ -38,11 +38,11 @@ static integer c__49 = 49;
     /* Subroutine */ int s_cat(char *, char **, integer *, integer *, ftnlen);
 
     /* Local variables */
-    doublecomplex hl[2401]	/* was [49][49] */;
+    doublecomplex hl[T2_S*T2_S]	/* was [49][49] */;
     integer kbot, nmin;
     extern logical lsame_(char *, char *);
     logical initz;
-    doublecomplex workl[49];
+    doublecomplex workl[T2_S];
     logical wantt, wantz;
     extern /* Subroutine */ int zcopy_(integer *, doublecomplex *, integer *, 
 	    doublecomplex *, integer *), zlaqr0_(logical *, logical *, 
@@ -427,7 +427,7 @@ static integer c__49 = 49;
 
 		kbot = *info;
 
-		if (*n >= 49) {
+		if (*n >= T2_S) {
 
 /*                 ==== Larger matrices have enough subdiagonal scratch */
 /*                 .    space to call ZLAQR0 directly. ==== */
@@ -444,11 +444,11 @@ static integer c__49 = 49;
 /*                 .    array before calling ZLAQR0. ==== */
 
 		    zlacpy_("A", n, n, &h__[h_offset], ldh, hl, &c__49);
-		    i__1 = *n + 1 + *n * 49 - 50;
+		    i__1 = *n + 1 + *n * T2_S - (T2_S+1);
 		    hl[i__1].r = 0., hl[i__1].i = 0.;
-		    i__1 = 49 - *n;
+		    i__1 = T2_S - *n;
 		    zlaset_("A", &c__49, &i__1, &c_b1, &c_b1, &hl[(*n + 1) * 
-			    49 - 49], &c__49);
+			    T2_S - T2_S], &c__49);
 		    zlaqr0_(&wantt, &wantz, &c__49, ilo, &kbot, hl, &c__49, &
 			    w[1], ilo, ihi, &z__[z_offset], ldz, workl, &
 			    c__49, info);

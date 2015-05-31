@@ -20,7 +20,7 @@ static integer c__1 = 1;
 static integer c_n1 = -1;
 static real c_b21 = -1.f;
 static real c_b22 = 1.f;
-static integer c__33 = 33;
+static integer c__33 = T3_S;
 
 /* Subroutine */ int cpbtrf_(char *uplo, integer *n, integer *kd, complex *ab, 
 	 integer *ldab, integer *info)
@@ -31,7 +31,7 @@ static integer c__33 = 33;
 
     /* Local variables */
     integer i__, j, i2, i3, ib, nb, ii, jj;
-    complex work[1056]	/* was [33][32] */;
+    complex work[T3_S*(T3_S-1)]	/* was [33][32] */;
     extern /* Subroutine */ int cgemm_(char *, char *, integer *, integer *, 
 	    integer *, complex *, complex *, integer *, complex *, integer *, 
 	    complex *, complex *, integer *), cherk_(char *, 
@@ -181,7 +181,7 @@ static integer c__33 = 33;
 /*     The block size must not exceed the semi-bandwidth KD, and must not */
 /*     exceed the limit set by the size of the local array WORK. */
 
-    nb = min(nb,32);
+    nb = min(nb,(T3_S-1));
 
     if (nb <= 1 || nb > *kd) {
 
@@ -204,7 +204,7 @@ static integer c__33 = 33;
 	    for (j = 1; j <= i__1; ++j) {
 		i__2 = j - 1;
 		for (i__ = 1; i__ <= i__2; ++i__) {
-		    i__3 = i__ + j * 33 - 34;
+		    i__3 = i__ + j * T3_S - (T3_S+1);
 		    work[i__3].r = 0.f, work[i__3].i = 0.f;
 /* L10: */
 		}
@@ -280,7 +280,7 @@ static integer c__33 = 33;
 			for (jj = 1; jj <= i__3; ++jj) {
 			    i__4 = ib;
 			    for (ii = jj; ii <= i__4; ++ii) {
-				i__5 = ii + jj * 33 - 34;
+				i__5 = ii + jj * T3_S - (T3_S+1);
 				i__6 = ii - jj + 1 + (jj + i__ + *kd - 1) * 
 					ab_dim1;
 				work[i__5].r = ab[i__6].r, work[i__5].i = ab[
@@ -325,7 +325,7 @@ static integer c__33 = 33;
 			    for (ii = jj; ii <= i__4; ++ii) {
 				i__5 = ii - jj + 1 + (jj + i__ + *kd - 1) * 
 					ab_dim1;
-				i__6 = ii + jj * 33 - 34;
+				i__6 = ii + jj * T3_S - (T3_S+1);
 				ab[i__5].r = work[i__6].r, ab[i__5].i = work[
 					i__6].i;
 /* L50: */
@@ -348,7 +348,7 @@ static integer c__33 = 33;
 	    for (j = 1; j <= i__2; ++j) {
 		i__1 = nb;
 		for (i__ = j + 1; i__ <= i__1; ++i__) {
-		    i__3 = i__ + j * 33 - 34;
+		    i__3 = i__ + j * T3_S - (T3_S+1);
 		    work[i__3].r = 0.f, work[i__3].i = 0.f;
 /* L80: */
 		}
@@ -422,7 +422,7 @@ static integer c__33 = 33;
 			for (jj = 1; jj <= i__3; ++jj) {
 			    i__4 = min(jj,i3);
 			    for (ii = 1; ii <= i__4; ++ii) {
-				i__5 = ii + jj * 33 - 34;
+				i__5 = ii + jj * T3_S - (T3_S+1);
 				i__6 = *kd + 1 - jj + ii + (jj + i__ - 1) * 
 					ab_dim1;
 				work[i__5].r = ab[i__6].r, work[i__5].i = ab[
@@ -466,7 +466,7 @@ static integer c__33 = 33;
 			    for (ii = 1; ii <= i__4; ++ii) {
 				i__5 = *kd + 1 - jj + ii + (jj + i__ - 1) * 
 					ab_dim1;
-				i__6 = ii + jj * 33 - 34;
+				i__6 = ii + jj * T3_S - (T3_S+1);
 				ab[i__5].r = work[i__6].r, ab[i__5].i = work[
 					i__6].i;
 /* L120: */
