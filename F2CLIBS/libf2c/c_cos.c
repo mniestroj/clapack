@@ -1,7 +1,7 @@
 #include "f2c.h"
 
 #ifdef KR_headers
-extern double sin(), cos(), sinh(), cosh();
+extern float sinf(), cosf(), sinhf(), coshf();
 
 VOID c_cos(r, z) complex *r, *z;
 #else
@@ -14,9 +14,9 @@ extern "C" {
 void c_cos(complex *r, complex *z)
 #endif
 {
-	double zi = z->i, zr = z->r;
-	r->r =   cos(zr) * cosh(zi);
-	r->i = - sin(zr) * sinh(zi);
+	float zi = z->i, zr = z->r;
+	r->r =   cosf(zr) * coshf(zi);
+	r->i = - sinf(zr) * sinhf(zi);
 	}
 #ifdef __cplusplus
 }

@@ -1,7 +1,7 @@
 #include "f2c.h"
 
 #ifdef KR_headers
-extern double exp(), cos(), sin();
+extern float expf(), cosf(), sinf();
 
  VOID c_exp(r, z) complex *r, *z;
 #else
@@ -14,11 +14,11 @@ extern "C" {
 void c_exp(complex *r, complex *z)
 #endif
 {
-	double expx, zi = z->i;
+	float expx, zi = z->i;
 
-	expx = exp(z->r);
-	r->r = expx * cos(zi);
-	r->i = expx * sin(zi);
+	expx = expf(z->r);
+	r->r = expx * cosf(zi);
+	r->i = expx * sinf(zi);
 	}
 #ifdef __cplusplus
 }
