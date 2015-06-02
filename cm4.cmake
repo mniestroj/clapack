@@ -23,9 +23,9 @@ CMAKE_FORCE_CXX_COMPILER(${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-g++ GNU)
 set(CMAKE_OBJCOPY ${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-objcopy CACHE INTERNAL "objcopy tool")
 set(CMAKE_OBJDUMP ${TOOLCHAIN_BIN_DIR}/${TOOLCHAIN_PREFIX}-objdump CACHE INTERNAL "objdump tool")
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-common -Wstrict-prototypes -ffunction-sections -fdata-sections")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mpcu=cortex-m4 -march=armv7e-m -mthumb")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfloat-abi=hard -mpfu=fpv4-sp-d16")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-common -Wno-strict-prototypes -ffunction-sections -fdata-sections")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mcpu=cortex-m4 -march=armv7e-m -mthumb")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfloat-abi=hard -mfpu=fpv4-sp-d16")
 
 set(CMAKE_C_FLAGS_DEBUG "-Og -g" CACHE INTERNAL "c compiler flags debug")
 set(CMAKE_CXX_FLAGS_DEBUG "-Og -g" CACHE INTERNAL "cxx compiler flags debug")
@@ -39,5 +39,7 @@ set(CMAKE_FIND_ROOT_PATH ${TOOLCHAIN_PATH}/${TOOLCHAIN_PREFIX})
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "")
 
 set(BUILD_SHARED_LIBS OFF)
